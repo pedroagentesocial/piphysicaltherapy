@@ -1,0 +1,40 @@
+---
+import { languages, localeTags, type Lang } from '../i18n/config';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { routeKeyFromPath, hrefFor } from '../i18n/routes';
+
+const current = getLangFromUrl(Astro.url);
+const t = useTranslations(current);
+// Resolve the counterpart URL through the translated-slug map so /en/team/
+// switches to /es/equipo/ (not a crude prefix swap that would 404).
+const key = routeKeyFromPath(Astro.url.pathname);
+const entries = Object.entries(languages) as [Lang, string][];
+---
+
+<nav aria-label={t.langSwitcher.label}>
+  <ul role="list" class="flex items-center gap-1">
+    {
+      entries.map(([code, name]) => {
+        const isActive = code === current;
+        return (
+          <li>
+            <a
+              href={hrefFor(key, code)}
+              hreflang={localeTags[code]}
+              lang={localeTags[code]}
+              aria-current={isActive ? 'true' : undefined}
+              class:list={[
+                'flex min-h-11 items-center rounded-md px-2.5 text-sm font-semibold uppercase tracking-wide transition-colors',
+                isActive ? 'bg-ink text-paper' : 'text-ink-soft hover:text-ink hover:bg-ink/5',
+              ]}
+            >
+              {/* Full language name for screen readers; code for sighted users. */}
+              <span class="sr-only">{name}</span>
+              <span aria-hidden="true">{code}</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

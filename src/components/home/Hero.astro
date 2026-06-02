@@ -1,0 +1,42 @@
+---
+import Img from '../Img.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+import { business } from '../../data/business';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const h = t.home.hero;
+---
+
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-10 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-[1.08fr_0.92fr]">
+  <div class="reveal">
+    <p class="eyebrow text-field-700">{h.eyebrow}</p>
+    <h1 class="display mt-5 text-[clamp(2.7rem,7vw,5.4rem)]">{h.title}</h1>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">{h.subtitle}</p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href={hrefFor('contact', lang)} class="btn btn-field text-base">{h.primary}</a>
+      <a href={`tel:${business.phone}`} class="btn btn-outline text-base">{t.nav.call} {business.phoneDisplay}</a>
+    </div>
+    <ul role="list" class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-ink-soft">
+      <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-field-500"></span>{t.common.directAccess}</li>
+      <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-field-500"></span>{t.common.sameWeek}</li>
+      <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-ember-500"></span>{t.common.seHablaEspanol}</li>
+    </ul>
+  </div>
+
+  <div class="reveal relative" style="--reveal-delay:100ms">
+    {/* Kinetic motion motif behind the photo */}
+    <svg class="absolute -left-6 -top-6 -z-10 h-40 w-40 text-field-300" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+      <path d="M8 80 Q40 20 60 60 T112 40" stroke-linecap="round" />
+      <path d="M8 100 Q40 40 60 80 T112 60" stroke-linecap="round" opacity="0.5" />
+    </svg>
+    <div class="overflow-hidden rounded-[2rem] shadow-[var(--shadow-lift)]">
+      <Img name="heroHome" eager ratio="4/5" sizes="(min-width:1024px) 44vw, 92vw" />
+    </div>
+    <div class="absolute -bottom-5 -right-3 rounded-2xl bg-ink px-5 py-3 text-paper shadow-[var(--shadow-lift)] sm:-right-5">
+      <p class="font-display text-2xl font-extrabold leading-none">DPT</p>
+      <p class="mt-1 text-xs text-paper/75">{t.common.bilingual}</p>
+    </div>
+  </div>
+</section>

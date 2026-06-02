@@ -1,0 +1,53 @@
+---
+import Breadcrumbs from '../Breadcrumbs.astro';
+import PageHero from '../PageHero.astro';
+import ConditionsGrid from '../ConditionsGrid.astro';
+import ProcessSteps from '../ProcessSteps.astro';
+import Faq from '../Faq.astro';
+import CtaBand from '../CtaBand.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+import { conditions } from '../../data/content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const s = t.servicePT;
+const rehabConditions = conditions.filter((c) => c.pillar === 'rehab');
+---
+
+<Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: t.nav.rehab }]} />
+
+<PageHero
+  eyebrow={s.eyebrow}
+  title={s.title}
+  lead={s.lead}
+  accent="field"
+  image="rehab"
+  pills={[t.common.directAccess, t.common.sameWeek, t.common.seHablaEspanol]}
+/>
+
+<section class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+  <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div class="reveal lg:sticky lg:top-24">
+      <h2 class="display text-3xl sm:text-4xl">{s.introTitle}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">{s.introBody}</p>
+    </div>
+    <dl class="grid gap-px overflow-hidden rounded-3xl border border-ink/10 bg-ink/10 sm:grid-cols-2">
+      {s.benefits.map((b, i) => (
+        <div class="reveal bg-paper p-6" style={`--reveal-delay:${i * 60}ms`}>
+          <dt class="font-display text-lg font-extrabold text-ink">{b.title}</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-ink-soft">{b.body}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+  <h2 class="display reveal max-w-2xl text-3xl sm:text-4xl">{s.treatTitle}</h2>
+  <div class="mt-8"><ConditionsGrid items={rehabConditions} /></div>
+</section>
+
+<ProcessSteps title={t.home.processTitle} />
+<Faq title={s.faqTitle} items={s.faq} />
+<CtaBand title={s.ctaTitle} body={t.home.ctaBody} accent="field" />

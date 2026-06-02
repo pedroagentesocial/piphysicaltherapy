@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StoriesView from '../../components/views/StoriesView.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { storiesSchema } from '../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = storiesSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.stories.title} description={t.seo.stories.description} routeKey="stories" schema={schema}>
+  <StoriesView />
+</Layout>

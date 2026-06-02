@@ -1,0 +1,52 @@
+---
+import Img from './Img.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { hrefFor } from '../i18n/routes';
+import { business } from '../data/business';
+import type { Accent, Pillar } from '../data/content';
+import type { ImageKey } from '../data/images';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  accent?: Accent;
+  image?: ImageKey;
+  pills?: string[];
+  /** Show the booking CTA pair under the lead. */
+  cta?: boolean;
+}
+const { eyebrow, title, lead, accent = 'field', image, pills = [], cta = true } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const eyebrowColor = accent === 'ember' ? 'text-ember-700' : 'text-field-700';
+const btn = accent === 'ember' ? 'btn-ember' : 'btn-field';
+---
+
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-10 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr]">
+  <div class="reveal">
+    <p class={`eyebrow ${eyebrowColor}`}>{eyebrow}</p>
+    <h1 class="display mt-5 text-[clamp(2.3rem,5.5vw,4rem)]">{title}</h1>
+    <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">{lead}</p>
+    {pills.length > 0 && (
+      <ul role="list" class="mt-6 flex flex-wrap gap-2">
+        {pills.map((p) => <li class="pill">{p}</li>)}
+      </ul>
+    )}
+    {cta && (
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={hrefFor('contact', lang)} class={`btn ${btn}`}>{t.nav.book}</a>
+        <a href={`tel:${business.phone}`} class="btn btn-outline">{t.nav.call} {business.phoneDisplay}</a>
+      </div>
+    )}
+  </div>
+
+  {image && (
+    <div class="reveal relative" style="--reveal-delay:90ms">
+      <div class={`absolute -inset-3 -z-10 rounded-[2.2rem] ${accent === 'ember' ? 'bg-ember-100' : 'bg-field-100'}`}></div>
+      <div class="overflow-hidden rounded-[1.8rem] shadow-[var(--shadow-lift)]">
+        <Img name={image} eager ratio="4/5" sizes="(min-width:1024px) 40vw, 90vw" />
+      </div>
+    </div>
+  )}
+</section>

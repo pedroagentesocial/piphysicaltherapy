@@ -1,0 +1,14 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ServicePtView from '../../../components/views/ServicePtView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { servicePtSchema } from '../../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = servicePtSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.servicesPT.title} description={t.seo.servicesPT.description} routeKey="servicesPT" schema={schema}>
+  <ServicePtView />
+</Layout>

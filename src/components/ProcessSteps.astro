@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const steps = t.process.steps;
+---
+
+<section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+  <h2 class="display reveal max-w-2xl text-3xl sm:text-4xl">{title}</h2>
+  <ol role="list" class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+    {steps.map((s, i) => (
+      <li class="reveal" style={`--reveal-delay:${i * 70}ms`}>
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-4xl font-extrabold text-field-600">{String(i + 1).padStart(2, '0')}</span>
+          <span class="h-px flex-1 bg-ink/12"></span>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-ink">{s.title}</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-soft">{s.body}</p>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,38 @@
+---
+import { images, type ImageKey } from '../data/images';
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  /** Key into the verified image manifest. */
+  name: ImageKey;
+  /** Above-the-fold images set eager (hero); everything else lazy-loads. */
+  eager?: boolean;
+  /** `sizes` attribute for responsive selection. */
+  sizes?: string;
+  /** Intrinsic ratio to reserve space and avoid layout shift, e.g. '4/5'. */
+  ratio?: string;
+  class?: string;
+}
+
+const { name, eager = false, sizes = '100vw', ratio = '4/3', class: className = '' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const img = images[name];
+
+const base = `https://images.unsplash.com/photo-${img.id}?auto=format&fit=crop&q=80`;
+const widths = [640, 960, 1280, 1600, 2000];
+const srcset = widths.map((w) => `${base}&w=${w} ${w}w`).join(', ');
+const src = `${base}&w=1280`;
+---
+
+<img
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={img.alt[lang]}
+  loading={eager ? 'eager' : 'lazy'}
+  decoding={eager ? 'sync' : 'async'}
+  fetchpriority={eager ? 'high' : 'auto'}
+  class={`block h-full w-full object-cover ${className}`}
+  style={`aspect-ratio:${ratio};background-color:var(--color-paper-3)`}
+  onerror="this.style.background='linear-gradient(135deg,var(--color-field-200),var(--color-ember-200))';this.removeAttribute('src');this.removeAttribute('srcset');"
+/>

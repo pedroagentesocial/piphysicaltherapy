@@ -1,0 +1,86 @@
+---
+import LanguageSelector from './LanguageSelector.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { hrefFor, routeKeyFromPath, type RouteKey } from '../i18n/routes';
+import { business } from '../data/business';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const current = routeKeyFromPath(Astro.url.pathname);
+
+const nav: { key: RouteKey; label: string }[] = [
+  { key: 'servicesPT', label: t.nav.rehab },
+  { key: 'servicesAccident', label: t.nav.accident },
+  { key: 'conditions', label: t.nav.conditions },
+  { key: 'team', label: t.nav.team },
+  { key: 'firstVisit', label: t.nav.firstVisit },
+  { key: 'contact', label: t.nav.contact },
+];
+const isActive = (k: RouteKey) => current === k;
+---
+
+<header class="sticky top-0 z-40 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+    <a href={hrefFor('home', lang)} class="flex items-center gap-2 text-ink">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-field-700 font-display text-sm font-extrabold text-paper">PI</span>
+      <span class="font-display text-lg font-extrabold tracking-tight">{t.site.name}</span>
+    </a>
+
+    {/* Desktop nav */}
+    <nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
+      {nav.map((item) => (
+        <a
+          href={hrefFor(item.key, lang)}
+          aria-current={isActive(item.key) ? 'page' : undefined}
+          class:list={[
+            'rounded-md px-3 py-2 text-sm font-semibold transition-colors',
+            isActive(item.key) ? 'text-field-800' : 'text-ink-soft hover:text-ink',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a href={`tel:${business.phone}`} class="hidden text-sm font-bold text-ink hover:text-field-800 xl:inline">
+        {business.phoneDisplay}
+      </a>
+      <a href={hrefFor('contact', lang)} class="btn btn-field hidden text-sm sm:inline-flex">{t.nav.book}</a>
+      <LanguageSelector />
+
+      {/* Mobile disclosure (works without JS) */}
+      <details class="group relative lg:hidden">
+        <summary
+          class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-lg text-ink hover:bg-ink/5"
+          aria-label={t.nav.menu}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" class="group-open:hidden" />
+            <path d="M6 6l12 12M18 6L6 18" class="hidden group-open:block" />
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-[calc(100%+0.5rem)] w-64 rounded-2xl border border-ink/10 bg-paper p-2 shadow-[var(--shadow-lift)]">
+          <nav aria-label="Mobile" class="flex flex-col">
+            {nav.map((item) => (
+              <a
+                href={hrefFor(item.key, lang)}
+                aria-current={isActive(item.key) ? 'page' : undefined}
+                class:list={[
+                  'rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors',
+                  isActive(item.key) ? 'bg-field-50 text-field-800' : 'text-ink-soft hover:bg-ink/5 hover:text-ink',
+                ]}
+              >
+                {item.label}
+              </a>
+            ))}
+            <a href={hrefFor('contact', lang)} class="btn btn-field mt-2 text-sm">{t.nav.book}</a>
+            <a href={`tel:${business.phone}`} class="mt-1 px-3 py-2 text-center text-sm font-bold text-ink">
+              {t.nav.call} {business.phoneDisplay}
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

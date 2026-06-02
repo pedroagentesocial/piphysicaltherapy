@@ -1,0 +1,14 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ConditionsHubView from '../../../components/views/ConditionsHubView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { conditionsHubSchema } from '../../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = conditionsHubSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.conditions.title} description={t.seo.conditions.description} routeKey="conditions" schema={schema}>
+  <ConditionsHubView />
+</Layout>

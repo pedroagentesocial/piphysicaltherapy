@@ -1,0 +1,36 @@
+---
+import Breadcrumbs from '../Breadcrumbs.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+
+interface Props {
+  doc: 'privacy' | 'terms';
+}
+const { doc } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const isPrivacy = doc === 'privacy';
+const title = isPrivacy ? t.footer.privacy : t.footer.terms;
+const intro = isPrivacy ? t.legal.privacyIntro : t.legal.termsIntro;
+const body = isPrivacy ? t.legal.privacyBody : t.legal.termsBody;
+const crumbKey = isPrivacy ? 'privacy' : 'terms';
+---
+
+<Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: title }]} />
+
+<article class="mx-auto max-w-2xl px-5 pb-16 pt-10 sm:px-8 sm:pt-14">
+  <h1 class="display text-[clamp(2rem,4.5vw,3.2rem)]">{title}</h1>
+  <p class="mt-5 leading-relaxed text-ink-soft">{intro}</p>
+
+  <div class="mt-10 space-y-8">
+    {body.map((b) => (
+      <section>
+        <h2 class="font-display text-xl font-extrabold text-ink">{b.h}</h2>
+        <p class="mt-2 leading-relaxed text-ink-soft">{b.p}</p>
+      </section>
+    ))}
+  </div>
+
+  <p class="mt-12 border-t border-ink/10 pt-6 text-xs leading-relaxed text-ink-faint">{t.footer.disclaimer}</p>
+</article>

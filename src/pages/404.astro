@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations, useTranslatedPath } from '../i18n/utils';
+import { defaultLang } from '../i18n/config';
+
+// 404 is served outside the /[lang]/ tree, so default to English copy.
+const lang = defaultLang;
+const t = useTranslations(lang);
+const localize = useTranslatedPath(lang);
+---
+
+<Layout title={t.seo.notFound.title} description={t.seo.notFound.description} routeKey="home">
+  <section class="mx-auto max-w-2xl px-5 py-28 text-center sm:px-8">
+    <p class="eyebrow justify-center text-ember-700">404</p>
+    <h1 class="display mt-6 text-4xl sm:text-5xl">{t.notFound.title}</h1>
+    <p class="mt-4 text-lg text-ink-soft">{t.notFound.body}</p>
+    <a href={localize()} class="btn btn-field mt-8">{t.notFound.back}</a>
+  </section>
+</Layout>

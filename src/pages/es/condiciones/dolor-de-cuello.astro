@@ -1,0 +1,19 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ConditionView from '../../../components/views/ConditionView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { conditionMeta } from '../../../lib/conditionMeta';
+import { conditionSchema } from '../../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const id = 'neck' as const;
+const route = 'condNeck' as const;
+const name = t.conditions[id].name;
+const meta = conditionMeta(lang, name);
+const schema = conditionSchema(t, Astro.site!, lang, route, name, meta.description);
+---
+
+<Layout title={meta.title} description={meta.description} routeKey={route} schema={schema}>
+  <ConditionView id={id} />
+</Layout>

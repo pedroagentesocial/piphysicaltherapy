@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FirstVisitView from '../../components/views/FirstVisitView.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { firstVisitSchema } from '../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = firstVisitSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.firstVisit.title} description={t.seo.firstVisit.description} routeKey="firstVisit" schema={schema}>
+  <FirstVisitView />
+</Layout>

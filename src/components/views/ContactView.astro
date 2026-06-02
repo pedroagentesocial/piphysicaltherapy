@@ -1,0 +1,97 @@
+---
+import Breadcrumbs from '../Breadcrumbs.astro';
+import LeadForm from '../LeadForm.astro';
+import InsuranceList from '../InsuranceList.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+import { business } from '../../data/business';
+import type { Lang } from '../../i18n/config';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Localized hours rendering from the single business source.
+const dayAbbr: Record<Lang, string[]> = {
+  en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  es: ['lun', 'mar', 'mié', 'jue', 'vie', 'sáb', 'dom'],
+};
+const order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const to12h = (hhmm: string) => {
+  const [h, m] = hhmm.split(':').map(Number);
+  const period = h >= 12 ? 'PM' : 'AM';
+  const hour = h % 12 === 0 ? 12 : h % 12;
+  return `${hour}:${String(m).padStart(2, '0')} ${period}`;
+};
+const dayRange = (days: readonly string[]) => {
+  const idx = days.map((d) => order.indexOf(d));
+  const first = dayAbbr[lang][Math.min(...idx)];
+  const last = dayAbbr[lang][Math.max(...idx)];
+  return first === last ? first : `${first} – ${last}`;
+};
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
+  `${business.address.street}, ${business.address.city}, ${business.address.region} ${business.address.postalCode}`,
+)}&output=embed`;
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${business.name}, ${business.address.city}, ${business.address.region}`,
+)}`;
+---
+
+<Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: t.nav.contact }]} />
+
+<header class="mx-auto max-w-6xl px-5 pb-2 pt-10 sm:px-8 sm:pt-14">
+  <p class="eyebrow reveal text-field-700">{t.contact.eyebrow}</p>
+  <h1 class="display reveal mt-5 text-[clamp(2.3rem,5.5vw,4rem)]">{t.contact.title}</h1>
+  <p class="reveal mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">{t.contact.lead}</p>
+</header>
+
+<div class="mx-auto grid max-w-6xl gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_0.9fr]">
+  <div class="reveal">
+    <LeadForm />
+  </div>
+
+  <div class="reveal space-y-8" style="--reveal-delay:80ms">
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-ink-faint">{t.contact.locationTitle}</h2>
+      <address class="mt-3 not-italic leading-relaxed text-ink">
+        {business.address.street}<br />
+        {business.address.city}, {business.address.region} {business.address.postalCode}
+      </address>
+      <p class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <a href={`tel:${business.phone}`} class="link-underline font-bold text-ink">{business.phoneDisplay}</a>
+        <a href={`mailto:${business.email}`} class="link-underline text-ink-soft">{business.email}</a>
+      </p>
+      <a href={mapLink} target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-sm font-bold text-field-800">
+        {t.contact.directionsLabel}
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10" /></svg>
+      </a>
+    </div>
+
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-widest text-ink-faint">{t.contact.hoursTitle}</h2>
+      <dl class="mt-3 space-y-1.5">
+        {business.hours.map((h) => (
+          <div class="flex justify-between gap-6 text-sm">
+            <dt class="font-semibold text-ink">{dayRange(h.days)}</dt>
+            <dd class="text-ink-soft">{to12h(h.opens)} – {to12h(h.closes)}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <InsuranceList />
+  </div>
+</div>
+
+<section class="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
+  <div class="reveal overflow-hidden rounded-3xl border border-ink/10">
+    <iframe
+      src={mapSrc}
+      title={`${business.name} — ${t.contact.locationTitle}`}
+      width="100%"
+      height="380"
+      style="border:0;display:block"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>

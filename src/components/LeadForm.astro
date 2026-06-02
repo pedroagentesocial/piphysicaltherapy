@@ -1,0 +1,107 @@
+---
+import { actions } from 'astro:actions';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const f = t.lead;
+
+// Server-side result (no-JS fallback + progressive enhancement).
+const result = Astro.getActionResult(actions.lead);
+const ok = result && !result.error;
+const failed = result && result.error;
+---
+
+<div class="rounded-3xl border border-ink/10 bg-paper p-6 shadow-[var(--shadow-soft)] sm:p-8">
+  {ok ? (
+    <div role="status" class="py-6 text-center">
+      <div class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-success-bg text-success">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+      </div>
+      <h3 class="display mt-4 text-2xl">{f.successTitle}</h3>
+      <p class="mt-2 text-ink-soft">{f.successBody}</p>
+    </div>
+  ) : (
+    <form method="POST" action={actions.lead} data-lead-form class="grid gap-4">
+      <h3 class="display text-2xl">{t.contact.formTitle}</h3>
+
+      {failed && (
+        <p role="alert" class="rounded-xl bg-danger-bg px-4 py-3 text-sm font-medium text-danger">
+          <strong>{f.errorTitle}.</strong> {f.errorBody}
+        </p>
+      )}
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="grid gap-1.5 text-sm font-semibold text-ink">
+          {f.name}
+          <input name="name" type="text" required autocomplete="name"
+            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+        </label>
+        <label class="grid gap-1.5 text-sm font-semibold text-ink">
+          {f.phone}
+          <input name="phone" type="tel" required autocomplete="tel" inputmode="tel"
+            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+        </label>
+      </div>
+
+      <label class="grid gap-1.5 text-sm font-semibold text-ink">
+        {f.email}
+        <input name="email" type="email" required autocomplete="email"
+          class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+      </label>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="grid gap-1.5 text-sm font-semibold text-ink">
+          {f.service}
+          <select name="service" required
+            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600">
+            <option value="rehab">{f.serviceOptions.rehab}</option>
+            <option value="accident">{f.serviceOptions.accident}</option>
+            <option value="other">{f.serviceOptions.other}</option>
+          </select>
+        </label>
+        <label class="grid gap-1.5 text-sm font-semibold text-ink">
+          {f.preferredLang}
+          <select name="preferredLang"
+            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600">
+            <option value="es" selected={lang === 'es'}>{f.langOptions.es}</option>
+            <option value="en" selected={lang === 'en'}>{f.langOptions.en}</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="grid gap-1.5 text-sm font-semibold text-ink">
+        {f.message}
+        <textarea name="message" rows="3" maxlength="1000"
+          class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600"></textarea>
+      </label>
+
+      {/* Locale of the submitting page + honeypot */}
+      <input type="hidden" name="locale" value={lang} />
+      <div aria-hidden="true" class="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+        <label>Company<input name="company" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <button type="submit" data-submit data-sending={f.submitting} class="btn btn-field mt-1 w-full">{f.submit}</button>
+      <p class="text-xs leading-relaxed text-ink-faint">{f.privacyNote}</p>
+    </form>
+  )}
+</div>
+
+<script>
+  // Progressive enhancement: disable the button + show a sending label on submit.
+  // The Astro Action still posts normally; the server result re-renders the
+  // success/error state on the same page.
+  function wire() {
+    const form = document.querySelector<HTMLFormElement>('[data-lead-form]');
+    if (!form) return;
+    form.addEventListener('submit', () => {
+      const btn = form.querySelector<HTMLButtonElement>('[data-submit]');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = btn.getAttribute('data-sending') || 'Sending...';
+      }
+    });
+  }
+  document.addEventListener('astro:page-load', wire);
+</script>

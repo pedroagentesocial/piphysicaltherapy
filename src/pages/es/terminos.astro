@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LegalView from '../../components/views/LegalView.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t.seo.terms.title} description={t.seo.terms.description} routeKey="terms">
+  <LegalView doc="terms" />
+</Layout>

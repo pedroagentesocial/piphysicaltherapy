@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactView from '../../components/views/ContactView.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { contactSchema } from '../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = contactSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.contact.title} description={t.seo.contact.description} routeKey="contact" schema={schema}>
+  <ContactView />
+</Layout>

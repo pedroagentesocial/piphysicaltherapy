@@ -1,0 +1,17 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { insurers } from '../data/business';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div>
+  <h2 class="text-xs font-bold uppercase tracking-widest text-ink-faint">{t.contact.insuranceTitle}</h2>
+  <ul role="list" class="mt-4 flex flex-wrap gap-2">
+    {insurers.map((name) => (
+      <li class="pill">{name}</li>
+    ))}
+  </ul>
+  <p class="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">{t.contact.insuranceNote}</p>
+</div>

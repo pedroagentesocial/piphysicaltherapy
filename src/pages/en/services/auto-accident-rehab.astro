@@ -1,0 +1,14 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ServiceAccidentView from '../../../components/views/ServiceAccidentView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { serviceAccidentSchema } from '../../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = serviceAccidentSchema(t, Astro.site!, lang);
+---
+
+<Layout title={t.seo.servicesAccident.title} description={t.seo.servicesAccident.description} routeKey="servicesAccident" schema={schema}>
+  <ServiceAccidentView />
+</Layout>

@@ -1,0 +1,93 @@
+---
+import '@fontsource-variable/archivo';
+import '@fontsource-variable/hanken-grotesk';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Seo from '../components/Seo.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { localeTags } from '../i18n/config';
+import type { RouteKey } from '../i18n/routes';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Which page this is — drives canonical + hreflang (translated-slug map). */
+  routeKey: RouteKey;
+  ogImage?: string;
+  /** Extra page-specific JSON-LD (FAQPage, MedicalTherapy, BreadcrumbList…). */
+  schema?: Record<string, unknown>[];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
+---
+
+<!doctype html>
+<html lang={localeTags[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} />
+    <JsonLd />
+    {
+      schema.map((s) => (
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(s)} />
+      ))
+    }
+    {/* Smooth crossfade between locales / internal nav. */}
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+    >
+      {t.nav.skip}
+    </a>
+    <Header />
+    <main id="main" tabindex="-1" class="focus:outline-none">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Kinetic-but-calm scroll reveal. Re-runs on every View Transition via
+      // astro:page-load. On SPA navigations reveals appear instantly so they
+      // never stack a second animation on top of the page crossfade.
+      function initReveals(firstLoad: boolean) {
+        const els = document.querySelectorAll<HTMLElement>('.reveal');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!firstLoad || reduce || !('IntersectionObserver' in window)) {
+          els.forEach((el) => el.classList.add('is-visible'));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+        );
+        els.forEach((el) => io.observe(el));
+      }
+      let firstLoad = true;
+      document.addEventListener('astro:page-load', () => {
+        initReveals(firstLoad);
+        firstLoad = false;
+      });
+    </script>
+    <noscript>
+      <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
+  </body>
+</html>

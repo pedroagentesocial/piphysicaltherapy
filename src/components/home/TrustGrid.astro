@@ -1,0 +1,23 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="border-y border-ink/10 bg-paper-2">
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+    <h2 class="display reveal max-w-2xl text-3xl sm:text-4xl">{t.home.trustTitle}</h2>
+    <dl class="mt-10 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+      {t.home.trust.map((item, i) => (
+        <div class="reveal" style={`--reveal-delay:${i * 60}ms`}>
+          <dt class="flex items-center gap-2 font-bold text-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-field-600" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+            {item.title}
+          </dt>
+          <dd class="mt-2 text-sm leading-relaxed text-ink-soft">{item.body}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

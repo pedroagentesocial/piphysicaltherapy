@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/*
+  PI Physical Therapy — "Kinetic recovery".
+  Daylight, athletic, human. NOT clinical teal, NOT editorial-serif.
+  Bone paper + warm charcoal ink. Committed color carries the heroes; two
+  service pillars own a hue each:
+    FIELD (vivid green, hue ~148, away from teal) = general rehab / sports — go, growth, capability. Primary brand.
+    EMBER (warm orange-red, hue ~37)              = after an accident / personal injury — attention, seriousness, care.
+  Display: Archivo (heavy, tight) as the kinetic protagonist. Body: Hanken Grotesk.
+*/
+@theme {
+  /* Warm bone paper + warm charcoal ink (neutrals tinted toward hue 80–95) */
+  --color-paper: oklch(0.976 0.006 95);
+  --color-paper-2: oklch(0.955 0.008 92);
+  --color-paper-3: oklch(0.926 0.011 90);
+  --color-ink: oklch(0.23 0.017 80);
+  --color-ink-soft: oklch(0.40 0.017 80);
+  --color-ink-faint: oklch(0.54 0.013 82);
+
+  /* FIELD — primary brand + REHAB pillar (athletic green, not teal) */
+  --color-field-50: oklch(0.96 0.03 146);
+  --color-field-100: oklch(0.92 0.06 146);
+  --color-field-200: oklch(0.85 0.10 147);
+  --color-field-300: oklch(0.78 0.135 147);
+  --color-field-400: oklch(0.70 0.155 148);
+  --color-field-500: oklch(0.62 0.155 149);
+  --color-field-600: oklch(0.54 0.14 150);
+  --color-field-700: oklch(0.45 0.115 152);
+  --color-field-800: oklch(0.37 0.09 154);
+  --color-field-900: oklch(0.29 0.066 156);
+
+  /* EMBER — ACCIDENT / personal-injury pillar (warm orange-red) */
+  --color-ember-50: oklch(0.95 0.025 46);
+  --color-ember-100: oklch(0.90 0.05 43);
+  --color-ember-200: oklch(0.83 0.09 40);
+  --color-ember-300: oklch(0.75 0.125 39);
+  --color-ember-400: oklch(0.68 0.15 38);
+  --color-ember-500: oklch(0.60 0.16 37);
+  --color-ember-600: oklch(0.53 0.155 35);
+  --color-ember-700: oklch(0.45 0.135 34);
+  --color-ember-900: oklch(0.33 0.09 33);
+
+  /* Semantic */
+  --color-success: oklch(0.52 0.13 150);
+  --color-success-bg: oklch(0.95 0.04 150);
+  --color-danger: oklch(0.52 0.19 27);
+  --color-danger-bg: oklch(0.95 0.035 32);
+
+  /* Warm shadows = depth, not boxes */
+  --shadow-soft: 0 10px 34px -16px oklch(0.25 0.03 80 / 0.28);
+  --shadow-lift: 0 26px 60px -22px oklch(0.25 0.03 80 / 0.34);
+
+  --font-display: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Exponential ease-outs only (no bounce/elastic) */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* Archivo as the kinetic display voice: heavy, tight, packed. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection {
+    background-color: var(--color-field-600);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2.5px solid var(--color-field-600);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  summary::-webkit-details-marker { display: none; }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    min-height: 2.95rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding-inline: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s var(--ease-out-quart), color 0.2s var(--ease-out-quart),
+      transform 0.2s var(--ease-out-quart), box-shadow 0.2s var(--ease-out-quart);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+  .btn:active { transform: translateY(0) scale(0.985); }
+  .btn-field { background-color: var(--color-field-700); color: var(--color-paper); }
+  .btn-field:hover { background-color: var(--color-field-800); }
+  .btn-ember { background-color: var(--color-ember-600); color: var(--color-paper); }
+  .btn-ember:hover { background-color: var(--color-ember-700); }
+  .btn-ink { background-color: var(--color-ink); color: var(--color-paper); }
+  .btn-ink:hover { background-color: var(--color-field-800); }
+  .btn-outline { border: 1.5px solid color-mix(in oklab, var(--color-ink) 24%, transparent); color: var(--color-ink); }
+  .btn-outline:hover { background-color: color-mix(in oklab, var(--color-ink) 6%, transparent); border-color: var(--color-ink); }
+  .btn-on-ink { background-color: var(--color-paper); color: var(--color-ink); }
+  .btn-on-ink:hover { background-color: var(--color-field-300); }
+
+  /* Kicker / eyebrow — a single strong label, not section grammar */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.7rem;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  /* Small status pill (insurance, "se habla español", direct access…) */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+  }
+
+  /* Dark "drenched" band — kinetic high-contrast CTA sections */
+  .surface-ink {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .surface-ink .display { color: var(--color-paper); }
+
+  .link-underline { position: relative; }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s var(--ease-out-quart);
+  }
+  .link-underline:hover::after, .link-underline:focus-visible::after { transform: scaleX(1); }
+}
+
+@layer utilities {
+  /* Kinetic-but-calm reveal — transform + opacity only, exponential ease. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s var(--ease-out-expo),
+      transform 0.5s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 240ms;
+    animation-timing-function: var(--ease-out-quart);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+    .link-underline::after { transition: none; }
+    .btn:hover, .btn:active { transform: none; box-shadow: none; }
+    html { scroll-behavior: auto; }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) { animation: none !important; }
+  }
+}
