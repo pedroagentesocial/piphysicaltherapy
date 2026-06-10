@@ -7,23 +7,35 @@ import type { Accent } from '../data/content';
 interface Props {
   title: string;
   body: string;
+  /** Kept for API compatibility; the dark CTA uses the brand palette throughout. */
   accent?: Accent;
 }
-const { title, body, accent = 'field' } = Astro.props;
+const { title, body } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const btn = accent === 'ember' ? 'btn-ember' : 'btn-field';
 ---
 
-<section class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-  <div class="surface-ink relative overflow-hidden rounded-[2rem] px-7 py-12 sm:px-12 sm:py-16">
-    <div class={`pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full blur-3xl ${accent === 'ember' ? 'bg-ember-500/25' : 'bg-field-500/25'}`}></div>
-    <div class="relative max-w-2xl">
-      <h2 class="display text-3xl sm:text-[2.6rem]">{title}</h2>
+<section class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+  <div class="cta-final px-7 py-14 shadow-[var(--shadow-lift)] sm:px-14 sm:py-20">
+    <div class="cta-final-glow" aria-hidden="true"></div>
+    {/* Silhouette of the PI mark, filled with a teal→aqua gradient via mask. */}
+    <div class="cta-final-mark" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-paper/20 bg-paper/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-aqua">
+        <span class="h-1.5 w-1.5 rounded-full bg-aqua" aria-hidden="true"></span>
+        {t.site.name}
+      </span>
+      <h2 class="display mt-5 text-3xl text-paper sm:text-[2.9rem]">{title}</h2>
       <p class="mt-4 text-lg leading-relaxed text-paper/80">{body}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href={hrefFor('contact', lang)} class={`btn ${btn}`}>{t.nav.book}</a>
-        <a href={`tel:${business.phone}`} class="btn btn-on-ink">{t.nav.call} {business.phoneDisplay}</a>
+        <a href={hrefFor('contact', lang)} class="btn btn-on-ink text-base">{t.nav.book}</a>
+        <a
+          href={`tel:${business.phone}`}
+          class="btn text-base border-[1.5px] border-paper/45 text-paper hover:border-paper hover:bg-paper/10"
+        >
+          {t.nav.call} {business.phoneDisplay}
+        </a>
       </div>
     </div>
   </div>

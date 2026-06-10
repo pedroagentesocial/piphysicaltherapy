@@ -2,11 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import LegalView from '../../components/views/LegalView.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { legalSchema } from '../../lib/pageSchema';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const schema = legalSchema(t, Astro.site!, lang, 'privacy');
 ---
 
-<Layout title={t.seo.privacy.title} description={t.seo.privacy.description} routeKey="privacy">
+<Layout title={t.seo.privacy.title} description={t.seo.privacy.description} routeKey="privacy" schema={schema}>
   <LegalView doc="privacy" />
 </Layout>

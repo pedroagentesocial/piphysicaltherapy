@@ -1,5 +1,6 @@
 ---
 import Breadcrumbs from '../Breadcrumbs.astro';
+import PageHero from '../PageHero.astro';
 import Testimonials from '../Testimonials.astro';
 import CtaBand from '../CtaBand.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
@@ -11,11 +12,14 @@ const t = useTranslations(lang);
 
 <Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: t.nav.stories }]} />
 
-<header class="mx-auto max-w-3xl px-5 pb-2 pt-10 sm:px-8 sm:pt-14">
-  <p class="eyebrow reveal text-field-700">{t.stories.eyebrow}</p>
-  <h1 class="display reveal mt-5 text-[clamp(2.3rem,5.5vw,4rem)]">{t.stories.title}</h1>
-  <p class="reveal mt-5 text-lg leading-relaxed text-ink-soft">{t.stories.lead}</p>
-</header>
+<PageHero
+  eyebrow={t.stories.eyebrow}
+  title={t.stories.title}
+  lead={t.stories.lead}
+  accent="field"
+  image="team"
+  pills={[t.common.directAccess, t.common.sameWeek, t.common.seHablaEspanol]}
+/>
 
-<Testimonials title={t.home.storiesTitle} items={t.stories.items} disclaimer={t.stories.disclaimer} />
+<Testimonials items={t.stories.items} disclaimer={t.stories.disclaimer} tone="paper-2" />
 <CtaBand title={t.home.ctaTitle} body={t.home.ctaBody} accent="field" />

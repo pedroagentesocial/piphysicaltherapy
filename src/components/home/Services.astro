@@ -1,0 +1,73 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+import { services } from '../../data/content';
+import { images } from '../../data/images';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Real, locally-hosted photos for these services; the rest fall back to the
+// (placeholder) stock manifest until real photos are added.
+const localPhotos: Record<string, string> = {
+  accident: '/images/auto-accident-rehab.jpg',
+  vestibular: '/images/balance.jpg',
+  work: '/images/work-injury.jpg',
+};
+
+const cards = services.map((s) => ({
+  ...s,
+  href: hrefFor(s.route, lang) + (s.hash ? `#${s.hash}` : ''),
+  name: t.services[s.id].name,
+  desc: t.services[s.id].desc,
+  img: localPhotos[s.id] ?? `https://images.unsplash.com/photo-${images[s.image].id}?auto=format&fit=crop&q=80&w=900`,
+}));
+---
+
+<section class="relative overflow-hidden">
+  {/* Soft brand wash for warmth, not a hard box */}
+  <div class="pointer-events-none absolute -left-24 top-10 -z-10 h-72 w-72 rounded-full bg-aqua/25 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-24 bottom-0 -z-10 h-72 w-72 rounded-full bg-field-200/30 blur-3xl" aria-hidden="true"></div>
+
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow text-field-700">{t.home.servicesEyebrow}</p>
+      <h2 class="display mt-4 text-3xl sm:text-[2.8rem]">{t.home.servicesTitle}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t.home.servicesLead}</p>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {cards.map((c, i) => {
+        const ember = c.accent === 'ember';
+        return (
+          <a
+            href={c.href}
+            class="service-card reveal reveal-scale group relative flex min-h-[15.5rem] flex-col justify-end overflow-hidden rounded-[1.6rem] p-7 text-paper sm:min-h-[16rem]"
+            style={`--reveal-delay:${i * 70}ms`}
+          >
+            {/* Background photo */}
+            <img
+              src={c.img}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/92 via-ink/60 to-ink/25" aria-hidden="true"></div>
+
+            <div class="relative">
+              <h3 class="font-display text-xl font-extrabold text-paper">{c.name}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-paper/80">{c.desc}</p>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-aqua">
+                {t.common.learnMore}
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
+            </div>
+
+            <span class:list={['service-card-bar', ember ? 'is-ember' : 'is-field']} aria-hidden="true"></span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

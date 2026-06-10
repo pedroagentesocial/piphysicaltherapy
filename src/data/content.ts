@@ -42,17 +42,29 @@ export const conditions: ConditionDef[] = [
 
 export type ConditionId = (typeof conditions)[number]['id'];
 
-/** Treating therapists — ⚠️ PLACEHOLDER names/credentials. Replace with the real
- *  licensed team before launch (Person JSON-LD + E-E-A-T depend on it). */
-export interface TeamMember {
-  id: string;
-  name: string;
-  credentials: string;
+/**
+ * Service offerings shown in the nav "Services" dropdown and the home Services
+ * section. The two pillars are full pages; the specialized programs deep-link
+ * into anchored sections of the physical-therapy page.
+ */
+export type ServiceId = 'pt' | 'accident' | 'sports' | 'vestibular' | 'work';
+
+export interface ServiceDef {
+  id: ServiceId;
+  route: RouteKey;
+  /** Optional anchor on the destination page (specialized programs). */
+  hash?: string;
+  accent: Accent;
+  /** Background photo for the home Services card. */
   image: ImageKey;
+  /** Pillars get a featured treatment in the UI. */
+  featured?: boolean;
 }
 
-export const team: TeamMember[] = [
-  { id: 'lead', name: 'Dr. [Full Name]', credentials: 'PT, DPT', image: 'team' },
-  { id: 'ortho', name: 'Dr. [Full Name]', credentials: 'PT, DPT, OCS', image: 'process' },
-  { id: 'sports', name: 'Dr. [Full Name]', credentials: 'PT, DPT, SCS', image: 'rehab' },
+export const services: ServiceDef[] = [
+  { id: 'pt', route: 'servicesPT', accent: 'field', image: 'process', featured: true },
+  { id: 'accident', route: 'servicesAccident', accent: 'ember', image: 'accident', featured: true },
+  { id: 'sports', route: 'servicesPT', hash: 'sports-rehab', accent: 'field', image: 'rehab' },
+  { id: 'vestibular', route: 'servicesPT', hash: 'vestibular-balance', accent: 'field', image: 'team' },
+  { id: 'work', route: 'servicesPT', hash: 'work-injury', accent: 'ember', image: 'clinic' },
 ];

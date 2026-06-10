@@ -24,6 +24,9 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
+// The header is fixed. The home hero sits beneath it (transparent overlay), so
+// only non-home pages need top padding equal to the header height.
+const isHome = routeKey === 'home';
 ---
 
 <!doctype html>
@@ -33,6 +36,8 @@ const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0F2D4D" />
     <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} />
     <JsonLd />
     {
@@ -51,7 +56,7 @@ const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
       {t.nav.skip}
     </a>
     <Header />
-    <main id="main" tabindex="-1" class="focus:outline-none">
+    <main id="main" tabindex="-1" class="focus:outline-none" style={isHome ? undefined : 'padding-top: var(--header-h)'}>
       <slot />
     </main>
     <Footer />
@@ -60,10 +65,12 @@ const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
       // Kinetic-but-calm scroll reveal. Re-runs on every View Transition via
       // astro:page-load. On SPA navigations reveals appear instantly so they
       // never stack a second animation on top of the page crossfade.
-      function initReveals(firstLoad: boolean) {
-        const els = document.querySelectorAll<HTMLElement>('.reveal');
+      // Reveal-on-scroll. Runs on every navigation (astro:page-load gives us a
+      // fresh DOM each time), so elements animate in as they enter the viewport.
+      function initReveals() {
+        const els = document.querySelectorAll<HTMLElement>('.reveal:not(.is-visible)');
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!firstLoad || reduce || !('IntersectionObserver' in window)) {
+        if (reduce || !('IntersectionObserver' in window)) {
           els.forEach((el) => el.classList.add('is-visible'));
           return;
         }
@@ -76,15 +83,11 @@ const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
               }
             }
           },
-          { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.1 },
         );
         els.forEach((el) => io.observe(el));
       }
-      let firstLoad = true;
-      document.addEventListener('astro:page-load', () => {
-        initReveals(firstLoad);
-        firstLoad = false;
-      });
+      document.addEventListener('astro:page-load', initReveals);
     </script>
     <noscript>
       <style>.reveal { opacity: 1 !important; transform: none !important; }</style>

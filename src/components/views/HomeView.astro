@@ -1,6 +1,6 @@
 ---
 import Hero from '../home/Hero.astro';
-import PillarSplit from '../home/PillarSplit.astro';
+import Services from '../home/Services.astro';
 import TrustGrid from '../home/TrustGrid.astro';
 import ProcessSteps from '../ProcessSteps.astro';
 import ConditionsGrid from '../ConditionsGrid.astro';
@@ -15,18 +15,21 @@ const t = useTranslations(lang);
 
 <Hero />
 <TrustGrid />
-<PillarSplit />
+<Services />
 
-<section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-  <div class="reveal max-w-2xl">
-    <h2 class="display text-3xl sm:text-[2.6rem]">{t.home.conditionsTitle}</h2>
-    <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t.home.conditionsLead}</p>
-  </div>
-  <div class="mt-9">
-    <ConditionsGrid items={conditions} />
+<section class="border-y border-ink/10 bg-paper-2">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow text-field-700">{t.home.conditionsEyebrow}</p>
+      <h2 class="display mt-4 text-3xl sm:text-[2.6rem]">{t.home.conditionsTitle}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t.home.conditionsLead}</p>
+    </div>
+    <div class="mt-9">
+      <ConditionsGrid items={conditions} />
+    </div>
   </div>
 </section>
 
-<ProcessSteps title={t.home.processTitle} />
-<Testimonials title={t.home.storiesTitle} items={t.stories.items} />
+<ProcessSteps title={t.home.processTitle} eyebrow={t.home.processEyebrow} />
+<Testimonials title={t.home.storiesTitle} eyebrow={t.home.storiesEyebrow} items={t.stories.items} tone="paper-2" />
 <CtaBand title={t.home.ctaTitle} body={t.home.ctaBody} accent="field" />

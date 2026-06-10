@@ -1,0 +1,94 @@
+---
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Img from '../Img.astro';
+import CtaBand from '../CtaBand.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const a = t.about;
+
+const valueIcons = [
+  '<circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0" stroke-linecap="round"/>',
+  '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/><circle cx="11" cy="11" r="2.2"/>',
+  '<circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" stroke-linecap="round"/>',
+  '<path d="M12 3l7 3v5c0 4.6-3 7.2-7 8-4-.8-7-3.4-7-8V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/>',
+];
+---
+
+<Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: t.nav.team }]} />
+
+{/* Intro + mission */}
+<header class="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pt-14">
+  <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+    <div>
+      <p class="eyebrow reveal text-field-700">{a.eyebrow}</p>
+      <h1 class="display reveal mt-5 text-[clamp(2.3rem,5.5vw,4rem)]">{a.title}</h1>
+      <p class="reveal mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">{a.lead}</p>
+    </div>
+    <div class="reveal rounded-3xl border border-field-200 bg-field-50 p-7" style="--reveal-delay:80ms">
+      <h2 class="font-display text-lg font-extrabold uppercase tracking-wide text-field-800">{a.missionTitle}</h2>
+      <p class="mt-3 leading-relaxed text-ink">{a.missionBody}</p>
+    </div>
+  </div>
+</header>
+
+{/* Values */}
+<section class="border-y border-ink/10 bg-paper-2">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <h2 class="display reveal text-3xl sm:text-4xl">{a.valuesTitle}</h2>
+    <dl class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {a.values.map((v, i) => (
+        <div class="reveal flex flex-col rounded-2xl border border-ink/10 bg-paper p-6" style={`--reveal-delay:${i * 60}ms`}>
+          <span class="grid h-11 w-11 place-items-center rounded-xl bg-field-50 text-field-700" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={valueIcons[i % valueIcons.length]} />
+          </span>
+          <dt class="mt-4 font-display text-lg font-extrabold text-ink">{v.title}</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-ink-soft">{v.body}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+{/* Approach */}
+<section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+  <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <div class="reveal">
+      <h2 class="display text-3xl sm:text-4xl">{a.approachTitle}</h2>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">{a.approachBody}</p>
+    </div>
+    <div class="reveal reveal-right overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]" style="--reveal-delay:80ms">
+      <Img name="clinic" ratio="16/10" sizes="(min-width:1024px) 52vw, 92vw" />
+    </div>
+  </div>
+</section>
+
+{/* Community commitment */}
+<section class="border-y border-ink/10 bg-paper-2">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div class="reveal">
+        <p class="eyebrow text-field-700">{t.common.bilingual}</p>
+        <h2 class="display mt-4 text-3xl sm:text-4xl">{a.communityTitle}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-ink-soft">{a.communityBody}</p>
+      </div>
+      <ul role="list" class="reveal grid gap-3" style="--reveal-delay:80ms">
+        {a.communityPoints.map((p) => (
+          <li class="flex items-start gap-3 rounded-2xl border border-ink/10 bg-paper p-4 text-ink">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="mt-0.5 shrink-0 text-field-600" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <span class="text-sm leading-relaxed">{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="reveal mt-10 rounded-3xl border border-ink/10 bg-paper p-7 sm:p-9">
+      <h2 class="font-display text-2xl font-extrabold text-ink">{a.credentialsTitle}</h2>
+      <p class="mt-3 max-w-2xl leading-relaxed text-ink-soft">{a.credentialsBody}</p>
+    </div>
+  </div>
+</section>
+
+<CtaBand title={t.home.ctaTitle} body={t.home.ctaBody} accent="field" />

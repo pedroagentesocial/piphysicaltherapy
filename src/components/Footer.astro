@@ -12,8 +12,8 @@ const services: { key: RouteKey; label: string }[] = [
   { key: 'conditions', label: t.nav.conditions },
 ];
 const clinic: { key: RouteKey; label: string }[] = [
-  { key: 'team', label: t.nav.team },
   { key: 'firstVisit', label: t.nav.firstVisit },
+  { key: 'team', label: t.nav.team },
   { key: 'stories', label: t.nav.stories },
   { key: 'contact', label: t.nav.contact },
 ];
@@ -27,10 +27,7 @@ const legal: { key: RouteKey; label: string }[] = [
   <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
       <div>
-        <div class="flex items-center gap-2 text-ink">
-          <span class="grid h-8 w-8 place-items-center rounded-lg bg-field-700 font-display text-sm font-extrabold text-paper">PI</span>
-          <span class="font-display text-lg font-extrabold tracking-tight">{t.site.name}</span>
-        </div>
+        <img src="/logo-lockup.png" alt={t.site.name} width="687" height="220" class="h-20 w-auto" />
         <p class="mt-3 max-w-xs text-sm leading-relaxed text-ink-soft">{t.site.tagline}</p>
         <address class="mt-5 text-sm not-italic leading-relaxed text-ink-soft">
           {business.address.street}<br />

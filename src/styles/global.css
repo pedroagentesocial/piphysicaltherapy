@@ -1,55 +1,62 @@
 @import "tailwindcss";
 
 /*
-  PI Physical Therapy — "Kinetic recovery".
-  Daylight, athletic, human. NOT clinical teal, NOT editorial-serif.
-  Bone paper + warm charcoal ink. Committed color carries the heroes; two
-  service pillars own a hue each:
-    FIELD (vivid green, hue ~148, away from teal) = general rehab / sports — go, growth, capability. Primary brand.
-    EMBER (warm orange-red, hue ~37)              = after an accident / personal injury — attention, seriousness, care.
-  Display: Archivo (heavy, tight) as the kinetic protagonist. Body: Hanken Grotesk.
+  PI Physical Therapy — brand identity ("identidad").
+  Therapeutic, calm, professional, human. A cohesive cool palette built from
+  the brand guide (see /identidad.png):
+    AZUL MARINO  #0F2D4D  — deep navy. Ink (text + dark bands) + ACCIDENT pillar.
+    TEAL TERAPÉUTICO #24A49D — primary brand + REHAB pillar. Movement, recovery, trust.
+    AQUA SUAVE   #9EDAD8  — soft aqua accent / light tints.
+    GRIS CLARO   #E9EEF2  — cool neutral surfaces.
+    BLANCO       #FFFFFF  — paper.
+  The two service pillars own a value each: TEAL (rehab / sports — active,
+  therapeutic) and NAVY (accident / personal injury — serious, grounded).
+  Display: Archivo (heavy, tight). Body: Hanken Grotesk.
 */
 @theme {
-  /* Warm bone paper + warm charcoal ink (neutrals tinted toward hue 80–95) */
-  --color-paper: oklch(0.976 0.006 95);
-  --color-paper-2: oklch(0.955 0.008 92);
-  --color-paper-3: oklch(0.926 0.011 90);
-  --color-ink: oklch(0.23 0.017 80);
-  --color-ink-soft: oklch(0.40 0.017 80);
-  --color-ink-faint: oklch(0.54 0.013 82);
+  /* Cool white paper + light gris-claro surfaces, navy-tinted ink */
+  --color-paper: oklch(0.994 0.002 240);
+  --color-paper-2: oklch(0.972 0.005 235);
+  --color-paper-3: oklch(0.947 0.008 242); /* GRIS CLARO #E9EEF2 */
+  --color-ink: oklch(0.28 0.066 252);       /* AZUL MARINO, deepened for body text */
+  --color-ink-soft: oklch(0.43 0.055 250);
+  --color-ink-faint: oklch(0.56 0.04 248);
 
-  /* FIELD — primary brand + REHAB pillar (athletic green, not teal) */
-  --color-field-50: oklch(0.96 0.03 146);
-  --color-field-100: oklch(0.92 0.06 146);
-  --color-field-200: oklch(0.85 0.10 147);
-  --color-field-300: oklch(0.78 0.135 147);
-  --color-field-400: oklch(0.70 0.155 148);
-  --color-field-500: oklch(0.62 0.155 149);
-  --color-field-600: oklch(0.54 0.14 150);
-  --color-field-700: oklch(0.45 0.115 152);
-  --color-field-800: oklch(0.37 0.09 154);
-  --color-field-900: oklch(0.29 0.066 156);
+  /* AQUA SUAVE — soft brand accent */
+  --color-aqua: oklch(0.847 0.061 193.5); /* #9EDAD8 */
 
-  /* EMBER — ACCIDENT / personal-injury pillar (warm orange-red) */
-  --color-ember-50: oklch(0.95 0.025 46);
-  --color-ember-100: oklch(0.90 0.05 43);
-  --color-ember-200: oklch(0.83 0.09 40);
-  --color-ember-300: oklch(0.75 0.125 39);
-  --color-ember-400: oklch(0.68 0.15 38);
-  --color-ember-500: oklch(0.60 0.16 37);
-  --color-ember-600: oklch(0.53 0.155 35);
-  --color-ember-700: oklch(0.45 0.135 34);
-  --color-ember-900: oklch(0.33 0.09 33);
+  /* FIELD — primary brand + REHAB pillar (TEAL TERAPÉUTICO, hue ~190) */
+  --color-field-50: oklch(0.97 0.022 192);
+  --color-field-100: oklch(0.94 0.04 191);
+  --color-field-200: oklch(0.88 0.062 191);
+  --color-field-300: oklch(0.81 0.082 190);
+  --color-field-400: oklch(0.73 0.098 190);
+  --color-field-500: oklch(0.652 0.105 189); /* TEAL #24A49D */
+  --color-field-600: oklch(0.575 0.10 189);
+  --color-field-700: oklch(0.50 0.088 190);
+  --color-field-800: oklch(0.42 0.073 191);
+  --color-field-900: oklch(0.34 0.057 194);
+
+  /* EMBER — ACCIDENT / personal-injury pillar (AZUL MARINO navy, hue ~252) */
+  --color-ember-50: oklch(0.95 0.016 240);
+  --color-ember-100: oklch(0.90 0.032 245);
+  --color-ember-200: oklch(0.81 0.052 248);
+  --color-ember-300: oklch(0.70 0.066 250);
+  --color-ember-400: oklch(0.58 0.073 251);
+  --color-ember-500: oklch(0.47 0.073 252);
+  --color-ember-600: oklch(0.40 0.07 252);
+  --color-ember-700: oklch(0.34 0.064 252); /* ≈ AZUL MARINO #0F2D4D */
+  --color-ember-900: oklch(0.26 0.05 253);
 
   /* Semantic */
-  --color-success: oklch(0.52 0.13 150);
-  --color-success-bg: oklch(0.95 0.04 150);
+  --color-success: oklch(0.58 0.115 168);
+  --color-success-bg: oklch(0.95 0.035 178);
   --color-danger: oklch(0.52 0.19 27);
   --color-danger-bg: oklch(0.95 0.035 32);
 
-  /* Warm shadows = depth, not boxes */
-  --shadow-soft: 0 10px 34px -16px oklch(0.25 0.03 80 / 0.28);
-  --shadow-lift: 0 26px 60px -22px oklch(0.25 0.03 80 / 0.34);
+  /* Cool navy-tinted shadows = depth, not boxes */
+  --shadow-soft: 0 10px 34px -16px oklch(0.29 0.05 250 / 0.30);
+  --shadow-lift: 0 26px 60px -22px oklch(0.29 0.05 250 / 0.36);
 
   --font-display: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
@@ -60,8 +67,13 @@
 }
 
 @layer base {
+  :root {
+    --header-h: 5.5rem;
+  }
   html {
     scroll-behavior: smooth;
+    /* Keep in-page anchors clear of the fixed header. */
+    scroll-padding-top: var(--header-h);
   }
   body {
     background-color: var(--color-paper);
@@ -167,19 +179,262 @@
     transition: transform 0.22s var(--ease-out-quart);
   }
   .link-underline:hover::after, .link-underline:focus-visible::after { transform: scaleX(1); }
+
+  /* ---- Site header: solid by default, transparent over the home hero ---- */
+  .site-header {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 50;
+    min-height: var(--header-h);
+    background-color: color-mix(in oklab, var(--color-paper) 85%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent);
+    transition: background-color 0.35s var(--ease-out-quart), border-color 0.35s var(--ease-out-quart);
+  }
+  .site-header.is-transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+  }
+
+  /* Logo cross-fade: dark wordmark ⇄ white wordmark */
+  .logo-stack { position: relative; }
+  .logo-dark, .logo-light { transition: opacity 0.35s var(--ease-out-quart); }
+  .logo-light { position: absolute; inset: 0; opacity: 0; }
+  .site-header.is-transparent .logo-dark { opacity: 0; }
+  .site-header.is-transparent .logo-light { opacity: 1; }
+
+  /* Nav foreground — solid state */
+  .nav-link { color: var(--color-ink-soft); }
+  .nav-link:hover { color: var(--color-ink); }
+  .nav-link.is-active { color: var(--color-field-800); }
+  .nav-phone { color: var(--color-ink); }
+  .nav-phone:hover { color: var(--color-field-800); }
+  .nav-toggle { color: var(--color-ink); }
+  .nav-toggle:hover { background-color: color-mix(in oklab, var(--color-ink) 5%, transparent); }
+
+  /* Nav foreground — transparent state (white over the video) */
+  .site-header.is-transparent .nav-link { color: color-mix(in oklab, white 82%, transparent); }
+  .site-header.is-transparent .nav-link:hover,
+  .site-header.is-transparent .nav-link.is-active { color: #fff; }
+  .site-header.is-transparent .nav-phone { color: #fff; }
+  .site-header.is-transparent .nav-phone:hover { color: var(--color-aqua); }
+  .site-header.is-transparent .nav-toggle { color: #fff; }
+  .site-header.is-transparent .nav-toggle:hover { background-color: color-mix(in oklab, white 15%, transparent); }
+  /* The book CTA keeps its brand color in both states (per request). */
+  .site-header.is-transparent .nav-lang a:not([aria-current]) { color: color-mix(in oklab, white 82%, transparent); }
+  .site-header.is-transparent .nav-lang a:not([aria-current]):hover { color: #fff; background-color: color-mix(in oklab, white 12%, transparent); }
+  .site-header.is-transparent .nav-lang a[aria-current] { background-color: #fff; color: var(--color-ink); }
+
+  /* ---- Services dropdown ---- */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    transition: color 0.2s var(--ease-out-quart);
+  }
+  .nav-chevron { transition: transform 0.25s var(--ease-out-quart); }
+  .nav-dropdown:hover .nav-chevron,
+  .nav-dropdown:focus-within .nav-chevron,
+  .nav-dropdown.is-open .nav-chevron { transform: rotate(180deg); }
+
+  .nav-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 0;
+    width: 22rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-paper);
+    border: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+    box-shadow: var(--shadow-lift);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.22s var(--ease-out-quart), transform 0.22s var(--ease-out-quart),
+      visibility 0s linear 0.22s;
+    z-index: 60;
+  }
+  .nav-dropdown:hover .nav-dropdown-panel,
+  .nav-dropdown:focus-within .nav-dropdown-panel,
+  .nav-dropdown.is-open .nav-dropdown-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.22s var(--ease-out-quart), transform 0.22s var(--ease-out-quart);
+  }
+  .nav-dropdown-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    border-radius: 0.7rem;
+    padding: 0.6rem 0.7rem;
+    transition: background-color 0.18s var(--ease-out-quart);
+  }
+  .nav-dropdown-item:hover { background-color: color-mix(in oklab, var(--color-field-500) 9%, transparent); }
+  .nav-dropdown-dot { margin-top: 0.45rem; height: 0.5rem; width: 0.5rem; flex: none; border-radius: 9999px; }
+  .nav-dropdown-dot.is-field { background-color: var(--color-field-500); }
+  .nav-dropdown-dot.is-ember { background-color: var(--color-ember-500); }
+
+  /* ---- Final CTA (dark mode, photo clipped INSIDE the brand icon) ---- */
+  .cta-final {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.5rem;
+    color: var(--color-paper);
+    background:
+      radial-gradient(95% 130% at 82% 6%, color-mix(in oklab, var(--color-field-500) 24%, transparent), transparent 55%),
+      linear-gradient(150deg, oklch(0.31 0.062 250) 0%, oklch(0.185 0.05 256) 100%);
+  }
+  .cta-final-glow {
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    width: 30rem;
+    height: 30rem;
+    transform: translateY(-50%);
+    border-radius: 9999px;
+    background: var(--color-field-500);
+    opacity: 0.2;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  /* Crisp vector silhouette of the PI mark, filled with a teal→aqua gradient. */
+  .cta-final-mark {
+    position: absolute;
+    top: 50%;
+    right: -2%;
+    width: min(58%, 30rem);
+    aspect-ratio: 1100 / 1390;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--color-field-400), var(--color-aqua));
+    -webkit-mask: url("/logo-mark.svg") center / contain no-repeat;
+    mask: url("/logo-mark.svg") center / contain no-repeat;
+    opacity: 0.92;
+    pointer-events: none;
+  }
+  @media (max-width: 640px) {
+    /* On phones the text spans full width, so the mark drops back to a watermark. */
+    .cta-final-mark { opacity: 0.16; width: 95%; right: -18%; }
+    .cta-final-glow { opacity: 0.12; }
+  }
+
+  /* ---- Service cards (home) ---- */
+  .service-card {
+    transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s var(--ease-out-quart),
+      border-color 0.25s var(--ease-out-quart);
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklab, var(--color-ink) 18%, transparent);
+  }
+  .service-card-bar {
+    position: absolute;
+    left: 1.75rem;
+    right: 1.75rem;
+    bottom: 0;
+    height: 3px;
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out-quart);
+  }
+  .service-card:hover .service-card-bar { transform: scaleX(1); }
+  .service-card-bar.is-field { background-color: var(--color-field-500); }
+  .service-card-bar.is-ember { background-color: var(--color-ember-500); }
+
+  /* ---- Hero carousel ---- */
+  /* One video per slide; cross-fade + slow zoom when the active one changes. */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 0.9s var(--ease-out-quart), transform 7s linear;
+    pointer-events: none;
+  }
+  .hero-video.is-active { opacity: 1; transform: scale(1); }
+
+  .hero-copy { display: grid; } /* all slides share one cell → box = tallest slide */
+  .hero-slide {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo),
+      visibility 0s linear 0.6s;
+    pointer-events: none;
+  }
+  .hero-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+    pointer-events: auto;
+  }
+  .hero-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 9999px;
+    color: #fff;
+    background-color: color-mix(in oklab, white 12%, transparent);
+    border: 1px solid color-mix(in oklab, white 30%, transparent);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background-color 0.2s var(--ease-out-quart), transform 0.2s var(--ease-out-quart);
+  }
+  .hero-arrow:hover { background-color: color-mix(in oklab, white 24%, transparent); }
+  .hero-arrow:active { transform: translateY(-50%) scale(0.94); }
+  .hero-dot {
+    box-sizing: content-box;
+    height: 0.6rem;
+    width: 0.6rem;
+    padding: 0.5rem; /* larger touch target; colour stays on the content box */
+    border-radius: 9999px;
+    background-color: color-mix(in oklab, white 45%, transparent);
+    background-clip: content-box;
+    transition: width 0.25s var(--ease-out-quart), background-color 0.25s var(--ease-out-quart);
+  }
+  .hero-dot.is-active { width: 1.8rem; background-color: #fff; background-clip: content-box; }
 }
 
 @layer utilities {
-  /* Kinetic-but-calm reveal — transform + opacity only, exponential ease. */
+  /* Kinetic-but-calm reveal — transform + opacity only, exponential ease.
+     Base is a soft rise + settle; variants add direction or scale. */
   .reveal {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(24px);
     transition:
-      opacity 0.5s var(--ease-out-expo),
-      transform 0.5s var(--ease-out-expo);
+      opacity 0.65s var(--ease-out-expo),
+      transform 0.65s var(--ease-out-expo);
     transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
   }
-  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-scale { transform: translateY(24px) scale(0.96); }
+  .reveal-left { transform: translateX(-28px); }
+  .reveal-right { transform: translateX(28px); }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
 
   ::view-transition-old(root),
   ::view-transition-new(root) {
@@ -188,7 +443,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+    .reveal, .reveal-scale, .reveal-left, .reveal-right, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+    .hero-slide { transform: none; transition: opacity 0.3s linear, visibility 0s linear 0.3s; }
+    .hero-slide.is-active { transition: opacity 0.3s linear; }
+    .hero-video { transform: none; transition: opacity 0.4s linear; }
+    .hero-video.is-active { transform: none; }
     .link-underline::after { transition: none; }
     .btn:hover, .btn:active { transform: none; box-shadow: none; }
     html { scroll-behavior: auto; }

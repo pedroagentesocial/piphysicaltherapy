@@ -1,27 +1,44 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
+  eyebrow?: string;
   items: { quote: string; name: string; context: string }[];
   disclaimer?: string;
+  /** Surface tone — 'paper-2' renders a full-width tinted band for rhythm. */
+  tone?: 'paper' | 'paper-2';
 }
-const { title, items, disclaimer } = Astro.props;
+const { title, eyebrow, items, disclaimer, tone = 'paper' } = Astro.props;
+const tinted = tone === 'paper-2';
+const cardBg = tinted ? 'bg-paper' : 'bg-paper-2';
 ---
 
-<section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-  <h2 class="display reveal max-w-2xl text-3xl sm:text-4xl">{title}</h2>
-  <div class="mt-10 grid gap-6 md:grid-cols-3">
-    {items.map((it, i) => (
-      <figure class="reveal flex flex-col rounded-3xl bg-paper-2 p-7" style={`--reveal-delay:${i * 80}ms`}>
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" class="text-field-500" aria-hidden="true">
-          <path d="M9.5 5C6 6.5 4 9.5 4 13v6h7v-7H7.5c0-2 1-3.5 3-4.5L9.5 5Zm9 0C15 6.5 13 9.5 13 13v6h7v-7h-3.5c0-2 1-3.5 3-4.5L18.5 5Z" />
-        </svg>
-        <blockquote class="mt-4 flex-1 text-[1.05rem] leading-relaxed text-ink">{it.quote}</blockquote>
-        <figcaption class="mt-5 border-t border-ink/10 pt-4">
-          <p class="font-bold text-ink">{it.name}</p>
-          <p class="text-sm text-ink-faint">{it.context}</p>
-        </figcaption>
-      </figure>
-    ))}
+<section class:list={['', tinted && 'border-y border-ink/10 bg-paper-2']}>
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    {title && (
+      <div class="reveal max-w-2xl">
+        {eyebrow && <p class="eyebrow text-field-700">{eyebrow}</p>}
+        <h2 class="display mt-4 text-3xl sm:text-4xl">{title}</h2>
+      </div>
+    )}
+    <div class:list={['grid gap-6 md:grid-cols-3', title ? 'mt-12' : '']}>
+      {items.map((it, i) => (
+        <figure
+          class:list={['reveal flex flex-col rounded-3xl border border-ink/10 p-7 transition-shadow hover:shadow-[var(--shadow-soft)]', cardBg]}
+          style={`--reveal-delay:${i * 80}ms`}
+        >
+          <div class="flex items-center gap-0.5 text-field-500" aria-label="5 out of 5" role="img">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21l1.1-6.5L2.6 9.9l6.5-.9L12 2.5z"/></svg>
+            ))}
+          </div>
+          <blockquote class="mt-4 flex-1 text-[1.05rem] leading-relaxed text-ink">{it.quote}</blockquote>
+          <figcaption class="mt-5 border-t border-ink/10 pt-4">
+            <p class="font-bold text-ink">{it.name}</p>
+            <p class="text-sm text-ink-faint">{it.context}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    {disclaimer && <p class="mt-6 max-w-2xl text-xs leading-relaxed text-ink-faint">{disclaimer}</p>}
   </div>
-  {disclaimer && <p class="mt-6 max-w-2xl text-xs leading-relaxed text-ink-faint">{disclaimer}</p>}
 </section>

@@ -24,7 +24,7 @@ export const routes = {
   condSports: { en: 'conditions/sports-injuries', es: 'condiciones/lesiones-deportivas' },
   condWhiplash: { en: 'conditions/whiplash', es: 'condiciones/latigazo-cervical' },
 
-  team: { en: 'team', es: 'equipo' },
+  team: { en: 'about', es: 'nosotros' },
   firstVisit: { en: 'your-first-visit', es: 'tu-primera-visita' },
   stories: { en: 'patient-stories', es: 'historias-de-pacientes' },
   contact: { en: 'contact', es: 'contacto' },

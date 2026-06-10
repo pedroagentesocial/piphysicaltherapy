@@ -1,14 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import TeamView from '../../components/views/TeamView.astro';
+import AboutView from '../../components/views/AboutView.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { teamSchema } from '../../lib/pageSchema';
+import { aboutSchema } from '../../lib/pageSchema';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const schema = teamSchema(t, Astro.site!, lang);
+const schema = aboutSchema(t, Astro.site!, lang);
 ---
 
 <Layout title={t.seo.team.title} description={t.seo.team.description} routeKey="team" schema={schema}>
-  <TeamView />
+  <AboutView />
 </Layout>

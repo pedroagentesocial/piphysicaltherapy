@@ -19,7 +19,7 @@ export const es: typeof en = {
     rehab: 'Terapia física',
     accident: 'Después de un accidente',
     conditions: 'Condiciones',
-    team: 'Nuestro equipo',
+    team: 'Nosotros',
     firstVisit: 'Su primera visita',
     stories: 'Historias de pacientes',
     contact: 'Contacto',
@@ -66,9 +66,9 @@ export const es: typeof en = {
         'Dolor de espalda, cuello, hombro y rodilla, recuperación post-quirúrgica, lesiones deportivas y latigazo cervical. Vea cómo los tratan nuestros fisioterapeutas en Salt Lake City.',
     },
     team: {
-      title: 'Conozca a Nuestros Doctores en Terapia Física en SLC',
+      title: 'Acerca de PI Physical Therapy | Salt Lake City',
       description:
-        'Nuestros fisioterapeutas licenciados (DPT) en Salt Lake City aportan experiencia ortopédica, deportiva y en rehabilitación de accidentes. Atención bilingüe e individual.',
+        'Una clínica bilingüe de terapia física y rehabilitación de lesiones en Salt Lake City. Conozca nuestra misión, nuestros valores y nuestro compromiso con la comunidad. Se habla español.',
     },
     firstVisit: {
       title: 'Su Primera Visita de Terapia Física | Qué Esperar',
@@ -106,11 +106,27 @@ export const es: typeof en = {
 
   home: {
     hero: {
-      eyebrow: 'Terapia física en Salt Lake City',
-      title: 'Vuelva a moverse como antes.',
-      subtitle:
-        'Atención de Doctor en Terapia Física para lesiones cotidianas, recuperación post-quirúrgica y rehabilitación deportiva, y ayuda experta para recuperarse por completo después de un accidente de auto.',
       primary: 'Solicitar una cita',
+      slides: [
+        {
+          eyebrow: 'Terapia física en Salt Lake City',
+          title: 'Vuelva a moverse como antes.',
+          subtitle:
+            'Atención de Doctor en Terapia Física para lesiones cotidianas, recuperación post-quirúrgica y rehabilitación deportiva, y ayuda experta para recuperarse por completo después de un accidente de auto.',
+        },
+        {
+          eyebrow: 'Después de un accidente',
+          title: '¿Lesionado en un choque? Le ayudamos.',
+          subtitle:
+            'Rehabilitación de latigazo cervical y lesiones de auto, con Doctores en Terapia Física que manejan el seguro y el papeleo junto con usted.',
+        },
+        {
+          eyebrow: 'Rehabilitación y deporte',
+          title: 'Entrene, recupérese y vuelva más fuerte.',
+          subtitle:
+            'Recuperación post-quirúrgica y lesiones deportivas, reconstruidas con atención manual, progresiva y uno a uno para que vuelva a moverse.',
+        },
+      ],
     },
     pillarsTitle: 'Dos tipos de recuperación, un solo equipo',
     pillarsLead:
@@ -142,6 +158,25 @@ export const es: typeof en = {
     storiesTitle: 'La recuperación, en sus palabras',
     ctaTitle: '¿Listo para moverse mejor?',
     ctaBody: 'Cuéntenos qué pasó. Le devolvemos la llamada dentro de un día hábil para agendarlo.',
+    // Etiquetas pequeñas sobre los títulos de sección
+    trustEyebrow: 'Por qué nosotros',
+    servicesEyebrow: 'Lo que hacemos',
+    servicesTitle: 'Atención para cada etapa de la recuperación',
+    servicesLead:
+      'Dos tipos de recuperación, un solo equipo. Desde el dolor cotidiano y la atención tras un accidente hasta programas especializados, recibe la misma atención uno a uno y un plan hecho a su medida.',
+    conditionsEyebrow: 'Condiciones',
+    processEyebrow: 'Cómo funciona',
+    storiesEyebrow: 'Historias de pacientes',
+  },
+
+  // Servicios (menú del navbar + sección de servicios del home), con las mismas
+  // claves que data/content.ts. Los programas especializados enlazan a la página de TF.
+  services: {
+    pt: { name: 'Terapia física', desc: 'Atención individual y manual para el dolor, recuperación post-quirúrgica y lesiones cotidianas.' },
+    accident: { name: 'Después de un accidente', desc: 'Rehabilitación de latigazo cervical y lesiones de auto, con el seguro y el papeleo manejados con usted.' },
+    sports: { name: 'Rehabilitación deportiva', desc: 'Programas de retorno al deporte que reconstruyen fuerza, potencia y confianza tras una lesión.' },
+    vestibular: { name: 'Equilibrio y mareos', desc: 'Terapia vestibular para vértigo, mareos, recuperación de conmoción y prevención de caídas.' },
+    work: { name: 'Lesiones de trabajo', desc: 'Rehabilitación de lesiones laborales con un retorno al trabajo seguro y documentado.' },
   },
 
   process: {
@@ -168,6 +203,41 @@ export const es: typeof en = {
       { title: 'Acceso directo', body: 'Empiece sin referido en Utah. Le ayudamos a confirmar qué cubre su plan.' },
     ],
     treatTitle: 'Motivos comunes por los que vienen los pacientes',
+    extraEyebrow: 'Programas especializados',
+    extraTitle: 'Programas hechos para objetivos específicos',
+    extraLead: 'Más allá de la rehabilitación general, ofrecemos programas enfocados para atletas, equilibrio y mareos, y lesiones de trabajo.',
+    extra: {
+      sports: {
+        title: 'Rehabilitación deportiva y retorno al deporte',
+        body: 'Esguinces, distensiones, tendinitis y lesiones por sobreuso, tratadas para que vuelva a su deporte más fuerte y con menos riesgo de recaer. Cerramos la brecha entre estar sano y estar listo para competir.',
+        points: [
+          'Fuerza, potencia y agilidad específicas del deporte',
+          'Pruebas de retorno al juego con criterios claros',
+          'Prevención de recaídas y manejo de cargas',
+          'Programas para corredores, levantadores y atletas de campo',
+        ],
+      },
+      vestibular: {
+        title: 'Equilibrio, mareos y terapia vestibular',
+        body: 'El vértigo, los mareos, los síntomas tras una conmoción y la inestabilidad responden bien a una rehabilitación vestibular específica que reentrena su sistema de equilibrio.',
+        points: [
+          'Tratamiento de VPPB (vértigo posicional)',
+          'Recuperación tras conmoción y mareos',
+          'Reentrenamiento de la estabilidad visual y el equilibrio',
+          'Evaluación y prevención del riesgo de caídas',
+        ],
+      },
+      work: {
+        title: 'Rehabilitación de lesiones de trabajo',
+        body: 'Las lesiones laborales necesitan atención documentada, orientada a metas, y un camino seguro de regreso al trabajo. Rehabilitamos la lesión y coordinamos con su empleador y su reclamo.',
+        points: [
+          'Lesiones de espalda, hombro y por esfuerzo repetitivo',
+          'Fortalecimiento y acondicionamiento según el puesto',
+          'Documentación para reclamos de compensación laboral',
+          'Plan de retorno al trabajo seguro y por etapas',
+        ],
+      },
+    },
     faqTitle: 'Preguntas sobre terapia física',
     faq: [
       { question: '¿Necesito un referido para empezar terapia física en Utah?', answer: 'No. Utah permite el acceso directo, así que puede comenzar terapia física sin referido médico. Algunos planes de seguro aún pueden exigir un referido para cubrir el tratamiento, así que conviene revisar su plan específico.' },
@@ -279,36 +349,74 @@ export const es: typeof en = {
     },
   },
 
-  team: {
-    eyebrow: 'Nuestro equipo',
-    title: 'Conozca a sus fisioterapeutas',
-    lead: 'La atención aquí está dirigida por Doctores en Terapia Física (DPT) licenciados. Ve al mismo terapeuta en cada visita, en inglés o español.',
+  about: {
+    eyebrow: 'Acerca de nosotros',
+    title: 'Recuperación pensada para usted, aquí en Salt Lake City',
+    lead: 'PI Physical Therapy es una clínica bilingüe de terapia física y rehabilitación de lesiones en Salt Lake City. Existimos para ayudar a nuestra comunidad a moverse, trabajar y vivir sin dolor.',
+    missionTitle: 'Nuestra misión',
+    missionBody:
+      'Brindar terapia física experta y uno a uno que trate la causa de fondo, respete su tiempo y sus metas, y sea accesible para toda la comunidad, en inglés o español.',
+    valuesTitle: 'Lo que defendemos',
+    values: [
+      { title: 'Atención uno a uno', body: 'Trabaja directamente con un Doctor en Terapia Física en cada visita, nunca lo pasamos a asistentes.' },
+      { title: 'Tratamiento de la causa', body: 'Encontramos por qué duele y corregimos el origen, para que los resultados duren y no solo se enmascaren los síntomas.' },
+      { title: 'Bilingüe por diseño', body: 'Atención, papeleo y programas en casa en inglés o español. Se habla español.' },
+      { title: 'Honestos y transparentes', body: 'Planes claros, tiempos realistas y respuestas directas sobre lo que cubre su plan.' },
+    ],
+    approachTitle: 'Cómo lo cuidamos',
+    approachBody:
+      'Cada plan comienza con una evaluación a fondo, combina terapia manual con ejercicio progresivo y se ajusta en cada visita conforme usted mejora. Coordinamos con su médico, aseguradora o abogado cuando hace falta para que usted se concentre en mejorar.',
+    communityTitle: 'Nuestro compromiso con la comunidad',
+    communityBody:
+      'Nos enorgullece servir al condado de Salt Lake. Como clínica bilingüe, trabajamos para eliminar las barreras de idioma y de acceso que impiden a las personas recibir atención, y colaboramos con proveedores, empleadores y abogados locales para apoyar la recuperación tras lesiones cotidianas y de accidentes.',
+    communityPoints: [
+      'Acceso directo: empiece sin referido en Utah',
+      'Citas la misma semana para que el dolor no espere',
+      'Apoyo con reclamos de accidente de auto (PIP) y de trabajo',
+      'Educación y programas en casa que sí puede mantener',
+    ],
     credentialsTitle: 'Credenciales que importan',
     credentialsBody:
-      'Cada clínico es un fisioterapeuta licenciado. Fíjese en las siglas: DPT (Doctor en Terapia Física), OCS (Especialista Certificado en Ortopedia) y SCS (Especialista Certificado en Deportes).',
-    members: {
-      lead: { role: 'Doctor en Terapia Física, Director de la Clínica', bio: 'Dirige la clínica con enfoque en rehabilitación ortopédica y tras accidentes. [Bio de ejemplo: reemplazar con la trayectoria, escuela y enfoque reales del terapeuta.]' },
-      ortho: { role: 'Doctor en Terapia Física, Especialista en Ortopedia', bio: 'Se enfoca en columna, post-quirúrgico y recuperación ortopédica compleja. [Bio de ejemplo: reemplazar con credenciales y experiencia reales.]' },
-      sports: { role: 'Doctor en Terapia Física, Especialista en Deportes', bio: 'Trabaja con atletas en recuperación de lesiones y rendimiento de regreso al juego. [Bio de ejemplo: reemplazar con la trayectoria real.]' },
-    },
-    note: 'Los nombres y credenciales de arriba son de ejemplo. Reemplácelos con el equipo licenciado real de la clínica antes del lanzamiento.',
+      'La atención aquí está dirigida por Doctores en Terapia Física (DPT) licenciados. Fíjese en las siglas: DPT (Doctor en Terapia Física), OCS (Especialista Certificado en Ortopedia) y SCS (Especialista Certificado en Deportes).',
   },
 
   firstVisit: {
     eyebrow: 'Su primera visita',
     title: 'Qué esperar en su primera visita',
     lead: 'Su primera cita se trata de entender su problema y salir con un plan. Así es exactamente como funciona.',
+    expectTitle: 'Qué pasa durante su visita',
     bringTitle: 'Qué traer',
     bring: ['Identificación con foto y su tarjeta del seguro', 'Para un accidente: su número de reclamo y aseguradora (y abogado, si tiene)', 'Ropa cómoda con la que pueda moverse', 'Una lista de sus medicamentos y cualquier reporte de imágenes o cirugía'],
-    expectTitle: 'Durante la visita',
+    prepareTitle: 'Cómo prepararse',
+    prepare: [
+      'Llegue unos 10 minutos antes para completar el papeleo.',
+      'Anote cuándo empezó el dolor y qué lo mejora o lo empeora.',
+      'Piense en sus metas: ¿a qué quiere volver a poder hacer?',
+      'Si es accidente o lesión de trabajo, tenga a la mano los datos del reclamo.',
+    ],
     directAccessTitle: '¿Necesito un referido?',
     directAccessBody:
       'No. Utah permite el acceso directo, así que puede empezar terapia física sin referido médico. Algunos planes de seguro aún piden un referido para cubrir la atención, así que le ayudamos a revisar su plan específico antes de que tenga algún costo inesperado.',
+    paymentTitle: 'Seguro y pago',
+    paymentBody:
+      'Aceptamos la mayoría de los planes principales y reclamos de accidente de auto (PIP) y de trabajo en Utah. Verificamos sus beneficios y le explicamos cualquier costo por adelantado, sin sorpresas.',
+    afterTitle: 'Qué pasa después de su primera visita',
+    afterBody:
+      'Se va con un plan claro y, por lo general, algunos ejercicios para empezar en casa. A partir de ahí, ajustamos su plan en cada visita conforme gana fuerza y se mueve mejor.',
+    afterPoints: [
+      'Un programa en casa personalizado que sí puede mantener',
+      'Un tiempo realista con metas claras',
+      'Progreso medido visita a visita: rango, fuerza y función',
+      'Coordinación con su médico, aseguradora o abogado cuando hace falta',
+    ],
     faqTitle: 'Preguntas de la primera visita',
     faq: [
       { question: '¿Cuánto dura la primera visita?', answer: 'Calcule alrededor de una hora. Incluye una evaluación completa, el inicio del tratamiento y un plan claro.' },
       { question: '¿Recibiré tratamiento el primer día?', answer: 'Por lo general sí. La mayoría de los pacientes empieza el tratamiento manual y sale con ejercicios en la primera visita.' },
-      { question: '¿Cuántas visitas voy a necesitar?', answer: 'Depende de su condición y sus metas. Después de la evaluación le daremos un estimado honesto.' },
+      { question: '¿Cuántas visitas voy a necesitar?', answer: 'Depende de su condición y sus metas. Después de la evaluación le daremos un estimado honesto y lo ajustamos conforme avanza.' },
+      { question: '¿Qué debo ponerme?', answer: 'Ropa cómoda con la que pueda moverse. Para la rodilla, traiga shorts; para el hombro, una camiseta sin mangas o suelta ayuda.' },
+      { question: '¿Necesito traer imágenes o una resonancia?', answer: 'Si tiene imágenes o reportes de cirugía recientes, tráigalos, pero no son necesarios para empezar. Su evaluación es manual y basada en el movimiento.' },
+      { question: '¿Puedo ir aunque mi accidente fue hace semanas?', answer: 'Sí. Los síntomas persistentes de cuello, espalda y dolor de cabeza tras un choque son comunes y aún tratables, y empezar atención documentada apoya su reclamo.' },
     ],
   },
 
@@ -384,12 +492,20 @@ export const es: typeof en = {
       { h: 'Información que recopilamos', p: 'Los datos de contacto que envía por nuestro formulario de citas (nombre, teléfono, correo y cualquier mensaje). A propósito no recopilamos historial médico detallado por este sitio.' },
       { h: 'Cómo la usamos', p: 'Solo para responder a su solicitud y agendar la atención. No vendemos su información.' },
       { h: 'Sus opciones', p: 'Contáctenos para acceder, corregir o eliminar la información que envió.' },
+      { h: 'Cookies y analítica', p: 'Podemos usar cookies básicas y analítica respetuosa de la privacidad para entender cómo se usa el sitio y mejorarlo. Puede controlar las cookies en la configuración de su navegador.' },
+      { h: 'Cómo se comparte la información', p: 'No vendemos su información. La compartimos solo con proveedores que nos ayudan a responderle (por ejemplo, envío seguro de formularios o correo) y solo cuando es necesario.' },
+      { h: 'Conservación y seguridad de los datos', p: 'Conservamos la información enviada solo el tiempo necesario para responder a su solicitud y cumplir nuestras obligaciones, y usamos medidas razonables para protegerla.' },
+      { h: 'Sus derechos y cómo contactarnos', p: 'Puede pedirnos acceder, corregir o eliminar la información que envió. Contáctenos por teléfono o mediante el formulario de nuestra página de contacto y le ayudaremos.' },
     ],
     termsIntro: 'Este aviso de términos de uso de ejemplo rige el uso de este sitio web. Reemplácelo con términos revisados por un abogado antes del lanzamiento.',
     termsBody: [
       { h: 'No es consejo médico', p: 'El contenido de este sitio es información general y no sustituye el consejo, diagnóstico o tratamiento médico profesional.' },
       { h: 'No es consejo de seguros ni legal', p: 'Las afirmaciones sobre el acceso directo y el seguro de auto (PIP) de Utah son generales. La cobertura depende de su plan y póliza; confirme con su aseguradora.' },
       { h: 'Uso del sitio', p: 'Use el sitio de forma legal. Podemos actualizar el contenido en cualquier momento.' },
+      { h: 'Enlaces de terceros', p: 'Nuestro sitio puede enlazar a sitios de terceros que no controlamos. No somos responsables de su contenido, exactitud ni prácticas de privacidad.' },
+      { h: 'Limitación de responsabilidad', p: 'El sitio se ofrece "tal cual". En la medida permitida por la ley, no somos responsables de daños derivados del uso o la imposibilidad de uso de este sitio web.' },
+      { h: 'Cambios en estos términos', p: 'Podemos actualizar estos términos de vez en cuando. El uso continuo del sitio tras los cambios significa que acepta los términos actualizados.' },
+      { h: 'Ley aplicable', p: 'Estos términos se rigen por las leyes del Estado de Utah, sin considerar sus normas de conflicto de leyes.' },
     ],
   },
 };

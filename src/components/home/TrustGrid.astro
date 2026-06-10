@@ -3,18 +3,32 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// One line-icon per trust item (order matches t.home.trust).
+const icons = [
+  '<path d="M12 3l7 3v5c0 4.6-3 7.2-7 8-4-.8-7-3.4-7-8V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/>',
+  '<circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0" stroke-linecap="round"/>',
+  '<rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.2h17M8 3v3.4M16 3v3.4" stroke-linecap="round"/><path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>',
+  '<circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" stroke-linecap="round"/>',
+];
 ---
 
 <section class="border-y border-ink/10 bg-paper-2">
-  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
-    <h2 class="display reveal max-w-2xl text-3xl sm:text-4xl">{t.home.trustTitle}</h2>
-    <dl class="mt-10 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow text-field-700">{t.home.trustEyebrow}</p>
+      <h2 class="display mt-4 text-3xl sm:text-4xl">{t.home.trustTitle}</h2>
+    </div>
+    <dl class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {t.home.trust.map((item, i) => (
-        <div class="reveal" style={`--reveal-delay:${i * 60}ms`}>
-          <dt class="flex items-center gap-2 font-bold text-ink">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-field-600" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
-            {item.title}
-          </dt>
+        <div
+          class="reveal flex flex-col rounded-2xl border border-ink/10 bg-paper p-6 transition-shadow hover:shadow-[var(--shadow-soft)]"
+          style={`--reveal-delay:${i * 60}ms`}
+        >
+          <span class="grid h-11 w-11 place-items-center rounded-xl bg-field-50 text-field-700" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={icons[i % icons.length]} />
+          </span>
+          <dt class="mt-4 font-display text-lg font-extrabold text-ink">{item.title}</dt>
           <dd class="mt-2 text-sm leading-relaxed text-ink-soft">{item.body}</dd>
         </div>
       ))}

@@ -2,6 +2,8 @@
 import Breadcrumbs from '../Breadcrumbs.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { hrefFor } from '../../i18n/routes';
+import { localeTags } from '../../i18n/config';
+import { LEGAL_UPDATED } from '../../lib/pageSchema';
 
 interface Props {
   doc: 'privacy' | 'terms';
@@ -14,13 +16,21 @@ const isPrivacy = doc === 'privacy';
 const title = isPrivacy ? t.footer.privacy : t.footer.terms;
 const intro = isPrivacy ? t.legal.privacyIntro : t.legal.termsIntro;
 const body = isPrivacy ? t.legal.privacyBody : t.legal.termsBody;
-const crumbKey = isPrivacy ? 'privacy' : 'terms';
+
+const updated = new Intl.DateTimeFormat(localeTags[lang], {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(new Date(`${LEGAL_UPDATED}T00:00:00`));
 ---
 
 <Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: title }]} />
 
 <article class="mx-auto max-w-2xl px-5 pb-16 pt-10 sm:px-8 sm:pt-14">
   <h1 class="display text-[clamp(2rem,4.5vw,3.2rem)]">{title}</h1>
+  <p class="mt-3 text-sm font-semibold text-ink-faint">
+    {t.legal.updated}: <time datetime={LEGAL_UPDATED}>{updated}</time>
+  </p>
   <p class="mt-5 leading-relaxed text-ink-soft">{intro}</p>
 
   <div class="mt-10 space-y-8">

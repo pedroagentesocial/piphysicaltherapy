@@ -16,7 +16,7 @@ export const en = {
     rehab: 'Physical therapy',
     accident: 'After an accident',
     conditions: 'Conditions',
-    team: 'Our team',
+    team: 'About',
     firstVisit: 'Your first visit',
     stories: 'Patient stories',
     contact: 'Contact',
@@ -64,9 +64,9 @@ export const en = {
         'Back, neck, shoulder and knee pain, post-surgical recovery, sports injuries and whiplash. See how our Salt Lake City physical therapists treat each one.',
     },
     team: {
-      title: 'Meet Our Doctors of Physical Therapy in Salt Lake City',
+      title: 'About PI Physical Therapy | Salt Lake City',
       description:
-        'Our licensed Salt Lake City physical therapists (DPT) bring orthopedic, sports and accident-rehab expertise. Bilingual, one-on-one care.',
+        'A bilingual physical therapy and injury-rehabilitation clinic in Salt Lake City. Learn about our mission, our values and our commitment to the community. Se habla español.',
     },
     firstVisit: {
       title: 'Your First Physical Therapy Visit | What to Expect',
@@ -104,11 +104,27 @@ export const en = {
 
   home: {
     hero: {
-      eyebrow: 'Salt Lake City physical therapy',
-      title: 'Get back to the way you move.',
-      subtitle:
-        'Doctor of Physical Therapy care for everyday injuries, post-surgical recovery and sports rehab, and expert help getting whole again after a car accident.',
       primary: 'Request an appointment',
+      slides: [
+        {
+          eyebrow: 'Salt Lake City physical therapy',
+          title: 'Get back to the way you move.',
+          subtitle:
+            'Doctor of Physical Therapy care for everyday injuries, post-surgical recovery and sports rehab, and expert help getting whole again after a car accident.',
+        },
+        {
+          eyebrow: 'After an accident',
+          title: 'Hurt in a crash? We have you covered.',
+          subtitle:
+            'Whiplash and auto-injury rehab from Doctors of Physical Therapy who handle the insurance and paperwork side with you.',
+        },
+        {
+          eyebrow: 'Rehab and sports recovery',
+          title: 'Train, recover, come back stronger.',
+          subtitle:
+            'Post-surgical recovery and sports injuries, rebuilt with hands-on, progressive, one-on-one care that gets you moving again.',
+        },
+      ],
     },
     pillarsTitle: 'Two kinds of recovery, one team',
     pillarsLead:
@@ -140,6 +156,25 @@ export const en = {
     storiesTitle: 'Recovery, in their words',
     ctaTitle: 'Ready to move better?',
     ctaBody: 'Tell us what happened. We will call you back within one business day to get you scheduled.',
+    // Section eyebrows (small kickers above headings)
+    trustEyebrow: 'Why us',
+    servicesEyebrow: 'What we do',
+    servicesTitle: 'Care for every stage of recovery',
+    servicesLead:
+      'Two kinds of recovery, one team. From everyday pain and after-accident care to specialized programs, you get the same one-on-one attention and a plan built around your goal.',
+    conditionsEyebrow: 'Conditions',
+    processEyebrow: 'How it works',
+    storiesEyebrow: 'Patient stories',
+  },
+
+  // Service offerings (nav dropdown + home Services section), keyed by the ids
+  // in data/content.ts. Specialized programs deep-link into the PT page.
+  services: {
+    pt: { name: 'Physical therapy', desc: 'One-on-one, hands-on care for pain, post-surgical recovery and everyday injuries.' },
+    accident: { name: 'After an accident', desc: 'Whiplash and auto-injury rehab, with the insurance and paperwork handled with you.' },
+    sports: { name: 'Sports rehab', desc: 'Return-to-sport programs that rebuild strength, power and confidence after injury.' },
+    vestibular: { name: 'Balance and dizziness', desc: 'Vestibular therapy for vertigo, dizziness, concussion recovery and fall prevention.' },
+    work: { name: 'Work injuries', desc: 'Rehab for on-the-job injuries with a safe, documented return to work.' },
   },
 
   // Shared process steps reused on home + first-visit.
@@ -167,6 +202,41 @@ export const en = {
       { title: 'Direct access', body: 'Start without a referral in Utah. We help you confirm what your plan covers.' },
     ],
     treatTitle: 'Common reasons patients come in',
+    extraEyebrow: 'Specialized programs',
+    extraTitle: 'Programs built for specific goals',
+    extraLead: 'Beyond general rehab, we run focused programs for athletes, balance and dizziness, and work-related injuries.',
+    extra: {
+      sports: {
+        title: 'Sports rehab and return to sport',
+        body: 'Sprains, strains, tendinitis and overuse injuries treated to get you back to your sport stronger and less likely to reinjure. We bridge the gap between healed and ready to compete.',
+        points: [
+          'Sport-specific strength, power and agility',
+          'Return-to-play testing with clear criteria',
+          'Reinjury prevention and load management',
+          'Programs for runners, lifters and field athletes',
+        ],
+      },
+      vestibular: {
+        title: 'Balance, dizziness and vestibular therapy',
+        body: 'Vertigo, dizziness, post-concussion symptoms and unsteadiness respond well to targeted vestibular rehabilitation that retrains your balance system.',
+        points: [
+          'BPPV (positional vertigo) treatment',
+          'Post-concussion and dizziness recovery',
+          'Gaze stability and balance retraining',
+          'Fall-risk screening and prevention',
+        ],
+      },
+      work: {
+        title: 'Work injury rehabilitation',
+        body: 'On-the-job injuries need documented, goal-driven care and a safe path back to work. We rehabilitate the injury and coordinate with your employer and claim.',
+        points: [
+          'Back, shoulder and repetitive-strain injuries',
+          'Job-specific strengthening and conditioning',
+          'Documentation for workers compensation claims',
+          'Safe, staged return-to-work planning',
+        ],
+      },
+    },
     faqTitle: 'Physical therapy questions',
     faq: [
       { question: 'Do I need a referral to start physical therapy in Utah?', answer: 'No. Utah allows direct access, so you can begin physical therapy without a physician referral. Some insurance plans may still require a referral to cover treatment, so it is worth checking your specific plan.' },
@@ -279,36 +349,74 @@ export const en = {
     },
   },
 
-  team: {
-    eyebrow: 'Our team',
-    title: 'Meet your physical therapists',
-    lead: 'Care here is led by licensed Doctors of Physical Therapy (DPT). You see the same therapist each visit, in English or Spanish.',
+  about: {
+    eyebrow: 'About us',
+    title: 'Recovery built around you, right here in Salt Lake City',
+    lead: 'PI Physical Therapy is a bilingual physical therapy and injury-rehabilitation clinic in Salt Lake City. We exist to help our neighbors move, work and live without pain.',
+    missionTitle: 'Our mission',
+    missionBody:
+      'To deliver expert, one-on-one physical therapy that treats the root cause, respects your time and your goals, and is accessible to everyone in our community, in English or Spanish.',
+    valuesTitle: 'What we stand for',
+    values: [
+      { title: 'One-on-one care', body: 'You work directly with a Doctor of Physical Therapy every visit, never passed off to aides.' },
+      { title: 'Root-cause treatment', body: 'We find why it hurts and fix the driver, so results last instead of masking symptoms.' },
+      { title: 'Bilingual by design', body: 'Care, paperwork and home programs in English or Spanish. Se habla español.' },
+      { title: 'Honest and transparent', body: 'Clear plans, realistic timelines and straight answers about what your plan covers.' },
+    ],
+    approachTitle: 'How we care for you',
+    approachBody:
+      'Every plan starts with a thorough evaluation, combines hands-on manual therapy with progressive exercise, and is adjusted every visit as you improve. We coordinate with your physician, insurer or attorney when needed so you can focus on getting better.',
+    communityTitle: 'Our commitment to the community',
+    communityBody:
+      'We are proud to serve Salt Lake County. As a bilingual clinic, we work to remove the language and access barriers that keep people from getting care, and we partner with local providers, employers and attorneys to support recovery after everyday and accident-related injuries.',
+    communityPoints: [
+      'Direct access: start care without a referral in Utah',
+      'Same-week appointments so pain does not wait',
+      'Support with auto-accident (PIP) and work-injury claims',
+      'Education and home programs you can actually keep up with',
+    ],
     credentialsTitle: 'Credentials that matter',
     credentialsBody:
-      'Every clinician is a licensed physical therapist. Look for the letters: DPT (Doctor of Physical Therapy), OCS (Orthopaedic Certified Specialist) and SCS (Sports Certified Specialist).',
-    members: {
-      lead: { role: 'Doctor of Physical Therapy, Clinic Director', bio: 'Leads the clinic with a focus on orthopedic and after-accident rehabilitation. [Placeholder bio: replace with the real therapist’s background, school and approach.]' },
-      ortho: { role: 'Doctor of Physical Therapy, Orthopedic Specialist', bio: 'Focuses on spine, post-surgical and complex orthopedic recovery. [Placeholder bio: replace with real credentials and experience.]' },
-      sports: { role: 'Doctor of Physical Therapy, Sports Specialist', bio: 'Works with athletes on injury recovery and return-to-play performance. [Placeholder bio: replace with real background.]' },
-    },
-    note: 'Names and credentials above are placeholders. Replace with the clinic’s real licensed team before launch.',
+      'Care here is led by licensed Doctors of Physical Therapy (DPT). Look for the letters: DPT (Doctor of Physical Therapy), OCS (Orthopaedic Certified Specialist) and SCS (Sports Certified Specialist).',
   },
 
   firstVisit: {
     eyebrow: 'Your first visit',
     title: 'What to expect on your first visit',
     lead: 'Your first appointment is about understanding your problem and leaving with a plan. Here is exactly how it goes.',
+    expectTitle: 'What happens during your visit',
     bringTitle: 'What to bring',
     bring: ['Photo ID and your insurance card', 'For an accident: your claim number and insurer (and attorney, if any)', 'Comfortable clothing you can move in', 'A list of your medications and any imaging or surgery reports'],
-    expectTitle: 'During the visit',
+    prepareTitle: 'How to prepare',
+    prepare: [
+      'Arrive about 10 minutes early to finish any paperwork.',
+      'Note when the pain started and what makes it better or worse.',
+      'Think about your goals: what do you want to get back to doing?',
+      'For an accident or work injury, have your claim details handy.',
+    ],
     directAccessTitle: 'Do I need a referral?',
     directAccessBody:
       'No. Utah allows direct access, so you can start physical therapy without a physician referral. Some insurance plans still ask for a referral to cover care, so we will help you check your specific plan before you owe anything unexpected.',
+    paymentTitle: 'Insurance and payment',
+    paymentBody:
+      'We accept most major plans and Utah auto-accident (PIP) and work-injury claims. We verify your benefits and explain any costs up front, so there are no surprises.',
+    afterTitle: 'What happens after your first visit',
+    afterBody:
+      'You leave with a clear plan and usually a few exercises to start at home. From there, we adjust your plan every visit as you get stronger and move better.',
+    afterPoints: [
+      'A personalized home program you can actually keep up with',
+      'A realistic timeline with clear milestones',
+      'Progress tracked visit to visit: range, strength and function',
+      'Coordination with your physician, insurer or attorney when needed',
+    ],
     faqTitle: 'First-visit questions',
     faq: [
       { question: 'How long is the first visit?', answer: 'Plan for about an hour. It includes a full evaluation, the start of treatment and a clear plan.' },
       { question: 'Will I get treatment on day one?', answer: 'Usually yes. Most patients begin hands-on treatment and leave with exercises at the first visit.' },
-      { question: 'How many visits will I need?', answer: 'It depends on your condition and goals. After the evaluation we will give you an honest estimate.' },
+      { question: 'How many visits will I need?', answer: 'It depends on your condition and goals. After the evaluation we will give you an honest estimate and adjust it as you progress.' },
+      { question: 'What should I wear?', answer: 'Comfortable clothing you can move in. For a knee, bring shorts; for a shoulder, a tank top or loose shirt helps.' },
+      { question: 'Do I need to bring imaging or an MRI?', answer: 'If you have recent imaging or surgery reports, bring them, but they are not required to start. Your evaluation is hands-on and movement-based.' },
+      { question: 'Can I still come in if my accident was weeks ago?', answer: 'Yes. Lingering neck, back and headache symptoms after a crash are common and still treatable, and starting documented care supports your claim.' },
     ],
   },
 
@@ -384,12 +492,20 @@ export const en = {
       { h: 'Information we collect', p: 'Contact details you submit through our appointment form (name, phone, email and any message). We intentionally do not collect detailed medical history through this site.' },
       { h: 'How we use it', p: 'Only to respond to your request and schedule care. We do not sell your information.' },
       { h: 'Your choices', p: 'Contact us to access, correct or delete the information you submitted.' },
+      { h: 'Cookies and analytics', p: 'We may use basic cookies and privacy-respecting analytics to understand how the site is used and improve it. You can control cookies through your browser settings.' },
+      { h: 'How information is shared', p: 'We do not sell your information. We share it only with service providers that help us respond to you (for example, secure form delivery or email), and only as needed.' },
+      { h: 'Data retention and security', p: 'We keep submitted information only as long as needed to respond to your request and meet our obligations, and we use reasonable safeguards to protect it.' },
+      { h: 'Your rights and how to reach us', p: 'You can ask us to access, correct or delete the information you submitted. Contact us by phone or through the form on our contact page and we will help.' },
     ],
     termsIntro: 'This placeholder terms-of-use notice governs your use of this website. Replace with terms reviewed by counsel before launch.',
     termsBody: [
       { h: 'No medical advice', p: 'Content on this site is for general information and is not a substitute for professional medical advice, diagnosis or treatment.' },
       { h: 'No insurance or legal advice', p: 'Statements about Utah direct access and auto-insurance (PIP) are general. Coverage depends on your plan and policy; confirm with your insurer.' },
       { h: 'Use of the site', p: 'Use the site lawfully. We may update content at any time.' },
+      { h: 'Third-party links', p: 'Our site may link to third-party websites we do not control. We are not responsible for their content, accuracy or privacy practices.' },
+      { h: 'Limitation of liability', p: 'The site is provided on an as-is basis. To the extent permitted by law, we are not liable for damages arising from your use of, or inability to use, this website.' },
+      { h: 'Changes to these terms', p: 'We may update these terms from time to time. Continued use of the site after changes means you accept the updated terms.' },
+      { h: 'Governing law', p: 'These terms are governed by the laws of the State of Utah, without regard to its conflict-of-laws rules.' },
     ],
   },
 } as const;
