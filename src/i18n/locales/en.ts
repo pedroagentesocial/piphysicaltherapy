@@ -22,6 +22,7 @@ export const en = {
     contact: 'Contact',
     book: 'Request an appointment',
     call: 'Call',
+    write: 'Message us',
     menu: 'Menu',
     skip: 'Skip to content',
   },
@@ -39,6 +40,7 @@ export const en = {
     treatedHere: 'Treated here',
     forAccidents: 'Accident rehab',
     bothPillars: 'Rehab and accident care',
+    comingSoon: 'Coming soon',
   },
 
   // Unique title + meta description per page (mirrored in es.ts with ES keywords).

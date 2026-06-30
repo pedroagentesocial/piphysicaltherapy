@@ -15,24 +15,30 @@ const schema = {
   '@id': `${b.url}/#clinic`,
   name: b.name,
   url: b.url,
-  telephone: b.phone,
+  // Phone/address/geo are omitted until the real NAP is set (see business.ts flags)
+  // so structured data never carries placeholder values.
+  ...(b.hasPhone ? { telephone: b.phone } : {}),
   email: b.email,
   image: new URL('/og-default.png', site).href,
   description: t.jsonld.description,
   priceRange: b.priceRange,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: b.address.street,
-    addressLocality: b.address.city,
-    addressRegion: b.address.region,
-    postalCode: b.address.postalCode,
-    addressCountry: b.address.country,
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: b.geo.latitude,
-    longitude: b.geo.longitude,
-  },
+  ...(b.hasLocation
+    ? {
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: b.address.street,
+          addressLocality: b.address.city,
+          addressRegion: b.address.region,
+          postalCode: b.address.postalCode,
+          addressCountry: b.address.country,
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: b.geo.latitude,
+          longitude: b.geo.longitude,
+        },
+      }
+    : {}),
   areaServed: [
     { '@type': 'AdministrativeArea', name: b.areaServed.county },
     ...b.areaServed.cities.map((c) => ({ '@type': 'City', name: c })),

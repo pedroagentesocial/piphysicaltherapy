@@ -31,10 +31,10 @@ const t = useTranslations(lang);
       <div class="mt-8 flex flex-wrap gap-3">
         <a href={hrefFor('contact', lang)} class="btn btn-on-ink text-base">{t.nav.book}</a>
         <a
-          href={`tel:${business.phone}`}
+          href={business.hasPhone ? `tel:${business.phone}` : hrefFor('contact', lang)}
           class="btn text-base border-[1.5px] border-paper/45 text-paper hover:border-paper hover:bg-paper/10"
         >
-          {t.nav.call} {business.phoneDisplay}
+          {business.hasPhone ? `${t.nav.call} ${business.phoneDisplay}` : t.nav.write}
         </a>
       </div>
     </div>

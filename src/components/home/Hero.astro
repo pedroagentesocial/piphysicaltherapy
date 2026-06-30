@@ -75,10 +75,10 @@ const poster = `https://images.unsplash.com/photo-${images.heroHome.id}?auto=for
     <div class="mt-9 flex flex-wrap items-center gap-3">
       <a href={hrefFor('contact', lang)} class="btn btn-on-ink text-base">{h.primary}</a>
       <a
-        href={`tel:${business.phone}`}
+        href={business.hasPhone ? `tel:${business.phone}` : hrefFor('contact', lang)}
         class="btn text-base border-[1.5px] border-paper/55 text-paper hover:bg-paper/12 hover:border-paper"
       >
-        {t.nav.call} {business.phoneDisplay}
+        {business.hasPhone ? `${t.nav.call} ${business.phoneDisplay}` : t.nav.write}
       </a>
     </div>
     <ul role="list" class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-paper/85">

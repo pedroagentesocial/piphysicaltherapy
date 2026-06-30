@@ -81,9 +81,11 @@ const isActive = (k: RouteKey) => current === k;
     </nav>
 
     <div class="flex items-center gap-2 sm:gap-3">
-      <a href={`tel:${business.phone}`} class="nav-phone hidden text-sm font-bold xl:inline">
-        {business.phoneDisplay}
-      </a>
+      {business.hasPhone && (
+        <a href={`tel:${business.phone}`} class="nav-phone hidden text-sm font-bold xl:inline">
+          {business.phoneDisplay}
+        </a>
+      )}
       <a href={hrefFor('contact', lang)} class="btn btn-field nav-cta hidden text-sm sm:inline-flex">{t.nav.book}</a>
       <div class="nav-lang">
         <LanguageSelector />
@@ -123,8 +125,8 @@ const isActive = (k: RouteKey) => current === k;
               </a>
             ))}
             <a href={hrefFor('contact', lang)} class="btn btn-field mt-2 text-sm">{t.nav.book}</a>
-            <a href={`tel:${business.phone}`} class="mt-1 px-3 py-2 text-center text-sm font-bold text-ink">
-              {t.nav.call} {business.phoneDisplay}
+            <a href={business.hasPhone ? `tel:${business.phone}` : hrefFor('contact', lang)} class="mt-1 px-3 py-2 text-center text-sm font-bold text-ink">
+              {business.hasPhone ? `${t.nav.call} ${business.phoneDisplay}` : t.nav.write}
             </a>
           </nav>
         </div>

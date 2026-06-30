@@ -17,6 +17,12 @@ export const business = {
   phoneDisplay: '(801) 555-0123', // US display format, 801 area code
   email: 'info@piphysicaltherapy.com',
 
+  // PROVISIONAL availability flags. While false, the UI routes "call" CTAs to the
+  // contact form, hides the phone, and shows the location as "coming soon" — never
+  // publishing placeholder NAP. Flip to true once the real phone/address are set.
+  hasPhone: false,
+  hasLocation: false,
+
   address: {
     street: '123 Example Ave, Suite 100',
     city: 'Salt Lake City',

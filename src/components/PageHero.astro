@@ -36,7 +36,7 @@ const btn = accent === 'ember' ? 'btn-ember' : 'btn-field';
     {cta && (
       <div class="mt-8 flex flex-wrap gap-3">
         <a href={hrefFor('contact', lang)} class={`btn ${btn}`}>{t.nav.book}</a>
-        <a href={`tel:${business.phone}`} class="btn btn-outline">{t.nav.call} {business.phoneDisplay}</a>
+        <a href={business.hasPhone ? `tel:${business.phone}` : hrefFor('contact', lang)} class="btn btn-outline">{business.hasPhone ? `${t.nav.call} ${business.phoneDisplay}` : t.nav.write}</a>
       </div>
     )}
   </div>

@@ -25,6 +25,7 @@ export const es: typeof en = {
     contact: 'Contacto',
     book: 'Solicitar una cita',
     call: 'Llamar',
+    write: 'Escríbanos',
     menu: 'Menú',
     skip: 'Saltar al contenido',
   },
@@ -42,6 +43,7 @@ export const es: typeof en = {
     treatedHere: 'Lo tratamos aquí',
     forAccidents: 'Rehabilitación de accidentes',
     bothPillars: 'Rehabilitación y accidentes',
+    comingSoon: 'Próximamente',
   },
 
   seo: {
