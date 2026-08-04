@@ -1,4 +1,14 @@
 ---
+/**
+ * Bajo demanda, a diferencia del resto del sitio. El formulario hace POST a
+ * esta misma URL (`action="?_action=lead"`), y una pagina prerenderizada no
+ * puede atender POST: Vercel respondia 405 y el envio se perdia. Renderizar
+ * por peticion permite que la Action corra y mantiene el funcionamiento sin
+ * JavaScript. Sigue indexada y en el sitemap; solo se renuncia a la cache del
+ * CDN, en una pagina donde no cuesta nada.
+ */
+export const prerender = false;
+
 import Layout from '../../layouts/Layout.astro';
 import ContactView from '../../components/views/ContactView.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';

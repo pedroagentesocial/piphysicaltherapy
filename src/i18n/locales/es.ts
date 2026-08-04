@@ -468,6 +468,14 @@ export const es: typeof en = {
       service: 'Por favor elija una opción.',
     },
     privacyNote: 'Al enviar, acepta que lo contactemos sobre su solicitud. Por favor no incluya detalles médicos sensibles.',
+    // Consentimiento SMS. Partido para que la Política de Privacidad siga siendo un enlace.
+    smsConsent:
+      'Al ingresar su número de teléfono, usted acepta recibir mensajes de texto de nuestra parte. Pueden aplicar tarifas de mensajería. Puede responder STOP o UNSUBSCRIBE para darse de baja.',
+    smsConsentSee: 'Consulte nuestra',
+    smsConsentPolicy: 'Política de Privacidad',
+    smsConsentTail: 'para más detalles.',
+    consentRequired: 'Por favor acepte recibir mensajes de texto antes de enviar.',
+    captchaFailed: 'La verificación de seguridad falló. Recargue la página e inténtelo de nuevo.',
   },
 
   footer: {

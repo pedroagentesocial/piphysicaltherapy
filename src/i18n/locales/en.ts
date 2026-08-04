@@ -468,6 +468,14 @@ export const en = {
       service: 'Please choose an option.',
     },
     privacyNote: 'By submitting, you agree to be contacted about your request. Please do not include sensitive medical details.',
+    // SMS consent. Split so the Privacy Policy stays a real link.
+    smsConsent:
+      'By Entering Your Phone Number, You Are Agreeing To Receive Text Messages From Us. Message Rates May Apply. You Can Reply STOP or UNSUBSCRIBE To Opt-Out.',
+    smsConsentSee: 'See our',
+    smsConsentPolicy: 'Privacy Policy',
+    smsConsentTail: 'for additional details.',
+    consentRequired: 'Please agree to receive text messages before submitting.',
+    captchaFailed: 'Security verification failed. Please reload the page and try again.',
   },
 
   footer: {

@@ -15,6 +15,12 @@ export interface Lead {
   message?: string;
   /** Locale of the page the form was submitted from. */
   locale: 'en' | 'es';
+  /**
+   * Exact SMS consent wording shown to the person, in the language they read
+   * it. Reaching here means the box was checked: the Action rejects the
+   * submission otherwise. This is what backs the consent if it's ever queried.
+   */
+  smsConsentText?: string;
 }
 
 const serviceLabel: Record<Lead['service'], string> = {
@@ -52,6 +58,7 @@ async function sendEmail(lead: Lead): Promise<'sent' | 'skipped'> {
         <li><strong>Type:</strong> ${serviceLabel[lead.service]}</li>
         <li><strong>Preferred language:</strong> ${lead.preferredLang === 'es' ? 'Spanish' : 'English'}</li>
         <li><strong>Submitted from:</strong> ${lead.locale.toUpperCase()} page</li>
+        <li><strong>SMS consent:</strong> given${lead.smsConsentText ? ` — "${escapeHtml(lead.smsConsentText)}"` : ''}</li>
       </ul>
       ${lead.message ? `<p><strong>Message:</strong><br>${escapeHtml(lead.message)}</p>` : ''}
     `,
@@ -66,7 +73,13 @@ async function postWebhook(lead: Lead): Promise<'sent' | 'skipped'> {
   const res = await fetch(LEAD_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ ...lead, source: 'piphysicaltherapy', submittedAt: new Date().toISOString() }),
+    body: JSON.stringify({
+      ...lead,
+      smsConsent: true,
+      smsConsentAt: new Date().toISOString(),
+      source: 'piphysicaltherapy',
+      submittedAt: new Date().toISOString(),
+    }),
   });
   if (!res.ok) throw new Error(`Webhook responded ${res.status}`);
   return 'sent';

@@ -1,10 +1,18 @@
 ---
 import { actions } from 'astro:actions';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { hrefFor } from '../i18n/routes';
+import { PUBLIC_TURNSTILE_SITE_KEY } from 'astro:env/client';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const f = t.lead;
+
+const privacyHref = hrefFor('privacy', lang);
+
+// Exact wording shown, in this locale. Travels with the lead as the consent
+// record, so it must match what the label renders below.
+const consentRecord = `${f.smsConsent} ${f.smsConsentSee} ${f.smsConsentPolicy} ${f.smsConsentTail}`;
 
 // Server-side result (no-JS fallback + progressive enhancement).
 const result = Astro.getActionResult(actions.lead);
@@ -76,27 +84,92 @@ const failed = result && result.error;
           class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600"></textarea>
       </label>
 
+      {/* SMS consent. `required` blocks submission with JS off too; the button
+          state below is only progressive enhancement. The wording is split so
+          the Privacy Policy stays a real link inside the label. */}
+      <label class="mt-1 flex items-start gap-3 text-xs leading-relaxed text-ink-soft">
+        <input
+          type="checkbox"
+          name="smsConsent"
+          required
+          data-consent
+          class="mt-0.5 h-4 w-4 shrink-0 accent-field-600"
+        />
+        <span>
+          {f.smsConsent}{' '}
+          {f.smsConsentSee}{' '}
+          <a href={privacyHref} class="underline underline-offset-2 hover:text-ink">{f.smsConsentPolicy}</a>{' '}
+          {f.smsConsentTail}
+        </span>
+      </label>
+      <input type="hidden" name="smsConsentText" value={consentRecord} />
+
+      {/* Captcha. Turnstile injects the `cf-turnstile-response` field into this
+          form on its own, which the Action reads. Rendered only when a site key
+          exists so local development without keys keeps working. */}
+      {PUBLIC_TURNSTILE_SITE_KEY && (
+        <>
+          <div
+            class="cf-turnstile"
+            data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
+            data-language={lang}
+            data-callback="onPtCaptcha"
+            data-expired-callback="onPtCaptchaGone"
+            data-error-callback="onPtCaptchaGone"
+          ></div>
+          <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        </>
+      )}
+
       {/* Locale of the submitting page + honeypot */}
       <input type="hidden" name="locale" value={lang} />
       <div aria-hidden="true" class="absolute left-[-9999px] h-0 w-0 overflow-hidden">
         <label>Company<input name="company" tabindex="-1" autocomplete="off" /></label>
       </div>
 
-      <button type="submit" data-submit data-sending={f.submitting} class="btn btn-field mt-1 w-full">{f.submit}</button>
+      <button type="submit" data-submit data-sending={f.submitting} class="btn btn-field mt-1 w-full disabled:cursor-not-allowed disabled:opacity-50">{f.submit}</button>
       <p class="text-xs leading-relaxed text-ink-faint">{f.privacyNote}</p>
     </form>
   )}
 </div>
 
+{/* Captcha callbacks live in an inline script so they exist before Cloudflare's
+    api.js runs, which can resolve the widget before the module below loads. */}
+<script is:inline>
+  window.__ptCaptchaOk = false;
+  window.onPtCaptcha = function () {
+    window.__ptCaptchaOk = true;
+    document.dispatchEvent(new CustomEvent('pt-captcha-change'));
+  };
+  window.onPtCaptchaGone = function () {
+    window.__ptCaptchaOk = false;
+    document.dispatchEvent(new CustomEvent('pt-captcha-change'));
+  };
+</script>
+
 <script>
-  // Progressive enhancement: disable the button + show a sending label on submit.
-  // The Astro Action still posts normally; the server result re-renders the
-  // success/error state on the same page.
+  // Progressive enhancement only. Without JS the form still works: `required`
+  // on the checkbox blocks submission, and the server re-validates consent and
+  // captcha regardless.
   function wire() {
     const form = document.querySelector<HTMLFormElement>('[data-lead-form]');
     if (!form) return;
+
+    const btn = form.querySelector<HTMLButtonElement>('[data-submit]');
+    const consent = form.querySelector<HTMLInputElement>('[data-consent]');
+    const needsCaptcha = Boolean(form.querySelector('.cf-turnstile'));
+
+    // The button needs consent, and the captcha too when one is rendered.
+    const sync = () => {
+      if (!btn) return;
+      const captchaOk = !needsCaptcha || (window as unknown as { __ptCaptchaOk?: boolean }).__ptCaptchaOk === true;
+      btn.disabled = !(consent?.checked && captchaOk);
+    };
+    consent?.addEventListener('change', sync);
+    document.addEventListener('pt-captcha-change', sync);
+    sync();
+
     form.addEventListener('submit', () => {
-      const btn = form.querySelector<HTMLButtonElement>('[data-submit]');
       if (btn) {
         btn.disabled = true;
         btn.textContent = btn.getAttribute('data-sending') || 'Sending...';

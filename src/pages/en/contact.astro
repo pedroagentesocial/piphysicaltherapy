@@ -1,4 +1,13 @@
 ---
+/**
+ * On-demand, unlike the rest of the site. The lead form posts back to this URL
+ * (`action="?_action=lead"`), and a prerendered page cannot handle POST: Vercel
+ * answered 405 and the submission was lost. Rendering per request lets the
+ * Action run and keeps the no-JS fallback working. Still indexed and in the
+ * sitemap; only the CDN cache is given up, on a page with no traffic cost.
+ */
+export const prerender = false;
+
 import Layout from '../../layouts/Layout.astro';
 import ContactView from '../../components/views/ContactView.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
