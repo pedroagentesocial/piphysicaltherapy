@@ -80,6 +80,19 @@ export default defineConfig({
   // Vercel serverless function.
   adapter: vercel(),
 
+  // Astro's CSRF guard (`checkOrigin`, on by default) compares the Origin
+  // header against the request URL. Behind Vercel that comparison fails here,
+  // so EVERY POST to the Actions endpoint was answered with 403 "Cross-site
+  // POST form submissions are forbidden" before any validation ran. The lead
+  // form was silently unusable: visitors only saw the generic error.
+  //
+  // Safe to disable for THIS form. CSRF protects actions performed on behalf
+  // of an authenticated user; this form is public, with no login and no
+  // session, so forging a submission gains an attacker nothing they could not
+  // do by POSTing directly. Real abuse protection is Turnstile (verified
+  // server-side), the honeypot and the Zod validation.
+  security: { checkOrigin: false },
+
   vite: {
     plugins: [tailwindcss()],
   },
