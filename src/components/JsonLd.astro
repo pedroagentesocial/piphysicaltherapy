@@ -1,5 +1,5 @@
 ---
-import { business as b } from '../data/business';
+import { business as b, socialSameAs } from '../data/business';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -51,7 +51,7 @@ const schema = {
     opens: h.opens,
     closes: h.closes,
   })),
-  ...(b.sameAs.length ? { sameAs: b.sameAs } : {}),
+  ...(socialSameAs.length ? { sameAs: socialSameAs } : {}),
 };
 ---
 

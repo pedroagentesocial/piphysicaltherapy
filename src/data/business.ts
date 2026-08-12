@@ -61,9 +61,23 @@ export const business = {
 
   priceRange: '$$',
 
-  // Social / external profiles (placeholders — add real ones for sameAs).
-  sameAs: [] as string[],
+  /**
+   * Las CINCO redes de la marca, siempre en este orden y siempre visibles.
+   * Un perfil sin url se muestra pero no enlaza: nunca publicamos un enlace
+   * muerto ni apuntamos a un handle que otro podría ocupar. Al poner la url,
+   * enlaza y entra solo al sameAs del JSON-LD.
+   */
+  socials: [
+    { key: 'facebook', label: 'Facebook', url: '' },
+    { key: 'instagram', label: 'Instagram', url: '' },
+    { key: 'tiktok', label: 'TikTok', url: '' },
+    { key: 'youtube', label: 'YouTube', url: '' },
+    { key: 'linkedin', label: 'LinkedIn', url: '' },
+  ],
 };
+
+/** Solo los perfiles que existen: lo único que el sameAs puede afirmar. */
+export const socialSameAs: string[] = business.socials.filter((s) => s.url).map((s) => s.url);
 
 export type Business = typeof business;
 
