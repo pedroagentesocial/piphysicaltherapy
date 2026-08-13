@@ -35,9 +35,17 @@ export const business = {
   // Salt Lake City coordinates (placeholder — set to the real clinic location).
   geo: { latitude: 40.7608, longitude: -111.891 },
 
-  // Real Utah cities in Salt Lake County the clinic serves.
+  /**
+   * Service area, widest first: the whole STATE, then the counties we draw most
+   * patients from, then the nearby cities. Footer copy and the JSON-LD
+   * `areaServed` both read from here so the claim is identical in both.
+   * County names stay in English everywhere (proper nouns); the locale supplies
+   * the grammar around the list ("… counties" / "los condados de …").
+   */
   areaServed: {
-    county: 'Salt Lake County',
+    state: 'Utah',
+    stateCode: 'UT',
+    counties: ['Salt Lake', 'Utah', 'Davis', 'Weber', 'Cache', 'Washington'],
     cities: [
       'Salt Lake City',
       'West Valley City',

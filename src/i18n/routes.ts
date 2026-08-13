@@ -29,6 +29,10 @@ export const routes = {
   stories: { en: 'patient-stories', es: 'historias-de-pacientes' },
   contact: { en: 'contact', es: 'contacto' },
 
+  // Landing for anything the clinic has announced but not launched yet. Today
+  // it is where the five social marks point while the accounts are being set up.
+  comingSoon: { en: 'coming-soon', es: 'proximamente' },
+
   privacy: { en: 'privacy', es: 'privacidad' },
   terms: { en: 'terms', es: 'terminos' },
 } as const satisfies Record<string, Record<Lang, string>>;

@@ -11,11 +11,14 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<ul role="list" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+{/* Flex-wrap, not grid: the lists here are 7 (all conditions) or 5 + 2 (split
+    by pillar), so the last row is always short. Grid would pin it left with a
+    hole beside it; this centres it. Column widths live in global.css. */}
+<ul role="list" class="flex flex-wrap justify-center gap-3">
   {items.map((c, i) => {
     const cond = t.conditions[c.id as keyof typeof t.conditions];
     return (
-      <li class="reveal" style={`--reveal-delay:${i * 50}ms`}>
+      <li class="condition-card reveal" style={`--reveal-delay:${i * 50}ms`}>
         <a
           href={hrefFor(c.route, lang)}
           class="group flex h-full items-center justify-between gap-3 rounded-2xl border border-ink/10 bg-paper p-5 transition-all hover:-translate-y-0.5 hover:border-ink/20 hover:shadow-[var(--shadow-soft)]"

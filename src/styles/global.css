@@ -160,6 +160,41 @@
     color: var(--color-ink-soft);
   }
 
+  /* Form controls. One class for input/select/textarea so the lead form stays
+     consistent. The 1rem font size is not cosmetic: iOS Safari zooms the whole
+     page when a focused control is under 16px, which throws the layout off on
+     every phone. Focus keeps the global :focus-visible outline (no outline-none)
+     and adds a border shift, so keyboard users are never left guessing. */
+  .form-input {
+    width: 100%;
+    min-height: 2.9rem;
+    border-radius: 0.75rem;
+    border: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent);
+    background-color: var(--color-paper);
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--color-ink);
+    transition: border-color 0.18s var(--ease-out-quart);
+  }
+  .form-input::placeholder { color: var(--color-ink-faint); }
+  .form-input:hover { border-color: color-mix(in oklab, var(--color-ink) 28%, transparent); }
+  .form-input:focus { border-color: var(--color-field-600); }
+  textarea.form-input { min-height: 5.5rem; resize: vertical; }
+
+  /* Turnstile ships a fixed 300px widget. Below ~400px viewports that is wider
+     than the form card, so we scale it down in place rather than let it force a
+     horizontal scrollbar on the whole page. */
+  .turnstile-shell { max-width: 100%; overflow: hidden; }
+  @media (max-width: 25rem) {
+    .turnstile-shell { height: 3.5rem; }
+    .turnstile-shell .cf-turnstile {
+      transform: scale(0.82);
+      transform-origin: top left;
+    }
+  }
+
   /* Dark "drenched" band — kinetic high-contrast CTA sections */
   .surface-ink {
     background-color: var(--color-ink);
@@ -331,11 +366,31 @@
     transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s var(--ease-out-quart),
       border-color 0.25s var(--ease-out-quart);
   }
+  /* Column widths for the flex-wrap row in home/Services.astro. Same result as
+     a 2- / 3-column grid (gap: 1.25rem), but the last incomplete row is centred
+     instead of pinned left with a hole beside it. Five cards never divide
+     evenly, so that row exists at every breakpoint. */
+  .service-card { width: 100%; }
+  @media (min-width: 40rem) {
+    .service-card { width: calc((100% - 1.25rem) / 2); }
+  }
+  @media (min-width: 64rem) {
+    .service-card { width: calc((100% - 2.5rem) / 3); }
+  }
   .service-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lift);
     border-color: color-mix(in oklab, var(--color-ink) 18%, transparent);
   }
+  /* Same idea as .service-card, with the tighter gap (0.75rem) this list uses. */
+  .condition-card { width: 100%; }
+  @media (min-width: 40rem) {
+    .condition-card { width: calc((100% - 0.75rem) / 2); }
+  }
+  @media (min-width: 64rem) {
+    .condition-card { width: calc((100% - 1.5rem) / 3); }
+  }
+
   .service-card-bar {
     position: absolute;
     left: 1.75rem;

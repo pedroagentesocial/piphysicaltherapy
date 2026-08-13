@@ -41,6 +41,9 @@ export const en = {
     forAccidents: 'Accident rehab',
     bothPillars: 'Rehab and accident care',
     comingSoon: 'Coming soon',
+    /** Shown instead of a street address while `business.hasLocation` is false. */
+    locationSoon: 'Location coming soon',
+    followUs: 'Follow us',
   },
 
   // Unique title + meta description per page (mirrored in es.ts with ES keywords).
@@ -92,6 +95,11 @@ export const en = {
     terms: {
       title: 'Terms of Use | PI Physical Therapy',
       description: 'The terms that govern your use of the PI Physical Therapy website.',
+    },
+    comingSoon: {
+      title: 'Coming soon | PI Physical Therapy',
+      description:
+        'Our Facebook, Instagram, TikTok, YouTube and LinkedIn channels are on the way. In the meantime, request an appointment at our Salt Lake City clinic.',
     },
     notFound: {
       title: 'Page not found | PI Physical Therapy',
@@ -480,13 +488,35 @@ export const en = {
 
   footer: {
     rights: 'All rights reserved.',
-    nap: 'Serving Salt Lake County: Salt Lake City, West Valley City, Sandy, Murray, West Jordan and Taylorsville.',
+    // Service-area line. `{list}` is filled from business.areaServed, so the copy
+    // and the JSON-LD always name the same places.
+    napState: 'We serve patients from across the state of Utah.',
+    napCounties: 'Most come to us from {list} counties.',
+    napCities: 'Cities we see most: {list}.',
     servicesTitle: 'Services',
     clinicTitle: 'Clinic',
     legalTitle: 'Legal',
     privacy: 'Privacy policy',
     terms: 'Terms of use',
     disclaimer: 'The information on this site is general and is not medical or legal advice. Insurance coverage depends on your individual plan and policy.',
+  },
+
+  comingSoon: {
+    eyebrow: 'Coming soon',
+    title: 'Our social channels are almost here',
+    lead: 'We are setting up Facebook, Instagram, TikTok, YouTube and LinkedIn to share recovery tips, exercises and clinic news in English and Spanish. There is nothing to follow just yet, so we would rather tell you than hand you a dead link.',
+    channelsTitle: 'Where to find us soon',
+    channelsNote: 'The moment an account is live, its icon here starts linking straight to it.',
+    meanwhileTitle: 'In the meantime',
+    meanwhile: [
+      'Send the appointment form and we will call you back within one business day.',
+      'See what we treat, from back pain to post-surgical and after-accident rehab.',
+      'Read what happens on your first visit, before you ever walk in.',
+      'Care, paperwork and home programs in English or Spanish.',
+    ],
+    ctaTitle: 'You do not need to wait for us to post',
+    ctaBody: 'No referral needed to start in Utah. Tell us what happened and we will get you scheduled this week.',
+    back: 'Back to home',
   },
 
   notFound: {

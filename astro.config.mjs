@@ -7,6 +7,9 @@ import { routes, routeKeyFromPath } from './src/i18n/routes';
 
 const SITE = 'https://www.piphysicaltherapy.com';
 
+// Pages that render `noindex` — they must not appear in the sitemap either.
+const NOINDEX_TAILS = [routes.comingSoon.en, routes.comingSoon.es];
+
 // Correct hreflang alternates for the sitemap. The built-in `i18n` option swaps
 // only the locale prefix, which is wrong for our TRANSLATED slugs
 // (/en/services/physical-therapy ↔ /es/servicios/terapia-fisica). So we map each
@@ -51,7 +54,10 @@ export default defineConfig({
     // Sitemap with CORRECT hreflang alternates for translated slugs. We skip the
     // bare root redirect and inject per-locale links from the route map.
     sitemap({
-      filter: (page) => page !== `${SITE}/`,
+      // Skip the bare root redirect and the noindex "coming soon" placeholder.
+      filter: (page) =>
+        page !== `${SITE}/` &&
+        !NOINDEX_TAILS.some((tail) => page.endsWith(`/${tail}/`)),
       serialize(item) {
         const { pathname } = new URL(item.url);
         item.links = localizedLinks(pathname);

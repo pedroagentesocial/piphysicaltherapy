@@ -39,8 +39,10 @@ const schema = {
         },
       }
     : {}),
+  // Widest first: the state, then the counties, then the cities.
   areaServed: [
-    { '@type': 'AdministrativeArea', name: b.areaServed.county },
+    { '@type': 'State', name: b.areaServed.state },
+    ...b.areaServed.counties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c} County` })),
     ...b.areaServed.cities.map((c) => ({ '@type': 'City', name: c })),
   ],
   medicalSpecialty: b.medicalSpecialty,

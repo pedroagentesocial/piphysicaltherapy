@@ -1,0 +1,51 @@
+---
+/**
+ * Landing for what the clinic has announced but not launched. Today that is the
+ * five social profiles: the marks in the footer, the contact page and the mobile
+ * menu all point here instead of at a dead or squatted handle.
+ */
+import Breadcrumbs from '../Breadcrumbs.astro';
+import SocialLinks from '../SocialLinks.astro';
+import CtaBand from '../CtaBand.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { hrefFor } from '../../i18n/routes';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Breadcrumbs items={[{ label: t.nav.home, href: hrefFor('home', lang) }, { label: t.common.comingSoon }]} />
+
+<section class="mx-auto max-w-3xl px-5 pb-4 pt-10 sm:px-8 sm:pt-14">
+  <p class="eyebrow reveal text-field-700">{t.comingSoon.eyebrow}</p>
+  <h1 class="display reveal mt-5 text-[clamp(2.3rem,5.5vw,4rem)]">{t.comingSoon.title}</h1>
+  <p class="reveal mt-5 text-lg leading-relaxed text-ink-soft">{t.comingSoon.lead}</p>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 py-8 sm:px-8">
+  <div class="reveal rounded-[1.8rem] border border-ink/10 bg-paper-2 px-6 py-9 sm:px-10">
+    <h2 class="font-display text-xl font-extrabold text-ink">{t.comingSoon.channelsTitle}</h2>
+    <SocialLinks inert size="lg" class="mt-6" />
+    <p class="mt-6 max-w-lg text-sm leading-relaxed text-ink-faint">{t.comingSoon.channelsNote}</p>
+  </div>
+</section>
+
+<section class="mx-auto max-w-3xl px-5 py-8 sm:px-8">
+  <h2 class="display reveal text-2xl sm:text-3xl">{t.comingSoon.meanwhileTitle}</h2>
+  <ul role="list" class="reveal mt-6 space-y-3.5">
+    {t.comingSoon.meanwhile.map((item) => (
+      <li class="flex gap-3 leading-relaxed text-ink-soft">
+        <svg class="mt-1 size-5 shrink-0 text-field-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+  <div class="reveal mt-9 flex flex-wrap gap-3">
+    <a href={hrefFor('contact', lang)} class="btn btn-field">{t.nav.book}</a>
+    <a href={hrefFor('home', lang)} class="btn btn-outline">{t.comingSoon.back}</a>
+  </div>
+</section>
+
+<CtaBand title={t.comingSoon.ctaTitle} body={t.comingSoon.ctaBody} />

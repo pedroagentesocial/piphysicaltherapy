@@ -44,6 +44,8 @@ export const es: typeof en = {
     forAccidents: 'Rehabilitación de accidentes',
     bothPillars: 'Rehabilitación y accidentes',
     comingSoon: 'Próximamente',
+    locationSoon: 'Ubicación próximamente',
+    followUs: 'Síganos',
   },
 
   seo: {
@@ -94,6 +96,11 @@ export const es: typeof en = {
     terms: {
       title: 'Términos de Uso | PI Physical Therapy',
       description: 'Los términos que rigen el uso del sitio web de PI Physical Therapy.',
+    },
+    comingSoon: {
+      title: 'Próximamente | PI Physical Therapy',
+      description:
+        'Nuestros canales de Facebook, Instagram, TikTok, YouTube y LinkedIn vienen en camino. Mientras tanto, solicite una cita en nuestra clínica de Salt Lake City.',
     },
     notFound: {
       title: 'Página no encontrada | PI Physical Therapy',
@@ -480,13 +487,33 @@ export const es: typeof en = {
 
   footer: {
     rights: 'Todos los derechos reservados.',
-    nap: 'Atendemos al condado de Salt Lake: Salt Lake City, West Valley City, Sandy, Murray, West Jordan y Taylorsville.',
+    napState: 'Atendemos a pacientes de todo el estado de Utah.',
+    napCounties: 'La mayoría llegan de los condados de {list}.',
+    napCities: 'Ciudades que más atendemos: {list}.',
     servicesTitle: 'Servicios',
     clinicTitle: 'Clínica',
     legalTitle: 'Legal',
     privacy: 'Política de privacidad',
     terms: 'Términos de uso',
     disclaimer: 'La información de este sitio es general y no es consejo médico ni legal. La cobertura del seguro depende de su plan y póliza individual.',
+  },
+
+  comingSoon: {
+    eyebrow: 'Próximamente',
+    title: 'Nuestras redes ya casi están listas',
+    lead: 'Estamos preparando Facebook, Instagram, TikTok, YouTube y LinkedIn para compartir consejos de recuperación, ejercicios y novedades de la clínica en inglés y español. Todavía no hay nada que seguir, y preferimos decírselo antes que darle un enlace muerto.',
+    channelsTitle: 'Dónde nos va a encontrar',
+    channelsNote: 'En cuanto una cuenta esté activa, su icono aquí empieza a enlazar directo a ella.',
+    meanwhileTitle: 'Mientras tanto',
+    meanwhile: [
+      'Envíe el formulario de citas y le devolvemos la llamada en un día hábil.',
+      'Vea lo que tratamos, desde dolor de espalda hasta rehabilitación post-quirúrgica y de accidentes.',
+      'Lea qué pasa en su primera visita, antes siquiera de venir.',
+      'Atención, papeleo y programas en casa en inglés o español.',
+    ],
+    ctaTitle: 'No tiene que esperar a que publiquemos',
+    ctaBody: 'En Utah no necesita referido para empezar. Cuéntenos qué pasó y lo agendamos esta misma semana.',
+    back: 'Volver al inicio',
   },
 
   notFound: {

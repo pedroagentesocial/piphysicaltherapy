@@ -19,11 +19,13 @@ interface Props {
   ogImage?: string;
   /** Extra page-specific JSON-LD (FAQPage, MedicalTherapy, BreadcrumbList…). */
   schema?: Record<string, unknown>[];
+  /** Keep the page out of the index (thin/placeholder pages). Also drops it from the sitemap. */
+  noindex?: boolean;
 }
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const { title, description, routeKey, ogImage, schema = [] } = Astro.props;
+const { title, description, routeKey, ogImage, schema = [], noindex = false } = Astro.props;
 // The header is fixed. The home hero sits beneath it (transparent overlay), so
 // only non-home pages need top padding equal to the header height.
 const isHome = routeKey === 'home';
@@ -38,7 +40,7 @@ const isHome = routeKey === 'home';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0F2D4D" />
-    <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} />
+    <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} noindex={noindex} />
     <JsonLd />
     {
       schema.map((s) => (

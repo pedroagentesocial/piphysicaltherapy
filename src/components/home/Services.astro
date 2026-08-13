@@ -36,7 +36,11 @@ const cards = services.map((s) => ({
       <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t.home.servicesLead}</p>
     </div>
 
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {/* Five cards never fill a 2- or 3-column grid evenly, and CSS grid parks
+        the leftovers on the left with a hole beside them. Flex-wrap with
+        justify-center keeps the widths identical to a grid but centres the
+        last, incomplete row at every breakpoint. */}
+    <div class="mt-12 flex flex-wrap justify-center gap-5">
       {cards.map((c, i) => {
         const ember = c.accent === 'ember';
         return (

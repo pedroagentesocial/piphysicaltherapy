@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ComingSoonView from '../../components/views/ComingSoonView.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { comingSoonSchema } from '../../lib/pageSchema';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const schema = comingSoonSchema(t, Astro.site!, lang);
+---
+
+<Layout
+  title={t.seo.comingSoon.title}
+  description={t.seo.comingSoon.description}
+  routeKey="comingSoon"
+  schema={schema}
+  noindex
+>
+  <ComingSoonView />
+</Layout>

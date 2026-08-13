@@ -20,7 +20,7 @@ const ok = result && !result.error;
 const failed = result && result.error;
 ---
 
-<div class="rounded-3xl border border-ink/10 bg-paper p-6 shadow-[var(--shadow-soft)] sm:p-8">
+<div class="rounded-3xl border border-ink/10 bg-paper p-5 shadow-[var(--shadow-soft)] sm:p-8">
   {ok ? (
     <div role="status" class="py-6 text-center">
       <div class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-success-bg text-success">
@@ -42,27 +42,23 @@ const failed = result && result.error;
       <div class="grid gap-4 sm:grid-cols-2">
         <label class="grid gap-1.5 text-sm font-semibold text-ink">
           {f.name}
-          <input name="name" type="text" required autocomplete="name"
-            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+          <input name="name" type="text" required autocomplete="name" class="form-input" />
         </label>
         <label class="grid gap-1.5 text-sm font-semibold text-ink">
           {f.phone}
-          <input name="phone" type="tel" required autocomplete="tel" inputmode="tel"
-            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+          <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" class="form-input" />
         </label>
       </div>
 
       <label class="grid gap-1.5 text-sm font-semibold text-ink">
         {f.email}
-        <input name="email" type="email" required autocomplete="email"
-          class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600" />
+        <input name="email" type="email" required autocomplete="email" inputmode="email" class="form-input" />
       </label>
 
       <div class="grid gap-4 sm:grid-cols-2">
         <label class="grid gap-1.5 text-sm font-semibold text-ink">
           {f.service}
-          <select name="service" required
-            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600">
+          <select name="service" required class="form-input">
             <option value="rehab">{f.serviceOptions.rehab}</option>
             <option value="accident">{f.serviceOptions.accident}</option>
             <option value="other">{f.serviceOptions.other}</option>
@@ -70,8 +66,7 @@ const failed = result && result.error;
         </label>
         <label class="grid gap-1.5 text-sm font-semibold text-ink">
           {f.preferredLang}
-          <select name="preferredLang"
-            class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600">
+          <select name="preferredLang" class="form-input">
             <option value="es" selected={lang === 'es'}>{f.langOptions.es}</option>
             <option value="en" selected={lang === 'en'}>{f.langOptions.en}</option>
           </select>
@@ -80,8 +75,7 @@ const failed = result && result.error;
 
       <label class="grid gap-1.5 text-sm font-semibold text-ink">
         {f.message}
-        <textarea name="message" rows="3" maxlength="1000"
-          class="rounded-xl border border-ink/15 bg-paper px-3.5 py-2.5 font-normal text-ink outline-none focus:border-field-600"></textarea>
+        <textarea name="message" rows="3" maxlength="1000" class="form-input"></textarea>
       </label>
 
       {/* SMS consent. `required` blocks submission with JS off too; the button
@@ -93,7 +87,7 @@ const failed = result && result.error;
           name="smsConsent"
           required
           data-consent
-          class="mt-0.5 h-4 w-4 shrink-0 accent-field-600"
+          class="mt-0.5 h-5 w-5 shrink-0 accent-field-600"
         />
         <span>
           {f.smsConsent}{' '}
@@ -109,14 +103,19 @@ const failed = result && result.error;
           exists so local development without keys keeps working. */}
       {PUBLIC_TURNSTILE_SITE_KEY && (
         <>
-          <div
-            class="cf-turnstile"
-            data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
-            data-language={lang}
-            data-callback="onPtCaptcha"
-            data-expired-callback="onPtCaptchaGone"
-            data-error-callback="onPtCaptchaGone"
-          ></div>
+          {/* The widget is a fixed 300px iframe, wider than the card on a small
+              phone. The shell clips it and scales it down there instead of
+              letting it push the page sideways. */}
+          <div class="turnstile-shell">
+            <div
+              class="cf-turnstile"
+              data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
+              data-language={lang}
+              data-callback="onPtCaptcha"
+              data-expired-callback="onPtCaptchaGone"
+              data-error-callback="onPtCaptchaGone"
+            ></div>
+          </div>
           <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         </>
       )}

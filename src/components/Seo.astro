@@ -11,9 +11,11 @@ interface Props {
   routeKey: RouteKey;
   /** Path (from site root) to the OG image. */
   ogImage?: string;
+  /** Keep the page out of the index (thin/placeholder pages). Links are still followed. */
+  noindex?: boolean;
 }
 
-const { title, description, routeKey, ogImage = '/og-default.png' } = Astro.props;
+const { title, description, routeKey, ogImage = '/og-default.png', noindex = false } = Astro.props;
 
 // `site` is guaranteed by astro.config.mjs `site:`.
 const site = Astro.site!;
@@ -35,7 +37,7 @@ const altOgLocales = (Object.keys(ogLocales) as Lang[])
 {/* hreflang: en-US, es-US and x-default → default locale (translated slugs) */}
 {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
 
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 
 {/* Open Graph */}
 <meta property="og:type" content="website" />

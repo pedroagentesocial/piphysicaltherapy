@@ -98,6 +98,10 @@ export function storiesSchema(t: UIDict, site: URL, lang: Lang) {
   return [crumbs(t, site, lang, [{ key: 'stories', label: t.nav.stories }])];
 }
 
+export function comingSoonSchema(t: UIDict, site: URL, lang: Lang) {
+  return [crumbs(t, site, lang, [{ key: 'comingSoon', label: t.common.comingSoon }])];
+}
+
 export function contactSchema(t: UIDict, site: URL, lang: Lang) {
   return [crumbs(t, site, lang, [{ key: 'contact', label: t.nav.contact }])];
 }

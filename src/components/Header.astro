@@ -1,5 +1,6 @@
 ---
 import LanguageSelector from './LanguageSelector.astro';
+import SocialLinks from './SocialLinks.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { hrefFor, routeKeyFromPath, type RouteKey } from '../i18n/routes';
 import { business } from '../data/business';
@@ -128,6 +129,8 @@ const isActive = (k: RouteKey) => current === k;
             <a href={business.hasPhone ? `tel:${business.phone}` : hrefFor('contact', lang)} class="mt-1 px-3 py-2 text-center text-sm font-bold text-ink">
               {business.hasPhone ? `${t.nav.call} ${business.phoneDisplay}` : t.nav.write}
             </a>
+            <span class="my-2 h-px bg-ink/10"></span>
+            <SocialLinks class="justify-center pb-1" />
           </nav>
         </div>
       </details>
