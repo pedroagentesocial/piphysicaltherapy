@@ -86,7 +86,7 @@ export const en = {
     contact: {
       title: 'Contact & Schedule Physical Therapy in Salt Lake City',
       description:
-        'Schedule physical therapy in Salt Lake City. Call (801) 555-0123 or request an appointment online. Insurance accepted, se habla español.',
+        'Schedule physical therapy in Salt Lake City. Call (801) 849-3112 or request an appointment online. Insurance accepted, se habla español.',
     },
     privacy: {
       title: 'Privacy Policy | PI Physical Therapy',
@@ -99,7 +99,7 @@ export const en = {
     comingSoon: {
       title: 'Coming soon | PI Physical Therapy',
       description:
-        'Our Facebook, Instagram, TikTok, YouTube and LinkedIn channels are on the way. In the meantime, request an appointment at our Salt Lake City clinic.',
+        'Our TikTok and LinkedIn channels are on the way. Find us today on Facebook, Instagram and YouTube, or request an appointment at our Salt Lake City clinic.',
     },
     notFound: {
       title: 'Page not found | PI Physical Therapy',
@@ -466,9 +466,9 @@ export const en = {
     submit: 'Request appointment',
     submitting: 'Sending...',
     successTitle: 'Request received',
-    successBody: 'Thank you. We will call you back within one business day. If it is urgent, call us at (801) 555-0123.',
+    successBody: 'Thank you. We will call you back within one business day. If it is urgent, call us at (801) 849-3112.',
     errorTitle: 'Something went wrong',
-    errorBody: 'We could not send your request. Please call us at (801) 555-0123 and we will get you scheduled.',
+    errorBody: 'We could not send your request. Please call us at (801) 849-3112 and we will get you scheduled.',
     errors: {
       name: 'Please enter your name.',
       phone: 'Please enter a valid phone number.',
@@ -503,9 +503,9 @@ export const en = {
 
   comingSoon: {
     eyebrow: 'Coming soon',
-    title: 'Our social channels are almost here',
-    lead: 'We are setting up Facebook, Instagram, TikTok, YouTube and LinkedIn to share recovery tips, exercises and clinic news in English and Spanish. There is nothing to follow just yet, so we would rather tell you than hand you a dead link.',
-    channelsTitle: 'Where to find us soon',
+    title: 'A couple of channels are still on the way',
+    lead: 'We are already on Facebook, Instagram and YouTube sharing recovery tips, exercises and clinic news in English and Spanish. TikTok and LinkedIn are not live yet, so we would rather tell you than hand you a dead link.',
+    channelsTitle: 'Where to find us',
     channelsNote: 'The moment an account is live, its icon here starts linking straight to it.',
     meanwhileTitle: 'In the meantime',
     meanwhile: [

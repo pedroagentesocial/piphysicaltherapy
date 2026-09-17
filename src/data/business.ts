@@ -3,9 +3,9 @@
  * facts. Used by the footer, the contact block AND the JSON-LD so structured
  * data and on-page content can never drift apart.
  *
- * ⚠️ NOTE: address / phone / geo below are PLACEHOLDERS using the reserved 801
- * "555" exchange. Replace with the clinic's real verified NAP before launch —
- * it must match the Google Business Profile EXACTLY for local SEO.
+ * ⚠️ NOTE: the phone is real. The address / geo below are still PLACEHOLDERS —
+ * replace with the clinic's verified address before launch; it must match the
+ * Google Business Profile EXACTLY for local SEO.
  */
 export const business = {
   // "PI" = Personal Injury (the clinic's accident-rehab focus). Keep the name
@@ -13,14 +13,14 @@ export const business = {
   name: 'PI Physical Therapy',
   url: 'https://www.piphysicaltherapy.com',
 
-  phone: '+1-801-555-0123', // tel: link format
-  phoneDisplay: '(801) 555-0123', // US display format, 801 area code
+  phone: '+1-801-849-3112', // tel: link format
+  phoneDisplay: '(801) 849-3112', // US display format, 801 area code
   email: 'info@piphysicaltherapy.com',
 
-  // PROVISIONAL availability flags. While false, the UI routes "call" CTAs to the
-  // contact form, hides the phone, and shows the location as "coming soon" — never
-  // publishing placeholder NAP. Flip to true once the real phone/address are set.
-  hasPhone: false,
+  // Availability flags. While false, the UI routes "call" CTAs to the contact
+  // form, hides the phone, and shows the location as "coming soon" — never
+  // publishing placeholder NAP. Flip hasLocation to true once the real address is set.
+  hasPhone: true,
   hasLocation: false,
 
   address: {
@@ -76,10 +76,10 @@ export const business = {
    * enlaza y entra solo al sameAs del JSON-LD.
    */
   socials: [
-    { key: 'facebook', label: 'Facebook', url: '' },
-    { key: 'instagram', label: 'Instagram', url: '' },
+    { key: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/piphysicaltherapy/' },
+    { key: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/pi_physical_therapy/' },
     { key: 'tiktok', label: 'TikTok', url: '' },
-    { key: 'youtube', label: 'YouTube', url: '' },
+    { key: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@PIPhysicalTherapy' },
     { key: 'linkedin', label: 'LinkedIn', url: '' },
   ],
 };

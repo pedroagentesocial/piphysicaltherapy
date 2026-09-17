@@ -87,7 +87,7 @@ export const es: typeof en = {
     contact: {
       title: 'Contacto y Citas de Terapia Física en Salt Lake City',
       description:
-        'Agende terapia física en Salt Lake City. Llame al (801) 555-0123 o solicite una cita en línea. Aceptamos seguros, se habla español.',
+        'Agende terapia física en Salt Lake City. Llame al (801) 849-3112 o solicite una cita en línea. Aceptamos seguros, se habla español.',
     },
     privacy: {
       title: 'Política de Privacidad | PI Physical Therapy',
@@ -100,7 +100,7 @@ export const es: typeof en = {
     comingSoon: {
       title: 'Próximamente | PI Physical Therapy',
       description:
-        'Nuestros canales de Facebook, Instagram, TikTok, YouTube y LinkedIn vienen en camino. Mientras tanto, solicite una cita en nuestra clínica de Salt Lake City.',
+        'Nuestros canales de TikTok y LinkedIn vienen en camino. Encuéntrenos hoy en Facebook, Instagram y YouTube, o solicite una cita en nuestra clínica de Salt Lake City.',
     },
     notFound: {
       title: 'Página no encontrada | PI Physical Therapy',
@@ -465,9 +465,9 @@ export const es: typeof en = {
     submit: 'Solicitar cita',
     submitting: 'Enviando...',
     successTitle: 'Solicitud recibida',
-    successBody: 'Gracias. Le devolveremos la llamada dentro de un día hábil. Si es urgente, llámenos al (801) 555-0123.',
+    successBody: 'Gracias. Le devolveremos la llamada dentro de un día hábil. Si es urgente, llámenos al (801) 849-3112.',
     errorTitle: 'Algo salió mal',
-    errorBody: 'No pudimos enviar su solicitud. Por favor llámenos al (801) 555-0123 y lo agendamos.',
+    errorBody: 'No pudimos enviar su solicitud. Por favor llámenos al (801) 849-3112 y lo agendamos.',
     errors: {
       name: 'Por favor ingrese su nombre.',
       phone: 'Por favor ingrese un número de teléfono válido.',
@@ -500,9 +500,9 @@ export const es: typeof en = {
 
   comingSoon: {
     eyebrow: 'Próximamente',
-    title: 'Nuestras redes ya casi están listas',
-    lead: 'Estamos preparando Facebook, Instagram, TikTok, YouTube y LinkedIn para compartir consejos de recuperación, ejercicios y novedades de la clínica en inglés y español. Todavía no hay nada que seguir, y preferimos decírselo antes que darle un enlace muerto.',
-    channelsTitle: 'Dónde nos va a encontrar',
+    title: 'Un par de redes todavía vienen en camino',
+    lead: 'Ya estamos en Facebook, Instagram y YouTube compartiendo consejos de recuperación, ejercicios y novedades de la clínica en inglés y español. TikTok y LinkedIn todavía no están activos, y preferimos decírselo antes que darle un enlace muerto.',
+    channelsTitle: 'Dónde encontrarnos',
     channelsNote: 'En cuanto una cuenta esté activa, su icono aquí empieza a enlazar directo a ella.',
     meanwhileTitle: 'Mientras tanto',
     meanwhile: [
