@@ -15,7 +15,7 @@ export const business = {
 
   phone: '+1-801-849-3112', // tel: link format
   phoneDisplay: '(801) 849-3112', // US display format, 801 area code
-  email: 'info@piphysicaltherapy.com',
+  email: 'support@piphysicaltherapy.com',
 
   // Availability flags. While false, the UI routes "call" CTAs to the contact
   // form, hides the phone, and shows the location as "coming soon" — never
