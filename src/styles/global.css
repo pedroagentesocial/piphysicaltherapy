@@ -347,7 +347,7 @@
     top: 50%;
     right: -2%;
     width: min(58%, 30rem);
-    aspect-ratio: 1100 / 1390;
+    aspect-ratio: 111 / 143;
     transform: translateY(-50%);
     background: linear-gradient(135deg, var(--color-field-400), var(--color-aqua));
     -webkit-mask: url("/logo-mark.svg") center / contain no-repeat;
