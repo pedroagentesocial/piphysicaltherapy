@@ -3,9 +3,8 @@
  * facts. Used by the footer, the contact block AND the JSON-LD so structured
  * data and on-page content can never drift apart.
  *
- * ⚠️ NOTE: the phone is real. The address / geo below are still PLACEHOLDERS —
- * replace with the clinic's verified address before launch; it must match the
- * Google Business Profile EXACTLY for local SEO.
+ * The phone and address are real. The address must match the Google Business
+ * Profile EXACTLY for local SEO.
  */
 export const business = {
   // "PI" = Personal Injury (the clinic's accident-rehab focus). Keep the name
@@ -21,19 +20,23 @@ export const business = {
   // form, hides the phone, and shows the location as "coming soon" — never
   // publishing placeholder NAP. Flip hasLocation to true once the real address is set.
   hasPhone: true,
-  hasLocation: false,
+  hasLocation: true,
 
   address: {
-    street: '123 Example Ave, Suite 100',
-    city: 'Salt Lake City',
+    street: '8706 S 700 E',
+    // Kept apart from the street so map links can leave it out: Google Maps
+    // cannot pin a suite number and falls back to a list of results.
+    suite: 'Suite 102-103',
+    city: 'Sandy',
     region: 'UT',
     regionName: 'Utah',
-    postalCode: '84101',
+    postalCode: '84070',
     country: 'US',
   },
 
-  // Salt Lake City coordinates (placeholder — set to the real clinic location).
-  geo: { latitude: 40.7608, longitude: -111.891 },
+  // 8706 S 700 E, Sandy (approximate from the street grid — confirm with the
+  // pin on the Google Business Profile).
+  geo: { latitude: 40.5933, longitude: -111.871 },
 
   /**
    * Service area, widest first: the whole STATE, then the counties we draw most
@@ -86,6 +89,16 @@ export const business = {
 
 /** Solo los perfiles que existen: lo único que el sameAs puede afirmar. */
 export const socialSameAs: string[] = business.socials.filter((s) => s.url).map((s) => s.url);
+
+/**
+ * What Google Maps is asked to find. Street, city and ZIP only: no suite (Maps
+ * cannot pin it) and no business name (the clinic has no Maps listing yet), so
+ * Maps opens straight on a pin at the building.
+ */
+export const mapsQuery = `${business.address.street}, ${business.address.city}, ${business.address.region} ${business.address.postalCode}`;
+
+/** Google Maps for the clinic: the address everywhere it is shown links here. */
+export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
 
 export type Business = typeof business;
 
