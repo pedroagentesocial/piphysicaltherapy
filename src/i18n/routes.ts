@@ -29,6 +29,10 @@ export const routes = {
   stories: { en: 'patient-stories', es: 'historias-de-pacientes' },
   contact: { en: 'contact', es: 'contacto' },
 
+  // Blog index. Each article lives at blog/<slug>/ with its own per-locale slug
+  // (see src/lib/blog.ts), so articles are not listed here.
+  blog: { en: 'blog', es: 'blog' },
+
   // Landing for anything the clinic has announced but not launched yet. Today
   // it is where the five social marks point while the accounts are being set up.
   comingSoon: { en: 'coming-soon', es: 'proximamente' },
@@ -65,7 +69,10 @@ export function routeKeyFromPath(pathname: string): RouteKey {
   const tail = (seg.length && (seg[0] === 'en' || seg[0] === 'es') ? seg.slice(1) : seg).join('/');
   const keys = Object.keys(routes) as RouteKey[];
   const hit = keys.find((k) => routes[k].en === tail || routes[k].es === tail);
-  return hit ?? 'home';
+  if (hit) return hit;
+  // Pages below a listed route (blog articles) belong to that route.
+  const parent = keys.find((k) => k !== 'home' && (tail.startsWith(`${routes[k].en}/`) || tail.startsWith(`${routes[k].es}/`)));
+  return parent ?? 'home';
 }
 
 export interface AlternateLink {

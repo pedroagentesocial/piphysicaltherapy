@@ -3,6 +3,12 @@ import { languages, localeTags, type Lang } from '../i18n/config';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { routeKeyFromPath, hrefFor } from '../i18n/routes';
 
+interface Props {
+  /** Per-locale paths for pages outside the route map (see Layout). */
+  localePaths?: Partial<Record<Lang, string>>;
+}
+const { localePaths } = Astro.props;
+
 const current = getLangFromUrl(Astro.url);
 const t = useTranslations(current);
 // Resolve the counterpart URL through the translated-slug map so /en/team/
@@ -19,7 +25,7 @@ const entries = Object.entries(languages) as [Lang, string][];
         return (
           <li>
             <a
-              href={hrefFor(key, code)}
+              href={localePaths?.[code] ?? hrefFor(key, code)}
               hreflang={localeTags[code]}
               lang={localeTags[code]}
               aria-current={isActive ? 'true' : undefined}

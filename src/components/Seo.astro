@@ -2,7 +2,7 @@
 import { business } from '../data/business';
 import { getLangFromUrl } from '../i18n/utils';
 import { absHrefFor, alternatesFor, type RouteKey } from '../i18n/routes';
-import { ogLocales, type Lang } from '../i18n/config';
+import { defaultLang, localeTags, ogLocales, type Lang } from '../i18n/config';
 
 interface Props {
   title: string;
@@ -13,16 +13,28 @@ interface Props {
   ogImage?: string;
   /** Keep the page out of the index (thin/placeholder pages). Links are still followed. */
   noindex?: boolean;
+  /** Per-locale paths for pages outside the route map (see Layout). */
+  localePaths?: Partial<Record<Lang, string>>;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description, routeKey, ogImage = '/og-default.png', noindex = false } = Astro.props;
+const { title, description, routeKey, ogImage = '/og-default.png', noindex = false, localePaths, ogType = 'website' } = Astro.props;
 
 // `site` is guaranteed by astro.config.mjs `site:`.
 const site = Astro.site!;
 const lang = getLangFromUrl(Astro.url);
 
-const canonical = absHrefFor(site, routeKey, lang);
-const alternates = alternatesFor(site, routeKey);
+const canonical = localePaths?.[lang] ? new URL(localePaths[lang], site).href : absHrefFor(site, routeKey, lang);
+// Untranslated pages only declare the locales that exist; x-default goes to the
+// default locale when there is one, else to the page itself.
+const alternates = localePaths
+  ? [
+      ...(Object.keys(ogLocales) as Lang[])
+        .filter((l) => localePaths[l])
+        .map((l) => ({ hreflang: localeTags[l], href: new URL(localePaths[l]!, site).href })),
+      { hreflang: 'x-default', href: new URL(localePaths[defaultLang] ?? localePaths[lang]!, site).href },
+    ]
+  : alternatesFor(site, routeKey);
 const ogImageUrl = new URL(ogImage, site).href;
 const ogLocale = ogLocales[lang];
 const altOgLocales = (Object.keys(ogLocales) as Lang[])
@@ -40,7 +52,7 @@ const altOgLocales = (Object.keys(ogLocales) as Lang[])
 <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 
 {/* Open Graph */}
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={business.name} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

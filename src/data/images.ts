@@ -58,3 +58,8 @@ export const images = {
 } as const satisfies Record<string, SiteImage>;
 
 export type ImageKey = keyof typeof images;
+
+/** Absolute URL of one rendition, for places that need a single URL (JSON-LD, og:image). */
+export function imageUrl(name: ImageKey, width = 1280): string {
+  return `https://images.unsplash.com/photo-${images[name].id}?auto=format&fit=crop&q=80&w=${width}`;
+}

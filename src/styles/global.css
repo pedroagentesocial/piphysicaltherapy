@@ -468,6 +468,105 @@
     transition: width 0.25s var(--ease-out-quart), background-color 0.25s var(--ease-out-quart);
   }
   .hero-dot.is-active { width: 1.8rem; background-color: #fff; background-clip: content-box; }
+
+  /* Blog article body, rendered from Markdown (src/content/blogs). Plain
+     elements only, so authors never need classes beyond the chart below. */
+  .prose-article { color: var(--color-ink-soft); font-size: 1.075rem; line-height: 1.75; }
+  .prose-article > * + * { margin-top: 1.15em; }
+  .prose-article h2 {
+    margin-top: 2.2em;
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 3vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+  }
+  .prose-article h3 { margin-top: 1.8em; font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; line-height: 1.25; color: var(--color-ink); }
+  .prose-article h2 + *, .prose-article h3 + * { margin-top: 0.6em; }
+  .prose-article strong { font-weight: 700; color: var(--color-ink); }
+  .prose-article a {
+    font-weight: 600;
+    color: var(--color-field-800);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-field-600) 40%, transparent);
+    text-underline-offset: 3px;
+  }
+  .prose-article a:hover { text-decoration-color: var(--color-field-700); }
+  /* Citations, written as [[1]](#source-1): small, no underline, never breaking a line. */
+  .prose-article a[href^="#source-"] { font-size: 0.78em; font-weight: 700; text-decoration: none; white-space: nowrap; vertical-align: 0.1em; }
+  .prose-article ul, .prose-article ol { padding-left: 1.3em; }
+  .prose-article ul { list-style: disc; }
+  .prose-article ol { list-style: decimal; }
+  .prose-article li + li { margin-top: 0.45em; }
+  .prose-article li::marker { color: var(--color-field-600); }
+  .prose-article blockquote {
+    border-left: 3px solid var(--color-field-500);
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--color-field-50);
+    padding: 1rem 1.25rem;
+    color: var(--color-ink);
+  }
+  .prose-article hr { margin-block: 2.5em; border-color: color-mix(in oklab, var(--color-ink) 12%, transparent); }
+
+  /* Tables scroll sideways inside themselves on phones instead of widening the page. */
+  .prose-article table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    line-height: 1.5;
+  }
+  .prose-article th, .prose-article td {
+    min-width: 8rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
+    padding: 0.7rem 0.9rem 0.7rem 0;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-article th { font-weight: 700; color: var(--color-ink); border-bottom-width: 2px; }
+
+  /* Single-series bar chart, written as raw HTML in Markdown:
+       <figure class="chart">
+         <figcaption>Title</figcaption>
+         <ul><li style="--v:39"><span>Label</span><span>39%</span></li>…</ul>
+         <p class="chart-source">Source: … <a href="#source-1">[1]</a></p>
+     (Markdown is not parsed inside raw HTML, so citations there are plain <a>.)
+       </figure>
+     --v is the bar length as a share of the longest bar's scale (0–100). One hue,
+     thin bars with a rounded data end, values in ink (never the bar colour). */
+  .prose-article .chart {
+    border: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+    border-radius: 1.5rem;
+    background-color: var(--color-paper);
+    padding: 1.4rem 1.4rem 1.1rem;
+  }
+  .prose-article .chart figcaption { font-family: var(--font-display); font-size: 1.02rem; font-weight: 800; line-height: 1.3; color: var(--color-ink); }
+  .prose-article .chart ul { margin-top: 1.1rem; padding: 0; list-style: none; }
+  .prose-article .chart li {
+    display: grid;
+    grid-template-columns: minmax(6.5rem, 30%) 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  .prose-article .chart li + li { margin-top: 0.7rem; }
+  .prose-article .chart li > span:first-child { color: var(--color-ink-soft); }
+  .prose-article .chart li > span:last-child { min-width: 3.2rem; text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--color-ink); }
+  .prose-article .chart li::before {
+    content: "";
+    grid-column: 2;
+    grid-row: 1;
+    width: calc(var(--v) * 1%);
+    height: 0.8rem;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--color-field-600);
+  }
+  .prose-article .chart li > span:last-child { grid-column: 3; grid-row: 1; }
+  .prose-article .chart .chart-source { margin-top: 1rem; font-size: 0.8rem; color: var(--color-ink-faint); }
 }
 
 @layer utilities {

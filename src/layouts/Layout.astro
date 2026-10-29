@@ -8,7 +8,7 @@ import JsonLd from '../components/JsonLd.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { localeTags } from '../i18n/config';
+import { localeTags, type Lang } from '../i18n/config';
 import type { RouteKey } from '../i18n/routes';
 
 interface Props {
@@ -21,11 +21,19 @@ interface Props {
   schema?: Record<string, unknown>[];
   /** Keep the page out of the index (thin/placeholder pages). Also drops it from the sitemap. */
   noindex?: boolean;
+  /**
+   * Per-locale paths for pages outside the route map (blog articles). Overrides
+   * canonical, hreflang and the language switcher. A missing locale means the
+   * page has no translation: hreflang skips it and the switcher falls back to
+   * the parent route.
+   */
+  localePaths?: Partial<Record<Lang, string>>;
+  ogType?: 'website' | 'article';
 }
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const { title, description, routeKey, ogImage, schema = [], noindex = false } = Astro.props;
+const { title, description, routeKey, ogImage, schema = [], noindex = false, localePaths, ogType } = Astro.props;
 // The header is fixed. The home hero sits beneath it (transparent overlay), so
 // only non-home pages need top padding equal to the header height.
 const isHome = routeKey === 'home';
@@ -40,7 +48,7 @@ const isHome = routeKey === 'home';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0F2D4D" />
-    <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} noindex={noindex} />
+    <Seo title={title} description={description} routeKey={routeKey} ogImage={ogImage} noindex={noindex} localePaths={localePaths} ogType={ogType} />
     <JsonLd />
     {
       schema.map((s) => (
@@ -57,7 +65,7 @@ const isHome = routeKey === 'home';
     >
       {t.nav.skip}
     </a>
-    <Header />
+    <Header localePaths={localePaths} />
     <main id="main" tabindex="-1" class="focus:outline-none" style={isHome ? undefined : 'padding-top: var(--header-h)'}>
       <slot />
     </main>

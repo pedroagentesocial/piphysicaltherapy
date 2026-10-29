@@ -5,6 +5,13 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { hrefFor, routeKeyFromPath, type RouteKey } from '../i18n/routes';
 import { business } from '../data/business';
 import { services } from '../data/content';
+import type { Lang } from '../i18n/config';
+
+interface Props {
+  /** Per-locale paths for pages outside the route map (see Layout). */
+  localePaths?: Partial<Record<Lang, string>>;
+}
+const { localePaths } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -25,6 +32,7 @@ const otherNav: { key: RouteKey; label: string }[] = [
   { key: 'conditions', label: t.nav.conditions },
   { key: 'firstVisit', label: t.nav.firstVisit },
   { key: 'team', label: t.nav.team },
+  { key: 'blog', label: t.nav.blog },
   { key: 'contact', label: t.nav.contact },
 ];
 const isActive = (k: RouteKey) => current === k;
@@ -32,7 +40,7 @@ const isActive = (k: RouteKey) => current === k;
 
 <header class="site-header" data-home={isHome ? 'true' : 'false'}>
   <div class="mx-auto flex h-full max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-    <a href={hrefFor('home', lang)} class="flex items-center text-ink" aria-label={t.site.name}>
+    <a href={hrefFor('home', lang)} class="flex shrink-0 items-center text-ink" aria-label={t.site.name}>
       <span class="logo-stack block">
         <img src="/logo-lockup.png" alt={t.site.name} width="882" height="304" class="logo-dark h-14 w-auto sm:h-16" />
         <img src="/logo-lockup-white.png" alt="" aria-hidden="true" width="882" height="304" class="logo-light h-14 w-auto sm:h-16" />
@@ -45,7 +53,7 @@ const isActive = (k: RouteKey) => current === k;
       <div class="nav-dropdown" data-dropdown>
         <button
           type="button"
-          class:list={['nav-link nav-dropdown-btn rounded-md px-3 py-2 text-sm font-semibold', servicesActive && 'is-active']}
+          class:list={['nav-link nav-dropdown-btn whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold', servicesActive && 'is-active']}
           aria-haspopup="true"
           aria-expanded="false"
           data-dropdown-btn
@@ -74,7 +82,7 @@ const isActive = (k: RouteKey) => current === k;
         <a
           href={hrefFor(item.key, lang)}
           aria-current={isActive(item.key) ? 'page' : undefined}
-          class:list={['nav-link rounded-md px-3 py-2 text-sm font-semibold', isActive(item.key) && 'is-active']}
+          class:list={['nav-link whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold', isActive(item.key) && 'is-active']}
         >
           {item.label}
         </a>
@@ -83,13 +91,13 @@ const isActive = (k: RouteKey) => current === k;
 
     <div class="flex items-center gap-2 sm:gap-3">
       {business.hasPhone && (
-        <a href={`tel:${business.phone}`} class="nav-phone hidden text-sm font-bold xl:inline">
+        <a href={`tel:${business.phone}`} class="nav-phone hidden whitespace-nowrap text-sm font-bold xl:inline">
           {business.phoneDisplay}
         </a>
       )}
-      <a href={hrefFor('contact', lang)} class="btn btn-field nav-cta hidden text-sm sm:inline-flex">{t.nav.book}</a>
+      <a href={hrefFor('contact', lang)} class="btn btn-field nav-cta hidden whitespace-nowrap text-sm sm:inline-flex lg:hidden xl:inline-flex">{t.nav.book}</a>
       <div class="nav-lang">
-        <LanguageSelector />
+        <LanguageSelector localePaths={localePaths} />
       </div>
 
       {/* Mobile disclosure (works without JS) */}
