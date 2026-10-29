@@ -1,0 +1,21 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BlogIndexView from '../../../components/views/BlogIndexView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { blogIndexSchema } from '../../../lib/pageSchema';
+import { getPosts, postHref } from '../../../lib/blog';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const posts = await getPosts(lang);
+const schema = blogIndexSchema(
+  t,
+  Astro.site!,
+  lang,
+  posts.map((p) => ({ title: p.data.title, url: new URL(postHref(p), Astro.site).href })),
+);
+---
+
+<Layout title={t.seo.blog.title} description={t.seo.blog.description} routeKey="blog" schema={schema}>
+  <BlogIndexView posts={posts} />
+</Layout>

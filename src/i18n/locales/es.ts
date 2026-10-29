@@ -23,6 +23,7 @@ export const es: typeof en = {
     firstVisit: 'Su primera visita',
     stories: 'Historias de pacientes',
     contact: 'Contacto',
+    blog: 'Blog',
     book: 'Solicitar una cita',
     call: 'Llamar',
     write: 'Escríbanos',
@@ -96,6 +97,11 @@ export const es: typeof en = {
     terms: {
       title: 'Términos de Uso | PI Physical Therapy',
       description: 'Los términos que rigen el uso del sitio web de PI Physical Therapy.',
+    },
+    blog: {
+      title: 'Blog de Terapia Física | PI Physical Therapy',
+      description:
+        'Artículos basados en evidencia sobre dolor de espalda, latigazo cervical, artrosis de rodilla y sus derechos como paciente en Utah. Cada dato enlazado a su fuente.',
     },
     comingSoon: {
       title: 'Próximamente | PI Physical Therapy',
@@ -496,6 +502,24 @@ export const es: typeof en = {
     privacy: 'Política de privacidad',
     terms: 'Términos de uso',
     disclaimer: 'La información de este sitio es general y no es consejo médico ni legal. La cobertura del seguro depende de su plan y póliza individual.',
+  },
+
+  blog: {
+    eyebrow: 'Blog',
+    title: 'Su recuperación, explicada con evidencia',
+    lead: 'Artículos en lenguaje claro sobre dolor, lesiones y recuperación. Cada cifra y recomendación enlaza al estudio, la guía o la ley de donde viene, para que usted mismo pueda comprobarla.',
+    readMore: 'Leer artículo',
+    minRead: '{n} min de lectura',
+    published: 'Publicado',
+    updated: 'Actualizado',
+    sourcesTitle: 'Fuentes',
+    sourcesNote: 'Los números entre corchetes en el texto, como [1], remiten a estas fuentes.',
+    otherLang: 'Read in English',
+    back: 'Todos los artículos',
+    empty: 'Pronto publicaremos nuevos artículos.',
+    disclaimer: 'Este artículo es información general, no consejo médico ni legal. Si tiene síntomas nuevos, graves o que empeoran, consulte a un médico o llame al 911.',
+    ctaTitle: '¿Tiene una pregunta sobre su propia recuperación?',
+    ctaBody: 'En Utah no necesita referido para empezar. Cuéntenos qué le pasa y lo agendamos esta misma semana.',
   },
 
   comingSoon: {

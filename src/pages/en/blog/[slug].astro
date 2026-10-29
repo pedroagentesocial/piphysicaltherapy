@@ -1,0 +1,40 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BlogPostView from '../../../components/views/BlogPostView.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+import { blogPostSchema } from '../../../lib/pageSchema';
+import { getPosts, localePathsFor, postHref, slugOf, type Post } from '../../../lib/blog';
+import { imageUrl } from '../../../data/images';
+
+export async function getStaticPaths() {
+  const posts = await getPosts('en');
+  return posts.map((post) => ({ params: { slug: slugOf(post) }, props: { post } }));
+}
+
+const { post } = Astro.props as { post: Post };
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const localePaths = await localePathsFor(post);
+const image = post.data.image ? imageUrl(post.data.image) : undefined;
+const schema = blogPostSchema(t, Astro.site!, lang, {
+  title: post.data.title,
+  description: post.data.description,
+  url: new URL(postHref(post), Astro.site).href,
+  image,
+  published: post.data.pubDate,
+  updated: post.data.updatedDate,
+  citations: post.data.sources.map((s) => s.url),
+});
+---
+
+<Layout
+  title={`${post.data.title} | ${t.site.name}`}
+  description={post.data.description}
+  routeKey="blog"
+  schema={schema}
+  localePaths={localePaths}
+  ogType="article"
+  ogImage={image}
+>
+  <BlogPostView post={post} localePaths={localePaths} />
+</Layout>

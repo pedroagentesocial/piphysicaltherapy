@@ -1,4 +1,6 @@
 // @ts-check
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineConfig, envField } from 'astro/config';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
@@ -10,11 +12,44 @@ const SITE = 'https://www.piphysicaltherapy.com';
 // Pages that render `noindex` — they must not appear in the sitemap either.
 const NOINDEX_TAILS = [routes.comingSoon.en, routes.comingSoon.es];
 
+// Blog articles have their own slug per locale, linked by the `translationKey`
+// in their frontmatter (see src/content.config.ts). The config cannot query
+// content collections, so it reads that one field straight from the files:
+// pathname → { en?: url, es?: url } for every article.
+function blogTranslations() {
+  /** @type {Record<string, { en?: string, es?: string }>} */
+  const byKey = {};
+  for (const lang of /** @type {const} */ (['en', 'es'])) {
+    const dir = path.join('src/content/blogs', lang);
+    if (!fs.existsSync(dir)) continue;
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.md'))) {
+      const key = fs.readFileSync(path.join(dir, file), 'utf8').match(/^translationKey:\s*['"]?([^'"\r\n]+)/m)?.[1];
+      if (!key) continue;
+      (byKey[key] ??= {})[lang] = `${SITE}/${lang}/${routes.blog[lang]}/${file.slice(0, -3)}/`;
+    }
+  }
+  /** @type {Record<string, { en?: string, es?: string }>} */
+  const byPath = {};
+  for (const urls of Object.values(byKey)) {
+    for (const url of Object.values(urls)) byPath[new URL(url).pathname] = urls;
+  }
+  return byPath;
+}
+const BLOG_TRANSLATIONS = blogTranslations();
+
 // Correct hreflang alternates for the sitemap. The built-in `i18n` option swaps
 // only the locale prefix, which is wrong for our TRANSLATED slugs
 // (/en/services/physical-therapy ↔ /es/servicios/terapia-fisica). So we map each
 // URL back to its route key and emit the real per-locale URLs.
 function localizedLinks(pathname) {
+  const article = BLOG_TRANSLATIONS[pathname];
+  if (article) {
+    return [
+      ...(article.en ? [{ lang: 'en-US', url: article.en }] : []),
+      ...(article.es ? [{ lang: 'es-US', url: article.es }] : []),
+      { lang: 'x-default', url: article.en ?? article.es },
+    ];
+  }
   const key = routeKeyFromPath(pathname);
   const tail = routes[key];
   const en = `${SITE}/en/${tail.en ? tail.en + '/' : ''}`;

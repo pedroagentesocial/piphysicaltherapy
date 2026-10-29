@@ -102,6 +102,51 @@ export function comingSoonSchema(t: UIDict, site: URL, lang: Lang) {
   return [crumbs(t, site, lang, [{ key: 'comingSoon', label: t.common.comingSoon }])];
 }
 
+export function blogIndexSchema(t: UIDict, site: URL, lang: Lang, posts: { title: string; url: string }[]) {
+  const blog = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: t.seo.blog.title,
+    description: t.seo.blog.description,
+    url: absHrefFor(site, 'blog', lang),
+    inLanguage: localeTags[lang],
+    publisher: { '@type': 'PhysicalTherapy', name: business.name, '@id': `${business.url}/#clinic` },
+    blogPost: posts.map((p) => ({ '@type': 'BlogPosting', headline: p.title, url: p.url })),
+  };
+  return [blog, crumbs(t, site, lang, [{ key: 'blog', label: t.nav.blog }])];
+}
+
+export function blogPostSchema(
+  t: UIDict,
+  site: URL,
+  lang: Lang,
+  post: { title: string; description: string; url: string; image?: string; published: Date; updated?: Date; citations: string[] },
+) {
+  const clinic = { '@type': 'PhysicalTherapy', name: business.name, '@id': `${business.url}/#clinic` };
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    url: post.url,
+    mainEntityOfPage: post.url,
+    inLanguage: localeTags[lang],
+    datePublished: post.published.toISOString().slice(0, 10),
+    dateModified: (post.updated ?? post.published).toISOString().slice(0, 10),
+    ...(post.image ? { image: post.image } : {}),
+    author: clinic,
+    publisher: clinic,
+    citation: post.citations,
+    isPartOf: { '@type': 'Blog', name: t.seo.blog.title, url: absHrefFor(site, 'blog', lang) },
+  };
+  const trail = breadcrumbSchema([
+    { name: t.nav.home, url: absHrefFor(site, 'home', lang) },
+    { name: t.nav.blog, url: absHrefFor(site, 'blog', lang) },
+    { name: post.title, url: post.url },
+  ]);
+  return [article, trail];
+}
+
 export function contactSchema(t: UIDict, site: URL, lang: Lang) {
   return [crumbs(t, site, lang, [{ key: 'contact', label: t.nav.contact }])];
 }

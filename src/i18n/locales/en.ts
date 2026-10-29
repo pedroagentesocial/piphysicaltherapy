@@ -20,6 +20,7 @@ export const en = {
     firstVisit: 'Your first visit',
     stories: 'Patient stories',
     contact: 'Contact',
+    blog: 'Blog',
     book: 'Request an appointment',
     call: 'Call',
     write: 'Message us',
@@ -95,6 +96,11 @@ export const en = {
     terms: {
       title: 'Terms of Use | PI Physical Therapy',
       description: 'The terms that govern your use of the PI Physical Therapy website.',
+    },
+    blog: {
+      title: 'Physical Therapy Blog | PI Physical Therapy',
+      description:
+        'Evidence-based articles on back pain, whiplash, knee osteoarthritis and your rights as a patient in Utah. Every claim linked to its source. Se habla español.',
     },
     comingSoon: {
       title: 'Coming soon | PI Physical Therapy',
@@ -499,6 +505,24 @@ export const en = {
     privacy: 'Privacy policy',
     terms: 'Terms of use',
     disclaimer: 'The information on this site is general and is not medical or legal advice. Insurance coverage depends on your individual plan and policy.',
+  },
+
+  blog: {
+    eyebrow: 'Blog',
+    title: 'Recovery, explained with evidence',
+    lead: 'Plain-language articles on pain, injuries and recovery. Every figure and recommendation links to the study, guideline or law it comes from, so you can check it yourself.',
+    readMore: 'Read article',
+    minRead: '{n} min read',
+    published: 'Published',
+    updated: 'Updated',
+    sourcesTitle: 'Sources',
+    sourcesNote: 'Bracketed numbers in the text, like [1], point to these sources.',
+    otherLang: 'Leer en español',
+    back: 'All articles',
+    empty: 'New articles are on the way.',
+    disclaimer: 'This article is general education, not medical or legal advice. If you have new, severe or worsening symptoms, see a doctor or call 911.',
+    ctaTitle: 'Have a question about your own recovery?',
+    ctaBody: 'No referral needed to start in Utah. Tell us what is going on and we will get you scheduled this week.',
   },
 
   comingSoon: {
