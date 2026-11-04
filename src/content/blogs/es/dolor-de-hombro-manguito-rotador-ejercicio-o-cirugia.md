@@ -17,7 +17,7 @@ sources:
     publisher: 'Beard DJ, et al. The Lancet 391(10118):329–338'
     date: '2018'
     url: 'https://pubmed.ncbi.nlm.nih.gov/29169668/'
-  - title: 'Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial (FIMPACT)'
+  - title: 'Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial'
     publisher: 'Paavola M, et al. BMJ 362:k2860'
     date: '2018'
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6052435/'

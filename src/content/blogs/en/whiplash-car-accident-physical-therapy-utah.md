@@ -13,7 +13,7 @@ sources:
     publisher: 'Shergill Y, Côté P, et al. Journal of the Canadian Chiropractic Association 65(2):186–192 (reproduces the Quebec Task Force grades, Spitzer et al., Spine, 1995)'
     date: '2021'
     url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8480375/'
-  - title: 'Neck Pain: Revision 2017. Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association'
+  - title: 'Neck Pain: Revision 2017'
     publisher: 'Blanpied PR, et al. Journal of Orthopaedic & Sports Physical Therapy 47(7):A1–A83'
     date: '2017'
     url: 'https://www.jospt.org/doi/10.2519/jospt.2017.0302'

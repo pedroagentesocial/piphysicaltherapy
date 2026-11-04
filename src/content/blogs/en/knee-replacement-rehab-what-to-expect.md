@@ -29,7 +29,7 @@ sources:
     publisher: 'Stevens-Lapsley JE, et al. Physical Therapy 92(2):210–226'
     date: '2012'
     url: 'https://pubmed.ncbi.nlm.nih.gov/22095207/'
-  - title: 'Effects of High-Intensity Versus Low-Intensity Rehabilitation After Total Knee Arthroplasty: A Randomized Controlled Trial'
+  - title: 'Early High-Intensity Versus Low-Intensity Rehabilitation After Total Knee Arthroplasty: A Randomized Controlled Trial'
     publisher: 'Bade MJ, et al. Arthritis Care & Research 69(9):1360–1368'
     date: '2017'
     url: 'https://pubmed.ncbi.nlm.nih.gov/27813347/'

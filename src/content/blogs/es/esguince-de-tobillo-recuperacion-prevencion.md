@@ -25,7 +25,7 @@ sources:
     publisher: 'Bachmann LM, et al. BMJ 326:417'
     date: '2003'
     url: 'https://pubmed.ncbi.nlm.nih.gov/12595378/'
-  - title: 'Common Questions About Ankle Sprains (Ottawa ankle rules)'
+  - title: 'Update on Acute Ankle Sprains'
     publisher: 'Tiemstra JD. American Family Physician 85(12):1170–1176'
     date: '2012'
     url: 'https://www.aafp.org/pubs/afp/issues/2012/0615/p1170.html'

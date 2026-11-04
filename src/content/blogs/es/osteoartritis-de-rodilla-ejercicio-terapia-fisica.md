@@ -9,7 +9,7 @@ sources:
     publisher: 'Centros para el Control y la Prevención de Enfermedades (CDC)'
     date: '26 de enero de 2024'
     url: 'https://www.cdc.gov/arthritis/osteoarthritis/index.html'
-  - title: 'Global, regional, and national burden of osteoarthritis, 1990–2020 and projections to 2050'
+  - title: 'Global, regional, and national burden of osteoarthritis, 1990–2020 and projections to 2050: a systematic analysis for the Global Burden of Disease Study 2021'
     publisher: 'GBD 2021 Osteoarthritis Collaborators. The Lancet Rheumatology 5(9):e508–e522'
     date: '2023'
     url: 'https://pubmed.ncbi.nlm.nih.gov/37675071/'

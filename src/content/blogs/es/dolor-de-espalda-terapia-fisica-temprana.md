@@ -9,7 +9,7 @@ sources:
     publisher: 'Lucas JW, Connor EM, Bose J. Centro Nacional de Estadísticas de Salud (NCHS), CDC'
     date: 'Julio de 2021'
     url: 'https://www.cdc.gov/nchs/products/databriefs/db415.htm'
-  - title: 'Global, regional, and national burden of low back pain, 1990–2020, its attributable risk factors, and projections to 2050'
+  - title: 'Global, regional, and national burden of low back pain, 1990–2020, its attributable risk factors, and projections to 2050: a systematic analysis of the Global Burden of Disease Study 2021'
     publisher: 'GBD 2021 Low Back Pain Collaborators. The Lancet Rheumatology 5(6):e316–e329'
     date: '2023'
     url: 'https://pubmed.ncbi.nlm.nih.gov/37273833/'
