@@ -1,5 +1,7 @@
 ---
 import { business } from '../data/business';
+import { tituloSeo, descripcionSeo } from '../lib/seo-text';
+const MARCA = 'PI Physical Therapy';
 import { getLangFromUrl } from '../i18n/utils';
 import { absHrefFor, alternatesFor, type RouteKey } from '../i18n/routes';
 import { defaultLang, localeTags, ogLocales, type Lang } from '../i18n/config';
@@ -42,8 +44,8 @@ const altOgLocales = (Object.keys(ogLocales) as Lang[])
   .map((l) => ogLocales[l]);
 ---
 
-<title>{title}</title>
-<meta name="description" content={description} />
+<title>{tituloSeo(title, MARCA)}</title>
+<meta name="description" content={descripcionSeo(description)} />
 <link rel="canonical" href={canonical} />
 
 {/* hreflang: en-US, es-US and x-default → default locale (translated slugs) */}
