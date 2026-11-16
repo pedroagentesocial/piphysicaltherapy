@@ -8,6 +8,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const h = t.home.hero;
 const slides = h.slides;
+// Solo la primera diapositiva lleva <h1>; las demás usan <p> con el mismo estilo
+// para que la portada tenga un único H1.
+const headingTag = (i: number) => (i === 0 ? 'h1' : 'p');
 
 // Poster still (shown before the video loads, or if /hero.mp4 is missing).
 const poster = `https://images.unsplash.com/photo-${images.heroHome.id}?auto=format&fit=crop&q=80&w=1800`;
@@ -51,7 +54,7 @@ const poster = `https://images.unsplash.com/photo-${images.heroHome.id}?auto=for
   <div class="mx-auto w-full max-w-6xl px-5 pb-24 pt-[calc(var(--header-h)+2rem)] sm:px-8">
     {/* Slides — grid-stacked so the box keeps the tallest slide's height. */}
     <div class="hero-copy">
-      {slides.map((s, i) => (
+      {slides.map((s, i) => { const Heading = headingTag(i); return (
         <div
           class:list={['hero-slide', i === 0 && 'is-active']}
           data-slide={i}
@@ -61,14 +64,14 @@ const poster = `https://images.unsplash.com/photo-${images.heroHome.id}?auto=for
           aria-hidden={i === 0 ? 'false' : 'true'}
         >
           <p class="eyebrow text-aqua">{s.eyebrow}</p>
-          <h1 class="display mt-4 max-w-3xl text-[clamp(2.15rem,6.4vw,5.4rem)] text-paper sm:mt-5">
+          <Heading class="display mt-4 max-w-3xl text-[clamp(2.15rem,6.4vw,5.4rem)] text-paper sm:mt-5">
             {s.title}
-          </h1>
+          </Heading>
           <p class="mt-5 max-w-xl text-base leading-relaxed text-paper/85 sm:mt-6 sm:text-xl">
             {s.subtitle}
           </p>
         </div>
-      ))}
+      ); })}
     </div>
 
     {/* Actions + trust bullets stay fixed beneath the rotating copy. */}
