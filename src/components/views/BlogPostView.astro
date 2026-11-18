@@ -4,7 +4,7 @@ import Breadcrumbs from '../Breadcrumbs.astro';
 import Img from '../Img.astro';
 import CtaBand from '../CtaBand.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { hrefFor } from '../../i18n/routes';
+import { hrefFor, type RouteKey } from '../../i18n/routes';
 import { localeTags, type Lang } from '../../i18n/config';
 import { readingMinutes, type Post } from '../../lib/blog';
 
@@ -21,6 +21,32 @@ const { title, description, pubDate, updatedDate, image, sources } = post.data;
 const dateFmt = new Intl.DateTimeFormat(localeTags[lang], { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const iso = (d: Date) => d.toISOString().slice(0, 10);
 const otherLang = (Object.keys(localePaths) as Lang[]).find((l) => l !== lang);
+
+/* La página de la clínica que trata lo que cuenta el artículo, por su
+   translationKey (igual en los dos idiomas). Lo que no cae en una condición
+   concreta (vértigo, caídas, túnel carpiano…) va a terapia física en general. */
+const RELACIONADA: Record<string, RouteKey> = {
+  'whiplash-utah': 'condWhiplash',
+  'low-back-pain-early-pt': 'condBack', sciatica: 'condBack',
+  'neck-headache': 'condNeck', 'neck-pain-desk': 'condNeck',
+  'frozen-shoulder': 'condShoulder', 'shoulder-rotator-cuff': 'condShoulder',
+  'knee-osteoarthritis': 'condKnee', 'meniscus-tear': 'condKnee', 'runners-knee': 'condKnee', 'jumpers-knee': 'condKnee',
+  'hip-replacement-rehab': 'condPostSurgical', 'knee-replacement-rehab': 'condPostSurgical', 'rotator-cuff-repair-rehab': 'condPostSurgical',
+  'acl-return-to-sport': 'condSports', 'achilles-tendinopathy': 'condSports', 'ankle-sprain': 'condSports',
+  'hamstring-strain': 'condSports', 'shin-splints': 'condSports', 'tennis-elbow': 'condSports', 'plantar-fasciitis': 'condSports',
+};
+const NOMBRES: Partial<Record<RouteKey, Record<Lang, string>>> = {
+  condWhiplash: { en: 'Physical therapy for whiplash', es: 'Terapia física para el latigazo cervical' },
+  condBack: { en: 'Physical therapy for back pain', es: 'Terapia física para el dolor de espalda' },
+  condNeck: { en: 'Physical therapy for neck pain', es: 'Terapia física para el dolor de cuello' },
+  condShoulder: { en: 'Physical therapy for shoulder pain', es: 'Terapia física para el hombro' },
+  condKnee: { en: 'Physical therapy for knee pain', es: 'Terapia física para la rodilla' },
+  condPostSurgical: { en: 'Post-surgical rehab', es: 'Rehabilitación después de una cirugía' },
+  condSports: { en: 'Sports injury physical therapy', es: 'Terapia física para lesiones deportivas' },
+  servicesPT: { en: 'Physical therapy at PI Physical Therapy', es: 'Terapia física en PI Physical Therapy' },
+};
+const destino: RouteKey = RELACIONADA[post.data.translationKey] ?? 'servicesPT';
+const relacionada = { href: hrefFor(destino, lang), label: NOMBRES[destino]![lang] };
 ---
 
 <Breadcrumbs
@@ -63,6 +89,14 @@ const otherLang = (Object.keys(localePaths) as Lang[]).find((l) => l !== lang);
   </div>
 
   <footer class="mx-auto mt-14 max-w-3xl px-5 sm:px-8">
+    <p class="mb-10 border-t border-ink/10 pt-6">
+      <span class="block text-xs font-semibold uppercase tracking-[0.16em] text-field-700">
+        {lang === 'es' ? 'Servicio relacionado' : 'Related service'}
+      </span>
+      <a href={relacionada.href} class="mt-2 inline-block font-semibold text-ink underline underline-offset-4 hover:text-field-700">
+        {relacionada.label} →
+      </a>
+    </p>
     <section aria-labelledby="sources-title" class="rounded-3xl bg-paper-2 p-6 sm:p-8">
       <h2 id="sources-title" class="font-display text-xl font-extrabold text-ink">{t.blog.sourcesTitle}</h2>
       <p class="mt-1 text-sm text-ink-faint">{t.blog.sourcesNote}</p>
