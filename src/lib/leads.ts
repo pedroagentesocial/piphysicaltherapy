@@ -100,8 +100,13 @@ export async function deliverLead(lead: Lead): Promise<void> {
     if (f.status === 'rejected') console.error('[lead] delivery channel failed:', f.reason);
   }
   if (ran.length === 0) {
-    console.log('[lead] no delivery channel configured, captured:', { ...lead, message: undefined });
-    return;
+    // En desarrollo se acepta para poder probar el formulario sin credenciales.
+    // En producción NO: responder "enviado" sin canal es perder el lead en silencio.
+    if (import.meta.env.DEV) {
+      console.log('[lead] no delivery channel configured, captured:', { ...lead, message: undefined });
+      return;
+    }
+    throw new Error('No lead delivery channel configured');
   }
   if (failures.length === ran.length) throw new Error('All configured lead channels failed');
 }
