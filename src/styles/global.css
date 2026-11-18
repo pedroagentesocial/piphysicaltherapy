@@ -20,7 +20,7 @@
   --color-paper-3: oklch(0.947 0.008 242); /* GRIS CLARO #E9EEF2 */
   --color-ink: oklch(0.28 0.066 252);       /* AZUL MARINO, deepened for body text */
   --color-ink-soft: oklch(0.43 0.055 250);
-  --color-ink-faint: oklch(0.56 0.04 248);
+  --color-ink-faint: oklch(0.54 0.04 248); /* era 0.56: 4.27:1 sobre el fondo claro, bajo el mínimo 4.5 */
 
   /* AQUA SUAVE — soft brand accent */
   --color-aqua: oklch(0.847 0.061 193.5); /* #9EDAD8 */
