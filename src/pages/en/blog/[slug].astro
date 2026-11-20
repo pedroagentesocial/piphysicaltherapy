@@ -28,7 +28,7 @@ const schema = blogPostSchema(t, Astro.site!, lang, {
 ---
 
 <Layout
-  title={`${post.data.title} | ${t.site.name}`}
+  title={`${post.data.seoTitle ?? post.data.title} | ${t.site.name}`}
   description={post.data.description}
   routeKey="blog"
   schema={schema}
