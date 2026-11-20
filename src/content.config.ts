@@ -12,6 +12,9 @@ const blogs = defineCollection({
   loader: glob({ pattern: '{en,es}/*.md', base: './src/content/blogs' }),
   schema: z.object({
     title: z.string(),
+    /** Short title for <title> and og:title only (Google cuts at ~60). The H1
+     *  and the schema headline keep using `title`. */
+    seoTitle: z.string().max(65).optional(),
     /** Meta description and card summary. Aim for 140–160 characters. */
     description: z.string(),
     translationKey: z.string(),
