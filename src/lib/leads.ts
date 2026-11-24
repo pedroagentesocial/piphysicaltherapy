@@ -4,7 +4,11 @@ import {
   LEAD_EMAIL_FROM,
   LEAD_EMAIL_TO,
   LEAD_WEBHOOK_URL,
+  GHL_WEBHOOK_URL,
 } from 'astro:env/server';
+
+/** En Vercel el webhook del CRM se guardó como GHL_WEBHOOK_URL; se aceptan los dos nombres. */
+const WEBHOOK_URL = LEAD_WEBHOOK_URL || GHL_WEBHOOK_URL;
 
 export interface Lead {
   name: string;
@@ -69,8 +73,8 @@ async function sendEmail(lead: Lead): Promise<'sent' | 'skipped'> {
 
 /** POST the lead to a webhook (CRM). No-op if not configured. */
 async function postWebhook(lead: Lead): Promise<'sent' | 'skipped'> {
-  if (!LEAD_WEBHOOK_URL) return 'skipped';
-  const res = await fetch(LEAD_WEBHOOK_URL, {
+  if (!WEBHOOK_URL) return 'skipped';
+  const res = await fetch(WEBHOOK_URL, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
