@@ -108,6 +108,7 @@ export default defineConfig({
       LEAD_EMAIL_FROM: envField.string({ context: 'server', access: 'secret', optional: true }),
       LEAD_EMAIL_TO: envField.string({ context: 'server', access: 'secret', optional: true }),
       LEAD_WEBHOOK_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      GHL_WEBHOOK_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
 
       // Cloudflare Turnstile. Ambas opcionales para que el proyecto siga
       // arrancando sin configurar: sin secret el captcha no se exige (util en
