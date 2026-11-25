@@ -3,7 +3,7 @@ title: 'Scoliosis in teens: when to watch, when to brace, what Schroth and other
 seoTitle: 'Scoliosis in teens: watching, bracing, Schroth and surgery'
 description: 'Adolescent idiopathic scoliosis is common and most curves stay small. What the evidence says about watching a curve, how well bracing works, what scoliosis-specific exercises like Schroth can and cannot do and when surgery comes up.'
 translationKey: adolescent-scoliosis
-pubDate: 2026-11-26
+pubDate: 2026-11-25
 image: process
 sources:
   - title: 'Idiopathic Scoliosis in Children and Adolescents'

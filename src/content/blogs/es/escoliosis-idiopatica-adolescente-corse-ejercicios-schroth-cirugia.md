@@ -3,7 +3,7 @@ title: 'Escoliosis en adolescentes: cuándo vigilar, cuándo usar corsé, qué p
 seoTitle: 'Escoliosis en adolescentes: vigilancia, corsé, Schroth y cirugía'
 description: 'La escoliosis idiopática del adolescente es común y la mayoría de las curvas se quedan pequeñas. Qué dice la evidencia sobre vigilar la curva, qué tan bien funciona el corsé, qué pueden y qué no pueden hacer ejercicios como Schroth y cuándo se habla de cirugía.'
 translationKey: adolescent-scoliosis
-pubDate: 2026-11-26
+pubDate: 2026-11-25
 image: process
 sources:
   - title: 'Idiopathic Scoliosis in Children and Adolescents'

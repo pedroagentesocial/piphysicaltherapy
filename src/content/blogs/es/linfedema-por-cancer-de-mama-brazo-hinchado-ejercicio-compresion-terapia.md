@@ -3,7 +3,7 @@ title: 'Brazo hinchado después del cáncer de mama: el riesgo de linfedema, la 
 seoTitle: 'Linfedema tras cáncer de mama: riesgo, ejercicio y tratamiento'
 description: 'Cerca de 1 de cada 5 mujeres desarrolla linfedema en el brazo después del tratamiento del cáncer de mama. Quién está en riesgo, por qué ayuda detectarlo pronto, qué encontraron los ensayos sobre mangas de compresión y drenaje linfático y por qué levantar pesas es seguro.'
 translationKey: breast-cancer-lymphedema
-pubDate: 2026-11-26
+pubDate: 2026-11-25
 image: team
 sources:
   - title: 'Lymphedema and Cancer'
