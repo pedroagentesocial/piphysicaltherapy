@@ -3,7 +3,7 @@ title: 'Estenosis lumbar: dolor de piernas al caminar, y lo que pueden hacer la 
 description: 'La estenosis lumbar causa dolor y pesadez en las piernas al caminar que se alivia al sentarse. Lo que encontraron los ensayos al comparar terapia física, cirugía e inyecciones, cómo suele evolucionar y las señales de alerta.'
 translationKey: lumbar-spinal-stenosis
 pubDate: 2026-11-18
-image: clinic
+image: lumbarSpinalStenosis
 sources:
   - title: 'Lumbar Spinal Stenosis'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

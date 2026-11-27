@@ -3,7 +3,7 @@ title: 'Carpal tunnel syndrome: what causes the tingling, what helps and when su
 description: 'Carpal tunnel syndrome causes numbness and tingling in the hand, often at night. What the research says about work, typing, splints, injections, hand therapy and surgery, and the signs that you should not wait.'
 translationKey: carpal-tunnel
 pubDate: 2026-11-12
-image: team
+image: carpalTunnel
 sources:
   - title: 'Prevalence of carpal tunnel syndrome in a general population'
     publisher: 'Atroshi I, Gummesson C, Johnsson R, et al. JAMA 282(2):153–158'

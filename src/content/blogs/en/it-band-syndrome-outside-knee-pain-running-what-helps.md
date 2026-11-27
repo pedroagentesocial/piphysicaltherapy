@@ -4,7 +4,7 @@ seoTitle: 'IT band syndrome in runners: causes, rehab and recovery'
 description: 'IT band syndrome is the most common cause of pain on the outside of the knee in runners. What causes it, why stretching the band is not the answer and what the research says about hip strengthening.'
 translationKey: it-band-syndrome
 pubDate: 2026-11-26
-image: rehab
+image: itBandSyndrome
 sources:
   - title: 'Iliotibial band syndrome in runners: a systematic review'
     publisher: 'van der Worp MP, van der Horst N, de Wijer A, et al. Sports Medicine 42(11):969–992'

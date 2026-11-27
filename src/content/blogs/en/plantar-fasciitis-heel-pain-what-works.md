@@ -3,7 +3,7 @@ title: 'Plantar fasciitis and heel pain: what works, what doesn’t, and how lon
 description: 'That sharp pain with your first steps in the morning is usually plantar fasciitis. What the 2023 guideline recommends, what the trials say about insoles and injections, and when to get checked.'
 translationKey: plantar-fasciitis
 pubDate: 2026-11-04
-image: clinic
+image: plantarFasciitis
 sources:
   - title: 'Volume of ambulatory care visits and patterns of care for patients diagnosed with plantar fasciitis: a national study of medical doctors'
     publisher: 'Riddle DL, Schappert SM. Foot & Ankle International 25(5):303–310'

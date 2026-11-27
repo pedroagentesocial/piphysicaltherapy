@@ -3,7 +3,7 @@ title: 'Rodilla del saltador: por qué duele el tendón debajo de la rótula y c
 description: 'La tendinopatía rotuliana es común en los deportes de salto y puede durar meses. Lo que dice la investigación sobre los programas de fortalecimiento, seguir jugando con dolor, las inyecciones, las ondas de choque y la cirugía, y las señales de un desgarro del tendón.'
 translationKey: jumpers-knee
 pubDate: 2026-11-10
-image: rehab
+image: jumpersKnee
 sources:
   - title: 'Dutch multidisciplinary guideline on anterior knee pain: Patellofemoral pain and patellar tendinopathy'
     publisher: 'Ophey M, Koëter S, van Ooijen L, et al. Knee Surgery, Sports Traumatology, Arthroscopy 33(2):457–469'

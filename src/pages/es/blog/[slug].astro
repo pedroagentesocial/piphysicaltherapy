@@ -15,7 +15,7 @@ const { post } = Astro.props as { post: Post };
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const localePaths = await localePathsFor(post);
-const image = post.data.image ? imageUrl(post.data.image) : undefined;
+const image = post.data.image ? new URL(imageUrl(post.data.image), Astro.site).href : undefined;
 const schema = blogPostSchema(t, Astro.site!, lang, {
   title: post.data.title,
   description: post.data.description,

@@ -3,7 +3,7 @@ title: 'Low back pain: why starting physical therapy early matters (and why you 
 description: 'Most back pain improves with the right movement-based care. What US data and clinical guidelines say about early physical therapy, imaging and red flags.'
 translationKey: low-back-pain-early-pt
 pubDate: 2026-10-29
-image: team
+image: lowBackPainEarlyPt
 sources:
   - title: 'Back, Lower Limb, and Upper Limb Pain Among U.S. Adults, 2019 (NCHS Data Brief No. 415)'
     publisher: 'Lucas JW, Connor EM, Bose J. National Center for Health Statistics, CDC'

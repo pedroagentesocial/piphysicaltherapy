@@ -3,7 +3,7 @@ title: 'Positional vertigo (BPPV): why the room spins when you roll over, and ho
 description: 'Benign paroxysmal positional vertigo is the classic spinning that comes with lying down or rolling over in bed. What causes it, how a repositioning maneuver treats it, how often it comes back and when dizziness is an emergency.'
 translationKey: bppv
 pubDate: 2026-11-09
-image: team
+image: bppv
 sources:
   - title: 'Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update)'
     publisher: 'Bhattacharyya N, Gubbels SP, Schwartz SR, et al. Otolaryngology–Head and Neck Surgery 156(3 suppl):S1–S47'

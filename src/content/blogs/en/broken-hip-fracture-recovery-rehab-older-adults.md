@@ -3,7 +3,7 @@ title: 'Broken hip: recovery after hip fracture surgery and how rehab helps you 
 description: 'Most hip fractures happen in falls after 65 and need surgery. What recovery really looks like, why getting up early matters, what exercise trials found and how to lower the risk of another fracture.'
 translationKey: hip-fracture
 pubDate: 2026-11-20
-image: team
+image: hipFracture
 sources:
   - title: 'Facts About Older Adult Falls'
     publisher: 'Centers for Disease Control and Prevention (CDC)'

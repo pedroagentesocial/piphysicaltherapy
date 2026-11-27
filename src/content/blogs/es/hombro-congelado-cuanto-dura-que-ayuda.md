@@ -3,7 +3,7 @@ title: 'Hombro congelado: cuánto dura, quién lo padece y qué ayuda de verdad'
 description: 'El hombro congelado puede tardar un año o más en calmarse, y es más común con diabetes. Lo que dice la investigación sobre las inyecciones de esteroides, la terapia física, el estiramiento suave frente al agresivo y la cirugía.'
 translationKey: frozen-shoulder
 pubDate: 2026-11-12
-image: clinic
+image: frozenShoulder
 sources:
   - title: 'Shoulder pain and mobility deficits: adhesive capsulitis'
     publisher: 'Kelley MJ, Shaffer MA, Kuhn JE, et al. Journal of Orthopaedic & Sports Physical Therapy 43(5):A1–A31'

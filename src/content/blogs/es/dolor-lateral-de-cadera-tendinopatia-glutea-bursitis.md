@@ -3,7 +3,7 @@ title: 'Dolor en el costado de la cadera: por qué casi nunca es bursitis y qué
 description: 'El dolor en la parte de afuera de la cadera, que muchos llaman bursitis de cadera, suele venir de los tendones de los glúteos. Lo que encontró un ensayo grande al comparar ejercicio y educación con una inyección de esteroides y con esperar, cuánto dura y las señales de alerta.'
 translationKey: lateral-hip-pain
 pubDate: 2026-11-16
-image: process
+image: heroHome
 sources:
   - title: 'Hip Bursitis'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

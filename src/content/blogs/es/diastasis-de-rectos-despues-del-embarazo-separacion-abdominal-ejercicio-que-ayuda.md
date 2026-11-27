@@ -4,7 +4,7 @@ seoTitle: 'Diástasis de rectos tras el embarazo: qué logra el ejercicio'
 description: 'La separación de los músculos del abdomen después del embarazo es muy común y muchas veces se reduce sola. Qué encontraron los estudios sobre cuánto dura, si los abdominales están prohibidos y cuándo se considera operar.'
 translationKey: diastasis-recti
 pubDate: 2026-11-25
-image: clinic
+image: diastasisRecti
 sources:
   - title: 'Diastasis Recti (Abdominal Separation)'
     publisher: 'Cleveland Clinic, biblioteca de salud'

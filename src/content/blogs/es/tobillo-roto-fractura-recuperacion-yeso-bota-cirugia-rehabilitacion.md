@@ -3,7 +3,7 @@ title: 'Tobillo roto: cuánto tarda la recuperación, yeso o bota, cirugía y c�
 description: 'Una fractura de tobillo suele tardar de 6 a 12 semanas en sanar y meses en recuperarse del todo. Lo que encontraron ensayos recientes sobre menos tiempo con yeso, botas removibles, cirugía, apoyar el pie antes y ejercicios de rehabilitación.'
 translationKey: ankle-fracture
 pubDate: 2026-11-18
-image: heroHome
+image: ankleFracture
 sources:
   - title: 'Ankle Fractures (Broken Ankle)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

@@ -3,7 +3,7 @@ title: 'Hombro dislocado: la recuperación, el riesgo de que vuelva a salirse y 
 description: 'Después de una primera luxación de hombro: cuánto tarda la recuperación, quién tiene más riesgo de que se vuelva a salir, qué puede y qué no puede hacer el cabestrillo y qué encontraron los ensayos sobre terapia física y cirugía.'
 translationKey: shoulder-dislocation
 pubDate: 2026-11-18
-image: accident
+image: shoulderDislocation
 sources:
   - title: 'Shoulder Dislocation'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

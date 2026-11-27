@@ -3,7 +3,7 @@ title: 'Caídas en adultos mayores: cómo el ejercicio y la terapia física ayud
 description: 'Cerca de 1 de cada 4 adultos de 65 años o más se cae cada año, pero las caídas se pueden prevenir. Lo que muestran los datos de los CDC y de Utah, y qué ejercicios funcionan según la investigación.'
 translationKey: fall-prevention
 pubDate: 2026-10-30
-image: heroHome
+image: fallPrevention
 sources:
   - title: 'Older Adult Falls Data'
     publisher: 'Centros para el Control y la Prevención de Enfermedades (CDC)'

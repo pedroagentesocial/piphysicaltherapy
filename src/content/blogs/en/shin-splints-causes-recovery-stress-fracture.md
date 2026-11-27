@@ -3,7 +3,7 @@ title: 'Shin splints: what causes them, how long they take and how to tell them 
 description: 'Shin splints are one of the most common running injuries. What the research says about risk factors, recovery time, graded return to running, shockwave and insoles, and the warning signs of a stress fracture.'
 translationKey: shin-splints
 pubDate: 2026-11-14
-image: process
+image: shinSplints
 sources:
   - title: 'The diagnosis and management of medial tibial stress syndrome: An evidence update'
     publisher: 'Winters M. Der Unfallchirurg 123(Suppl 1):15–19'

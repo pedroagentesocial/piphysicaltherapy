@@ -3,7 +3,7 @@ title: 'Rehab after a total knee replacement: what to expect and why physical th
 description: 'Knee replacements are common and usually successful, but recovery depends on rehab. What the 2026 physical therapy guideline recommends, a typical timeline and the warning signs to know.'
 translationKey: knee-replacement-rehab
 pubDate: 2026-11-03
-image: accident
+image: kneeReplacementRehab
 sources:
   - title: 'Total Knee Replacement'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

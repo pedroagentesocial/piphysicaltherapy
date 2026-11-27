@@ -4,7 +4,7 @@ seoTitle: 'Morton''s neuroma: ball of foot pain, shoes, injection, surgery'
 description: 'Morton''s neuroma causes burning pain between the toes, or the feeling of walking on a pebble. How it is diagnosed and what studies found for footwear changes, injections, manual therapy and surgery.'
 translationKey: mortons-neuroma
 pubDate: 2026-11-27
-image: clinic
+image: mortonsNeuroma
 sources:
   - title: 'Treatments for Morton''s neuroma'
     publisher: 'Matthews BG, Thomson CE, Harding MP, McKinley JC, Ware RS. Cochrane Database of Systematic Reviews 2(2):CD014687'

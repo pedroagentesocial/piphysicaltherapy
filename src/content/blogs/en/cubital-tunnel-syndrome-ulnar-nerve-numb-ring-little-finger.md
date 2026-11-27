@@ -4,7 +4,7 @@ seoTitle: 'Cubital tunnel syndrome: numb fingers, what helps and surgery'
 description: 'Tingling in the ring and little fingers that gets worse with the elbow bent is often cubital tunnel syndrome. How it is diagnosed, what studies of advice, night splints and nerve glides found and how the surgeries compare.'
 translationKey: cubital-tunnel
 pubDate: 2026-11-24
-image: rehab
+image: cubitalTunnel
 sources:
   - title: 'Ulnar Nerve Entrapment at the Elbow (Cubital Tunnel Syndrome)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

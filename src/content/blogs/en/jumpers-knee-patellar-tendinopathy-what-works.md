@@ -3,7 +3,7 @@ title: 'Jumper’s knee: why the tendon below your kneecap hurts and how to load
 description: 'Patellar tendinopathy is common in jumping sports and can linger for months. What the research says about strengthening programs, playing through it, injections, shockwave and surgery, and the signs of a tendon tear.'
 translationKey: jumpers-knee
 pubDate: 2026-11-10
-image: rehab
+image: jumpersKnee
 sources:
   - title: 'Dutch multidisciplinary guideline on anterior knee pain: Patellofemoral pain and patellar tendinopathy'
     publisher: 'Ophey M, Koëter S, van Ooijen L, et al. Knee Surgery, Sports Traumatology, Arthroscopy 33(2):457–469'

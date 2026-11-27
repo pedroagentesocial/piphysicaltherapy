@@ -3,7 +3,7 @@ title: 'Broken wrist: the recovery timeline, cast or surgery, and what rehab rea
 description: 'A broken wrist (distal radius fracture) is one of the most common fractures, from falls and car crashes alike. How long recovery takes, what trials found about cast versus surgery, what the evidence says about therapy and home exercise, and warning signs.'
 translationKey: wrist-fracture
 pubDate: 2026-11-16
-image: accident
+image: wristFracture
 sources:
   - title: 'Distal Radius Fractures (Broken Wrist)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

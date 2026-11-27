@@ -3,7 +3,7 @@ title: 'Dislocated kneecap: recovery, the chance it slips out again and when sur
 description: 'A kneecap dislocation is most common in teenagers. How recovery goes, who is most likely to dislocate again, what physical therapy does and what trials found about surgery after a first dislocation.'
 translationKey: patellar-dislocation
 pubDate: 2026-11-20
-image: heroHome
+image: patellarDislocation
 sources:
   - title: 'Patellar (Kneecap) Instability'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

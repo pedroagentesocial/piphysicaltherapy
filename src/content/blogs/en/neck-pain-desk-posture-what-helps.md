@@ -3,7 +3,7 @@ title: 'Neck pain from desk work and screens: what actually helps (and what post
 description: 'Neck pain is common, but research on "bad posture" may surprise you. What the evidence says about strengthening, short daily exercise, hands-on care and warning signs.'
 translationKey: neck-pain-desk
 pubDate: 2026-11-03
-image: team
+image: neckPainDesk
 sources:
   - title: 'Summary Health Statistics: National Health Interview Survey, 2018, Table A-5'
     publisher: 'National Center for Health Statistics, CDC'

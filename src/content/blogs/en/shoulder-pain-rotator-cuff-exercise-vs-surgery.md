@@ -3,7 +3,7 @@ title: 'Shoulder pain and the rotator cuff: what the evidence says about exercis
 description: 'Rotator cuff problems cause most shoulder pain. What placebo-controlled surgery trials, guidelines and long-term studies say about exercise, surgery and when to get checked.'
 translationKey: shoulder-rotator-cuff
 pubDate: 2026-10-30
-image: clinic
+image: shoulderRotatorCuff
 sources:
   - title: 'A systematic review of the global prevalence and incidence of shoulder pain'
     publisher: 'Lucas J, van Doorn P, Hegedus E, Lewis J, van der Windt D. BMC Musculoskeletal Disorders 23:1073'

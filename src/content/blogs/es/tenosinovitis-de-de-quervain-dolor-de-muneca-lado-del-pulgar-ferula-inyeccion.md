@@ -4,7 +4,7 @@ seoTitle: 'Tenosinovitis de De Quervain: dolor de muñeca y tratamiento'
 description: 'La tenosinovitis de De Quervain causa dolor en la muñeca del lado del pulgar, muchas veces en mamás y papás recientes y en personas que agarran y giran. Quién la tiene, qué encontraron los estudios sobre férulas e inyecciones y qué aporta la terapia física.'
 translationKey: de-quervain
 pubDate: 2026-11-26
-image: clinic
+image: deQuervain
 sources:
   - title: 'Consensus on a multidisciplinary treatment guideline for de Quervain disease: results from the European HANDGUIDE study'
     publisher: 'Huisstede BM, Coert JH, Fridén J, Hoogvliet P; European HANDGUIDE Group. Physical Therapy 94(8):1095–1110'

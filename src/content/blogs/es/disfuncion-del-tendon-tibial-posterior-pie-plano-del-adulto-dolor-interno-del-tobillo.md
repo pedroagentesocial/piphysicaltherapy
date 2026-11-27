@@ -4,7 +4,7 @@ seoTitle: 'Tendón tibial posterior y pie plano: qué tratamiento funciona'
 description: 'El dolor en la cara interna del tobillo y un arco que se hunde poco a poco pueden ser disfunción del tendón tibial posterior. Cómo se detecta, qué encontraron los estudios de plantillas, férulas y ejercicio y cuándo se habla de cirugía.'
 translationKey: posterior-tibial-tendon
 pubDate: 2026-11-24
-image: process
+image: posteriorTibialTendon
 sources:
   - title: 'Adult Acquired Flat Foot (Posterior Tibial Tendon Dysfunction)'
     publisher: 'The Royal Orthopaedic Hospital NHS Foundation Trust (Reino Unido)'

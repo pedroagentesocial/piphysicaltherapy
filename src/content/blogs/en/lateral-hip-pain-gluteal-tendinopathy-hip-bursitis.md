@@ -3,7 +3,7 @@ title: 'Pain on the outside of the hip: why it is usually not bursitis, and what
 description: 'Pain on the outside of the hip, often called hip bursitis, usually comes from the gluteal tendons. What a large trial found when it compared exercise and education with a steroid shot and with waiting, how long it lasts and the warning signs.'
 translationKey: lateral-hip-pain
 pubDate: 2026-11-16
-image: process
+image: heroHome
 sources:
   - title: 'Hip Bursitis'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

@@ -4,7 +4,7 @@ seoTitle: 'Neuroma de Morton: dolor en la planta del pie y tratamiento'
 description: 'El neuroma de Morton causa dolor ardiente entre los dedos del pie o la sensación de pisar una piedrita. Cómo se diagnostica y qué encontraron los estudios sobre calzado, inyecciones, terapia manual y cirugía.'
 translationKey: mortons-neuroma
 pubDate: 2026-11-27
-image: clinic
+image: mortonsNeuroma
 sources:
   - title: 'Treatments for Morton''s neuroma'
     publisher: 'Matthews BG, Thomson CE, Harding MP, McKinley JC, Ware RS. Cochrane Database of Systematic Reviews 2(2):CD014687'

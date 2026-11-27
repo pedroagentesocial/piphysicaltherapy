@@ -3,7 +3,7 @@ title: 'Esguince de tobillo: cómo recuperarse bien y evitar que se repita'
 description: 'Los esguinces de tobillo son comunes, y en un estudio cerca de 4 de cada 10 personas terminaron con inestabilidad persistente. Cuándo necesita una radiografía, qué tratamiento funciona y cómo el equilibrio previene nuevos esguinces.'
 translationKey: ankle-sprain
 pubDate: 2026-10-30
-image: rehab
+image: ankleSprain
 sources:
   - title: 'The epidemiology of ankle sprains in the United States'
     publisher: 'Waterman BR, Owens BD, Davey S, Zacchilli MA, Belmont PJ. Journal of Bone and Joint Surgery 92(13):2279–2284'

@@ -3,7 +3,7 @@ title: 'Achilles tendon rupture: surgery or a boot, how long recovery takes and 
 description: 'A torn Achilles can heal with or without surgery. What the large trials found about re-rupture, complications, casts and boots, return to sport and the calf weakness that can linger.'
 translationKey: achilles-rupture
 pubDate: 2026-11-20
-image: rehab
+image: achillesRupture
 sources:
   - title: 'Achilles Tendon Rupture (Tear)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

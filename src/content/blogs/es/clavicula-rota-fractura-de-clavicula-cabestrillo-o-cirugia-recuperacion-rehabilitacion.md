@@ -4,7 +4,7 @@ seoTitle: 'Clavícula rota: cabestrillo o cirugía, tiempos y rehabilitación'
 description: 'La mayoría de las clavículas rotas sanan con un cabestrillo. Qué encontraron los ensayos que compararon el cabestrillo con la cirugía, cuánto tarda en sanar, cuándo mover el hombro y qué señales requieren atención urgente.'
 translationKey: clavicle-fracture
 pubDate: 2026-11-23
-image: rehab
+image: clavicleFracture
 sources:
   - title: 'Clavicle Fracture (Broken Collarbone)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

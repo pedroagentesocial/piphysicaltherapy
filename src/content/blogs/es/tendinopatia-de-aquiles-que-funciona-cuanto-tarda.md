@@ -3,7 +3,7 @@ title: 'Dolor en el tendón de Aquiles: por qué persiste, qué funciona y qué 
 description: 'La tendinopatía de Aquiles suele tardar meses en calmarse, y el reposo por sí solo rara vez la resuelve. Lo que dice la investigación sobre el ejercicio, las taloneras, las inyecciones, las ondas de choque y la cirugía, y las señales de alerta de una ruptura.'
 translationKey: achilles-tendinopathy
 pubDate: 2026-11-06
-image: clinic
+image: achillesTendinopathy
 sources:
   - title: 'Dutch multidisciplinary guideline on Achilles tendinopathy'
     publisher: 'de Vos RJ, van der Vlist AC, Zwerver J, et al. British Journal of Sports Medicine 55(20):1125–1134'

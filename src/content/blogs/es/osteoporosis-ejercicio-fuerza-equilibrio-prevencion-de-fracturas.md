@@ -4,7 +4,7 @@ seoTitle: 'Osteoporosis y ejercicio: huesos más fuertes, menos fracturas'
 description: 'El ejercicio no cura la osteoporosis, pero el tipo correcto puede proteger el hueso, mejorar el equilibrio y bajar el riesgo de fracturas. Qué muestra la investigación y cómo entrenar con seguridad.'
 translationKey: osteoporosis-exercise
 pubDate: 2026-11-23
-image: clinic
+image: osteoporosisExercise
 sources:
   - title: 'Osteoporosis'
     publisher: 'Instituto Nacional de Artritis y Enfermedades Musculoesqueléticas y de la Piel (NIAMS), NIH'

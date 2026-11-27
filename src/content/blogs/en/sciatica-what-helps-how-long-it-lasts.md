@@ -3,7 +3,7 @@ title: 'Sciatica: what it is, how long it lasts and what actually helps'
 description: 'Most sciatica gets better, but the evidence on treatment is more mixed than you may hear. What studies say about staying active, physical therapy, medicines, surgery and emergency signs.'
 translationKey: sciatica
 pubDate: 2026-11-04
-image: process
+image: sciatica
 sources:
   - title: 'Sciatica'
     publisher: 'NHS (National Health Service, UK)'

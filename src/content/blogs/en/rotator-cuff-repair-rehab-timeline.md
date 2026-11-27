@@ -3,7 +3,7 @@ title: 'Rehab after rotator cuff repair: the timeline, the sling and what affect
 description: 'Recovering from rotator cuff surgery takes months, not weeks. What to expect at each stage, what the research says about moving early versus staying in the sling, how often repairs re-tear and when to call your surgeon.'
 translationKey: rotator-cuff-repair-rehab
 pubDate: 2026-11-12
-image: rehab
+image: rotatorCuffRepairRehab
 sources:
   - title: 'Management of Rotator Cuff Injuries (2025)'
     publisher: 'American Academy of Orthopaedic Surgeons (AAOS), Evidence-Based Clinical Practice Guideline'

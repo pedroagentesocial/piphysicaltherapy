@@ -3,7 +3,7 @@ title: '¿Necesita un referido para ver a un fisioterapeuta en Utah?'
 description: 'La ley de Utah le permite empezar terapia física sin un referido médico. Lo que dice la ley, cómo lo manejan Medicare y los seguros privados, y qué muestra la investigación.'
 translationKey: direct-access-utah
 pubDate: 2026-10-29
-image: process
+image: accident
 sources:
   - title: 'Utah Code 58-24b-307: No referral required for physical therapy'
     publisher: 'Legislatura del Estado de Utah'

@@ -3,7 +3,7 @@ title: 'Runner’s knee: why the front of your knee hurts and what actually help
 description: 'Runner’s knee is common, and it does not only affect runners. What the research says about exercise, changing your training, shoe inserts, tape, braces and surgery, and how long recovery can take.'
 translationKey: runners-knee
 pubDate: 2026-11-06
-image: rehab
+image: runnersKnee
 sources:
   - title: '2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat, Manchester. Part 1: Terminology, definitions, clinical examination, natural history, patellofemoral osteoarthritis and patient-reported outcome measures'
     publisher: 'Crossley KM, Stefanik JJ, Selfe J, et al. British Journal of Sports Medicine 50(14):839–843'

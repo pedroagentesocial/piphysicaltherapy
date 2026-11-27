@@ -4,7 +4,7 @@ seoTitle: "Parkinson's and exercise: what works and how to start"
 description: "Exercise is one of the most useful things you can do for Parkinson's disease. What trials of treadmill training, cycling, tai chi, dance and balance work found, how much to aim for and how to start safely."
 translationKey: parkinsons-disease
 pubDate: 2026-11-24
-image: team
+image: parkinsonsDisease
 sources:
   - title: "Parkinson's disease"
     publisher: 'NHS (UK National Health Service)'

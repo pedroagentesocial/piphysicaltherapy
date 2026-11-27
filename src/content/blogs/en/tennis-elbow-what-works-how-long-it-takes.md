@@ -3,7 +3,7 @@ title: 'Tennis elbow: what works, what doesn’t and how long it takes'
 description: 'Most tennis elbow improves within a year, but the treatment you choose can change the ride. What trials show about exercise, physical therapy, steroid and PRP injections, braces and surgery.'
 translationKey: tennis-elbow
 pubDate: 2026-11-05
-image: rehab
+image: tennisElbow
 sources:
   - title: 'Prevalence and determinants of lateral and medial epicondylitis: a population study'
     publisher: 'Shiri R, Viikari-Juntura E, Varonen H, Heliövaara M. American Journal of Epidemiology 164(11):1065–1074'

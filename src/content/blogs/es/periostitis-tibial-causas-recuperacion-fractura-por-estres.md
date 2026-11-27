@@ -3,7 +3,7 @@ title: 'Periostitis tibial o "shin splints": qué la causa, cuánto tarda y cóm
 description: 'El dolor en la espinilla al correr es una de las lesiones más comunes de los corredores. Lo que dice la investigación sobre los factores de riesgo, el tiempo de recuperación, el regreso gradual a correr, las ondas de choque y las plantillas, y las señales de una fractura por estrés.'
 translationKey: shin-splints
 pubDate: 2026-11-14
-image: process
+image: shinSplints
 sources:
   - title: 'The diagnosis and management of medial tibial stress syndrome: An evidence update'
     publisher: 'Winters M. Der Unfallchirurg 123(Suppl 1):15–19'

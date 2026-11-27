@@ -4,7 +4,7 @@ seoTitle: 'Osgood-Schlatter en adolescentes: causas y tratamiento'
 description: 'La enfermedad de Osgood-Schlatter causa dolor y un bulto debajo de la rótula en adolescentes activos. Quién la tiene, cuánto dura y por qué la investigación apunta a manejar la carga y fortalecer, no solo a descansar.'
 translationKey: osgood-schlatter
 pubDate: 2026-11-27
-image: rehab
+image: osgoodSchlatter
 sources:
   - title: 'Treatment of Osgood-Schlatter disease: review of the literature'
     publisher: 'Circi E, Atalay Y, Beyzadeoglu T. Musculoskeletal Surgery 101(3):195–200'

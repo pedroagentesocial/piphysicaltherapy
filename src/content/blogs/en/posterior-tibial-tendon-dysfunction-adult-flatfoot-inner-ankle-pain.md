@@ -4,7 +4,7 @@ seoTitle: 'Posterior tibial tendon dysfunction: what treatment works'
 description: 'Pain along the inside of the ankle and an arch that slowly collapses can be posterior tibial tendon dysfunction. How it is spotted, what trials of orthoses, braces and exercise found and when surgery comes up.'
 translationKey: posterior-tibial-tendon
 pubDate: 2026-11-24
-image: process
+image: posteriorTibialTendon
 sources:
   - title: 'Adult Acquired Flat Foot (Posterior Tibial Tendon Dysfunction)'
     publisher: 'The Royal Orthopaedic Hospital NHS Foundation Trust'

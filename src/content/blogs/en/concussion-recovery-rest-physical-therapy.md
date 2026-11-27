@@ -4,7 +4,7 @@ seoTitle: 'Concussion: why strict rest is out and how physical therapy helps'
 description: 'Most people feel better from a concussion within weeks, and resting in a dark room is no longer the advice. What the research says, how physical therapy can help and the danger signs to know.'
 translationKey: concussion
 pubDate: 2026-11-05
-image: team
+image: concussion
 sources:
   - title: 'A Fact Sheet for High School Parents'
     publisher: 'Centers for Disease Control and Prevention (CDC), HEADS UP'

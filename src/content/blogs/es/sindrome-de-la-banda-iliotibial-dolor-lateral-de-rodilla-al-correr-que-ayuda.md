@@ -4,7 +4,7 @@ seoTitle: 'Síndrome de la banda iliotibial al correr: causas y tratamiento'
 description: 'El síndrome de la banda iliotibial es la causa más común de dolor en la parte de afuera de la rodilla en corredores. Qué lo causa, por qué estirar la banda no es la solución y qué dice la investigación sobre fortalecer la cadera.'
 translationKey: it-band-syndrome
 pubDate: 2026-11-26
-image: rehab
+image: itBandSyndrome
 sources:
   - title: 'Iliotibial band syndrome in runners: a systematic review'
     publisher: 'van der Worp MP, van der Horst N, de Wijer A, et al. Sports Medicine 42(11):969–992'

@@ -3,7 +3,7 @@ title: 'Ciática: qué es, cuánto dura y qué ayuda de verdad'
 description: 'La mayoría de las ciáticas mejoran, pero la evidencia sobre los tratamientos es más mixta de lo que se suele decir. Lo que dicen los estudios sobre mantenerse activo, terapia física, medicamentos, cirugía y señales de emergencia.'
 translationKey: sciatica
 pubDate: 2026-11-04
-image: process
+image: sciatica
 sources:
   - title: 'Sciatica'
     publisher: 'NHS (Servicio Nacional de Salud del Reino Unido)'

@@ -3,7 +3,7 @@ title: 'Knee osteoarthritis: what the evidence says about exercise and physical 
 description: 'Exercise is a first-line, strongly recommended treatment for knee osteoarthritis. What the guidelines and major trials show, including physical therapy vs. steroid injections.'
 translationKey: knee-osteoarthritis
 pubDate: 2026-10-29
-image: heroHome
+image: kneeOsteoarthritis
 sources:
   - title: 'Osteoarthritis'
     publisher: 'Centers for Disease Control and Prevention (CDC)'

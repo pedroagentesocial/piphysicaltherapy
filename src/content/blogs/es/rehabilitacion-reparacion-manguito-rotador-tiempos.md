@@ -3,7 +3,7 @@ title: 'Rehabilitación tras la reparación del manguito rotador: los tiempos, e
 description: 'Recuperarse de una cirugía del manguito rotador toma meses, no semanas. Qué esperar en cada etapa, qué dice la investigación sobre moverse pronto o quedarse más tiempo en el cabestrillo, qué tan seguido se vuelve a romper la reparación y cuándo llamar a su cirujano.'
 translationKey: rotator-cuff-repair-rehab
 pubDate: 2026-11-12
-image: rehab
+image: rotatorCuffRepairRehab
 sources:
   - title: 'Management of Rotator Cuff Injuries (2025)'
     publisher: 'Academia Estadounidense de Cirujanos Ortopédicos (AAOS), guía de práctica clínica basada en evidencia'

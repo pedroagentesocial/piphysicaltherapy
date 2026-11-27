@@ -3,7 +3,7 @@ title: 'Hip osteoarthritis: what exercise can do, what it cannot, and when to co
 description: 'Every major guideline puts exercise first for hip osteoarthritis, but the benefit is modest and surgery is better for severe cases. What the research says about exercise, weight, medicines, injections and hip replacement.'
 translationKey: hip-osteoarthritis
 pubDate: 2026-11-12
-image: process
+image: hipOsteoarthritis
 sources:
   - title: 'Global, regional, and national burden of osteoarthritis, 1990-2020 and projections to 2050: a systematic analysis for the Global Burden of Disease Study 2021'
     publisher: 'GBD 2021 Osteoarthritis Collaborators. The Lancet Rheumatology 5(9):e508–e522'

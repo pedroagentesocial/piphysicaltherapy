@@ -3,7 +3,7 @@ title: 'Broken ankle: how long recovery takes, cast or boot, surgery, and gettin
 description: 'A broken ankle usually takes 6 to 12 weeks to heal and months to recover fully. What recent trials found about shorter casting, removable boots, surgery, early walking and rehab exercise.'
 translationKey: ankle-fracture
 pubDate: 2026-11-18
-image: heroHome
+image: ankleFracture
 sources:
   - title: 'Ankle Fractures (Broken Ankle)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

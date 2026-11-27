@@ -3,7 +3,7 @@ title: 'Rehab after hip replacement: the recovery timeline, hip precautions and 
 description: 'Most people walk the day of or the day after hip replacement surgery. What to expect in the weeks and months that follow, what the research says about hip precautions and home versus supervised therapy, and when to call your surgeon.'
 translationKey: hip-replacement-rehab
 pubDate: 2026-11-14
-image: rehab
+image: hipReplacementRehab
 sources:
   - title: 'Total Hip Replacement'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

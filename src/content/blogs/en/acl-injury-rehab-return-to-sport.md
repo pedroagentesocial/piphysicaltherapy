@@ -3,7 +3,7 @@ title: 'ACL injury: what rehabilitation looks like and when it is safe to return
 description: 'Whether you have surgery or not, rehab is the core of ACL recovery. What trials show about surgery vs. rehab first, return-to-sport timing and testing, and preventing the next injury.'
 translationKey: acl-return-to-sport
 pubDate: 2026-10-30
-image: process
+image: aclReturnToSport
 sources:
   - title: 'Management of Anterior Cruciate Ligament Injuries: Evidence-Based Clinical Practice Guideline'
     publisher: 'American Academy of Orthopaedic Surgeons (AAOS)'

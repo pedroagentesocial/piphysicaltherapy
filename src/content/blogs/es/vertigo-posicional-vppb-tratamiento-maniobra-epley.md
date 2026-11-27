@@ -3,7 +3,7 @@ title: 'Vértigo posicional (VPPB): por qué todo da vueltas al girarse en la ca
 description: 'El vértigo posicional paroxístico benigno es el mareo giratorio típico que aparece al acostarse o girarse en la cama. Qué lo causa, cómo lo trata una maniobra de reposicionamiento, qué tan seguido regresa y cuándo el mareo es una emergencia.'
 translationKey: bppv
 pubDate: 2026-11-09
-image: team
+image: bppv
 sources:
   - title: 'Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update)'
     publisher: 'Bhattacharyya N, Gubbels SP, Schwartz SR, et al. Otolaryngology–Head and Neck Surgery 156(3 suppl):S1–S47'

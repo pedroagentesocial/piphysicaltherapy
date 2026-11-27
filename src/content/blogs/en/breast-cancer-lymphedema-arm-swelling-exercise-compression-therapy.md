@@ -4,7 +4,7 @@ seoTitle: 'Lymphedema after breast cancer: risk, exercise and treatment'
 description: 'About 1 in 5 women develop arm lymphedema after breast cancer treatment. Who is at risk, why early detection helps, what trials found about compression sleeves and lymph drainage and why weight lifting is safe.'
 translationKey: breast-cancer-lymphedema
 pubDate: 2026-11-25
-image: team
+image: breastCancerLymphedema
 sources:
   - title: 'Lymphedema and Cancer'
     publisher: 'National Cancer Institute'

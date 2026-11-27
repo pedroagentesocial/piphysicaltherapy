@@ -3,7 +3,7 @@ title: 'Fractura de muñeca: los tiempos de recuperación, yeso o cirugía, y lo
 description: 'La fractura de muñeca (fractura del radio distal) es una de las más comunes, tanto por caídas como por choques de auto. Cuánto tarda la recuperación, lo que encontraron los ensayos sobre yeso frente a cirugía, lo que dice la evidencia sobre la terapia y los ejercicios en casa, y las señales de alerta.'
 translationKey: wrist-fracture
 pubDate: 2026-11-16
-image: accident
+image: wristFracture
 sources:
   - title: 'Distal Radius Fractures (Broken Wrist)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

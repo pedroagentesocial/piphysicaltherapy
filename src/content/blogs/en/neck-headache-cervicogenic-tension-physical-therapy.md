@@ -3,7 +3,7 @@ title: 'Headaches that start in the neck: what physical therapy can and cannot d
 description: 'Tension-type and neck-related (cervicogenic) headaches are common, and some respond to physical therapy. What the research says about manual therapy, exercise and dry needling, how painkillers can backfire, and when a headache is an emergency.'
 translationKey: neck-headache
 pubDate: 2026-11-10
-image: clinic
+image: neckHeadache
 sources:
   - title: 'Headache Classification Committee of the International Headache Society (IHS) The International Classification of Headache Disorders, 3rd edition'
     publisher: 'Cephalalgia 38(1):1–211'

@@ -3,7 +3,7 @@ title: 'Osteoartritis de rodilla: lo que dice la evidencia sobre el ejercicio y 
 description: 'El ejercicio es un tratamiento de primera línea y muy recomendado para la osteoartritis de rodilla. Lo que muestran las guías y los grandes estudios, incluida la terapia física frente a las inyecciones de esteroides.'
 translationKey: knee-osteoarthritis
 pubDate: 2026-10-29
-image: heroHome
+image: kneeOsteoarthritis
 sources:
   - title: 'Osteoarthritis'
     publisher: 'Centros para el Control y la Prevención de Enfermedades (CDC)'

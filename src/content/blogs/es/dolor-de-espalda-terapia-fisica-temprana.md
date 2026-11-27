@@ -3,7 +3,7 @@ title: 'Dolor de espalda baja: por qué conviene empezar la terapia física pron
 description: 'La mayoría del dolor de espalda mejora con atención basada en movimiento. Lo que dicen los datos de EE. UU. y las guías clínicas sobre terapia temprana, imágenes y señales de alarma.'
 translationKey: low-back-pain-early-pt
 pubDate: 2026-10-29
-image: team
+image: lowBackPainEarlyPt
 sources:
   - title: 'Back, Lower Limb, and Upper Limb Pain Among U.S. Adults, 2019 (NCHS Data Brief No. 415)'
     publisher: 'Lucas JW, Connor EM, Bose J. Centro Nacional de Estadísticas de Salud (NCHS), CDC'

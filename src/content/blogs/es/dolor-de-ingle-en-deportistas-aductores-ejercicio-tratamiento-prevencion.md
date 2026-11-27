@@ -4,7 +4,7 @@ seoTitle: 'Dolor de ingle en deportistas: tratamiento y prevención'
 description: 'El dolor de ingle es común en el fútbol y otros deportes con patadas, sprints y cambios de dirección. Cómo se clasifica, qué encontraron los ensayos sobre el entrenamiento activo y cómo un solo ejercicio de aductores redujo los problemas de ingle un 41%.'
 translationKey: groin-pain-athletes
 pubDate: 2026-11-25
-image: rehab
+image: groinPainAthletes
 sources:
   - title: 'Doha agreement meeting on terminology and definitions in groin pain in athletes'
     publisher: 'Weir A, Brukner P, Delahunt E, et al. British Journal of Sports Medicine 49(12):768–774'

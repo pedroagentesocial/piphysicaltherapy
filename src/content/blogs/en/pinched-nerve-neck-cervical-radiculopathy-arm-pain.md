@@ -3,7 +3,7 @@ title: 'Pinched nerve in the neck: why your arm hurts, how long it lasts and wha
 description: 'Arm pain, tingling or weakness from a pinched nerve in the neck (cervical radiculopathy) usually gets better without surgery. What studies show about recovery time, collars, physical therapy and surgery, and the warning signs to act on.'
 translationKey: cervical-radiculopathy
 pubDate: 2026-11-16
-image: team
+image: cervicalRadiculopathy
 sources:
   - title: 'Cervical Radiculopathy (Pinched Nerve)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

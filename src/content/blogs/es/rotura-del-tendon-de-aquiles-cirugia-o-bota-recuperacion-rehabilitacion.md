@@ -3,7 +3,7 @@ title: 'Rotura del tendón de Aquiles: cirugía o bota, cuánto tarda la recuper
 description: 'Un tendón de Aquiles roto puede sanar con o sin cirugía. Qué encontraron los grandes ensayos sobre nuevas roturas, complicaciones, yeso o bota, regreso al deporte y la debilidad de la pantorrilla que puede quedar.'
 translationKey: achilles-rupture
 pubDate: 2026-11-20
-image: rehab
+image: achillesRupture
 sources:
   - title: 'Achilles Tendon Rupture (Tear)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

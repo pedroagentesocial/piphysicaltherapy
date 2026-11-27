@@ -3,7 +3,7 @@ title: 'Dolor de mandíbula y trastornos de la ATM: qué ayuda, qué evitar y si
 description: 'Los trastornos temporomandibulares (TTM) causan dolor en la articulación de la mandíbula y en los músculos para masticar. La mayoría mejora sola. Lo que recomiendan las guías, qué tratamientos evitar, lo que dice la investigación sobre el latigazo cervical y la mandíbula, y las señales de alerta.'
 translationKey: tmd-jaw-pain
 pubDate: 2026-11-16
-image: clinic
+image: tmdJawPain
 sources:
   - title: 'TMD (Temporomandibular Disorders)'
     publisher: 'Instituto Nacional de Investigación Dental y Craneofacial (NIDCR), NIH'

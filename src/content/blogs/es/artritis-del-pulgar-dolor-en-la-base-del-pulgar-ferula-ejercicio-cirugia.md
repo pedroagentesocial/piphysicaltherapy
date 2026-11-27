@@ -3,7 +3,7 @@ title: 'Artritis del pulgar: qué ayuda con el dolor en la base del pulgar, desd
 description: 'La artritis en la base del pulgar hace que abrir frascos, girar llaves o hacer pinza duela. Qué dice la investigación sobre férulas, ejercicios de mano, geles, inyecciones y cirugía, y qué esperar con el tiempo.'
 translationKey: thumb-arthritis
 pubDate: 2026-11-20
-image: process
+image: thumbArthritis
 sources:
   - title: 'Arthritis of the Thumb'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

@@ -3,7 +3,7 @@ title: 'Whiplash after a car accident: what recovery looks like and how Utah PIP
 description: 'How whiplash is graded, what recovery usually looks like, what physical therapy guidelines recommend, and how Utah’s no-fault PIP coverage pays for care.'
 translationKey: whiplash-utah
 pubDate: 2026-10-29
-image: accident
+image: whiplashUtah
 sources:
   - title: 'Utah Crash Facts 2023'
     publisher: 'Utah Highway Safety Office'

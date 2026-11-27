@@ -4,7 +4,7 @@ seoTitle: 'Broken collarbone: sling or surgery, healing time and rehab'
 description: 'Most broken collarbones heal in a sling. What trials found comparing a sling with surgery, how long healing takes, when to start moving the shoulder and which signs need care fast.'
 translationKey: clavicle-fracture
 pubDate: 2026-11-23
-image: rehab
+image: clavicleFracture
 sources:
   - title: 'Clavicle Fracture (Broken Collarbone)'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

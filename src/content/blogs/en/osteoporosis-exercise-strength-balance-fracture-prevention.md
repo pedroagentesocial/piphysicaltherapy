@@ -4,7 +4,7 @@ seoTitle: 'Osteoporosis and exercise: stronger bones, fewer fractures'
 description: 'Exercise will not cure osteoporosis, but the right kind can protect bone, improve balance and cut the risk of breaking one. What the research shows and how to train safely.'
 translationKey: osteoporosis-exercise
 pubDate: 2026-11-23
-image: clinic
+image: osteoporosisExercise
 sources:
   - title: 'Osteoporosis'
     publisher: 'National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS), NIH'

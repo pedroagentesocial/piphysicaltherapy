@@ -3,7 +3,7 @@ title: 'Hip impingement (FAI) and labral tears: physical therapy or arthroscopy?
 description: 'Hip impingement and labral tears cause groin pain in active young adults. Why scans can mislead, what trials found comparing physical therapy with hip arthroscopy, and how to decide.'
 translationKey: hip-impingement-fai
 pubDate: 2026-11-18
-image: rehab
+image: hipImpingementFai
 sources:
   - title: 'Femoroacetabular Impingement'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

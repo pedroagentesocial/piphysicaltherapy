@@ -3,7 +3,7 @@ title: 'Pinzamiento de cadera (FAI) y desgarro del labrum: ¿terapia física o a
 description: 'El pinzamiento de cadera y los desgarros del labrum causan dolor en la ingle en adultos jóvenes activos. Por qué las imágenes pueden confundir, qué encontraron los ensayos al comparar terapia física con artroscopia y cómo decidir.'
 translationKey: hip-impingement-fai
 pubDate: 2026-11-18
-image: rehab
+image: hipImpingementFai
 sources:
   - title: 'Femoroacetabular Impingement'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

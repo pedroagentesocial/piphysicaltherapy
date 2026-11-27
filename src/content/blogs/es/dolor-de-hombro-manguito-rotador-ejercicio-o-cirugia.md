@@ -3,7 +3,7 @@ title: 'Dolor de hombro y manguito rotador: lo que dice la evidencia sobre ejerc
 description: 'Los problemas del manguito rotador causan la mayoría del dolor de hombro. Lo que dicen los estudios con cirugía placebo, las guías y los estudios a largo plazo sobre ejercicio, cirugía y cuándo revisarse.'
 translationKey: shoulder-rotator-cuff
 pubDate: 2026-10-30
-image: clinic
+image: shoulderRotatorCuff
 sources:
   - title: 'A systematic review of the global prevalence and incidence of shoulder pain'
     publisher: 'Lucas J, van Doorn P, Hegedus E, Lewis J, van der Windt D. BMC Musculoskeletal Disorders 23:1073'

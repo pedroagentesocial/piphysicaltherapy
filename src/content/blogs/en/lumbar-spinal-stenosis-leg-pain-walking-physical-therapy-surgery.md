@@ -3,7 +3,7 @@ title: 'Lumbar spinal stenosis: leg pain when you walk, and what physical therap
 description: 'Lumbar spinal stenosis causes leg pain and heaviness when walking that eases when you sit. What trials found comparing physical therapy, surgery and injections, how it tends to change over time and the warning signs.'
 translationKey: lumbar-spinal-stenosis
 pubDate: 2026-11-18
-image: clinic
+image: lumbarSpinalStenosis
 sources:
   - title: 'Lumbar Spinal Stenosis'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

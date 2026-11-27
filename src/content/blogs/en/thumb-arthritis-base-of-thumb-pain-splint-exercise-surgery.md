@@ -3,7 +3,7 @@ title: 'Thumb arthritis: what helps pain at the base of the thumb, from splints 
 description: 'Arthritis at the base of the thumb makes jars, keys and pinching painful. What the research says about splints, hand exercises, gels, injections and surgery, and what to expect over time.'
 translationKey: thumb-arthritis
 pubDate: 2026-11-20
-image: process
+image: thumbArthritis
 sources:
   - title: 'Arthritis of the Thumb'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

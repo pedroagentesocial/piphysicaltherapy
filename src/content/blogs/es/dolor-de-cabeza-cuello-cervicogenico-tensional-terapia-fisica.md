@@ -3,7 +3,7 @@ title: 'Dolores de cabeza que empiezan en el cuello: lo que la terapia física p
 description: 'Los dolores de cabeza tensionales y los que vienen del cuello (cervicogénicos) son comunes, y algunos responden a la terapia física. Lo que dice la investigación sobre la terapia manual, el ejercicio y la punción seca, cómo los analgésicos pueden empeorar el problema y cuándo un dolor de cabeza es una emergencia.'
 translationKey: neck-headache
 pubDate: 2026-11-10
-image: clinic
+image: neckHeadache
 sources:
   - title: 'Headache Classification Committee of the International Headache Society (IHS) The International Classification of Headache Disorders, 3rd edition'
     publisher: 'Cephalalgia 38(1):1–211'

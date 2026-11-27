@@ -3,7 +3,7 @@ title: 'Artrosis de cadera: lo que el ejercicio puede hacer, lo que no y cuándo
 description: 'Todas las guías importantes ponen el ejercicio primero en la artrosis de cadera, pero el beneficio es modesto y la cirugía es mejor en los casos graves. Lo que dice la investigación sobre el ejercicio, el peso, los medicamentos, las inyecciones y el reemplazo de cadera.'
 translationKey: hip-osteoarthritis
 pubDate: 2026-11-12
-image: process
+image: hipOsteoarthritis
 sources:
   - title: 'Global, regional, and national burden of osteoarthritis, 1990-2020 and projections to 2050: a systematic analysis for the Global Burden of Disease Study 2021'
     publisher: 'GBD 2021 Osteoarthritis Collaborators. The Lancet Rheumatology 5(9):e508–e522'

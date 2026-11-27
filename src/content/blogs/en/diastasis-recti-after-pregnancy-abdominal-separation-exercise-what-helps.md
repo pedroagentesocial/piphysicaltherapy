@@ -4,7 +4,7 @@ seoTitle: 'Diastasis recti after pregnancy: what exercise can and cannot do'
 description: 'A gap between the ab muscles after pregnancy is very common and often shrinks on its own. What studies found about how often it lasts, whether crunches are really off limits and when surgery is considered.'
 translationKey: diastasis-recti
 pubDate: 2026-11-25
-image: clinic
+image: diastasisRecti
 sources:
   - title: 'Diastasis Recti (Abdominal Separation)'
     publisher: 'Cleveland Clinic, Health Library'

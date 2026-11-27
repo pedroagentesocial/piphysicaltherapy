@@ -3,7 +3,7 @@ title: 'Fractura de cadera: la recuperación después de la cirugía y cómo la 
 description: 'La mayoría de las fracturas de cadera ocurren en caídas después de los 65 años y requieren cirugía. Cómo es la recuperación, por qué importa levantarse pronto, qué encontraron los ensayos de ejercicio y cómo bajar el riesgo de otra fractura.'
 translationKey: hip-fracture
 pubDate: 2026-11-20
-image: team
+image: hipFracture
 sources:
   - title: 'Facts About Older Adult Falls'
     publisher: 'Centros para el Control y la Prevención de Enfermedades (CDC)'

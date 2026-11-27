@@ -3,7 +3,7 @@ title: 'Ankle sprains: how to recover well and keep it from happening again'
 description: 'A sprained ankle is common, and in one study about 4 in 10 people ended up with ongoing instability. When you need an X-ray, what treatment works, and how balance training prevents repeat sprains.'
 translationKey: ankle-sprain
 pubDate: 2026-10-30
-image: rehab
+image: ankleSprain
 sources:
   - title: 'The epidemiology of ankle sprains in the United States'
     publisher: 'Waterman BR, Owens BD, Davey S, Zacchilli MA, Belmont PJ. Journal of Bone and Joint Surgery 92(13):2279–2284'

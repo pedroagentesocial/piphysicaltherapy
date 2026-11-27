@@ -3,7 +3,7 @@ title: 'Falls in older adults: how exercise and physical therapy help prevent th
 description: 'About 1 in 4 adults 65 and older falls every year, but falls can be prevented. What CDC and Utah data show, and which exercises the research says actually work.'
 translationKey: fall-prevention
 pubDate: 2026-10-30
-image: heroHome
+image: fallPrevention
 sources:
   - title: 'Older Adult Falls Data'
     publisher: 'Centers for Disease Control and Prevention (CDC)'

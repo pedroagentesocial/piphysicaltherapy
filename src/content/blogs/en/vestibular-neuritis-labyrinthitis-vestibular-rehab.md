@@ -3,7 +3,7 @@ title: 'Vestibular neuritis and labyrinthitis: why the dizziness lingers and how
 description: 'Sudden, severe vertigo that lasts for days is often an inner ear nerve problem, but it can also be a stroke. What vestibular neuritis and labyrinthitis are, how long recovery takes, what vestibular rehab and medicines can do, and when to call 911.'
 translationKey: vestibular-neuritis
 pubDate: 2026-11-14
-image: clinic
+image: vestibularNeuritis
 sources:
   - title: 'Acute unilateral vestibulopathy/vestibular neuritis: Diagnostic criteria'
     publisher: 'Strupp M, Bisdorff A, Furman J, et al. Journal of Vestibular Research 32(5):389–406'

@@ -4,7 +4,7 @@ seoTitle: 'Osgood-Schlatter disease in teens: causes, rehab and recovery'
 description: 'Osgood-Schlatter disease causes pain and a bump below the kneecap in active teens. Who gets it, how long it lasts and why the research points to load management and strengthening rather than just rest.'
 translationKey: osgood-schlatter
 pubDate: 2026-11-27
-image: rehab
+image: osgoodSchlatter
 sources:
   - title: 'Treatment of Osgood-Schlatter disease: review of the literature'
     publisher: 'Circi E, Atalay Y, Beyzadeoglu T. Musculoskeletal Surgery 101(3):195–200'

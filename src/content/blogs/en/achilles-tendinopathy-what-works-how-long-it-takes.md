@@ -3,7 +3,7 @@ title: 'Achilles tendon pain: why it lingers, what works and what to avoid'
 description: 'Achilles tendinopathy usually takes months to settle, and rest alone rarely fixes it. What the research says about exercise, heel lifts, injections, shockwave and surgery, and the warning signs of a rupture.'
 translationKey: achilles-tendinopathy
 pubDate: 2026-11-06
-image: clinic
+image: achillesTendinopathy
 sources:
   - title: 'Dutch multidisciplinary guideline on Achilles tendinopathy'
     publisher: 'de Vos RJ, van der Vlist AC, Zwerver J, et al. British Journal of Sports Medicine 55(20):1125–1134'

@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { images } from './data/images';
+import { blogImages, images, type PostImageKey } from './data/images';
 
 /**
  * Blog articles: one Markdown file per locale under src/content/blogs/{en,es}/.
@@ -21,8 +21,8 @@ const blogs = defineCollection({
     pubDate: z.coerce.date(),
     /** Set whenever the facts are rechecked or the content changes. */
     updatedDate: z.coerce.date().optional(),
-    /** Card and header photo, from the verified image manifest. */
-    image: z.enum(Object.keys(images) as [keyof typeof images, ...(keyof typeof images)[]]).optional(),
+    /** Card and header photo, from the image manifest (site images or blog-only photos). */
+    image: z.enum([...Object.keys(images), ...Object.keys(blogImages)] as [PostImageKey, ...PostImageKey[]]).optional(),
     /**
      * Every source the article cites, in citation order. In the body, cite with
      * [[1]](#source-1); the page renders this list with matching anchors.

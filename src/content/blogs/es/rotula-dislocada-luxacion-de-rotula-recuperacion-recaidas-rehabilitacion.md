@@ -3,7 +3,7 @@ title: 'Rótula dislocada: la recuperación, la probabilidad de que se vuelva a 
 description: 'La luxación de rótula es más común en adolescentes. Cómo es la recuperación, quién tiene más riesgo de que se vuelva a salir, qué hace la terapia física y qué encontraron los ensayos sobre operar tras una primera luxación.'
 translationKey: patellar-dislocation
 pubDate: 2026-11-20
-image: heroHome
+image: patellarDislocation
 sources:
   - title: 'Patellar (Kneecap) Instability'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

@@ -3,7 +3,7 @@ title: 'Frozen shoulder: how long it lasts, who gets it and what actually helps'
 description: 'Frozen shoulder can take a year or more to settle, and it is more common with diabetes. What the research says about steroid injections, physical therapy, gentle versus aggressive stretching and surgery.'
 translationKey: frozen-shoulder
 pubDate: 2026-11-12
-image: clinic
+image: frozenShoulder
 sources:
   - title: 'Shoulder pain and mobility deficits: adhesive capsulitis'
     publisher: 'Kelley MJ, Shaffer MA, Kuhn JE, et al. Journal of Orthopaedic & Sports Physical Therapy 43(5):A1–A31'

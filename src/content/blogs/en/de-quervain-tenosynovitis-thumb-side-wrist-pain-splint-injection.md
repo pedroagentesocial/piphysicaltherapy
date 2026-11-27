@@ -4,7 +4,7 @@ seoTitle: 'De Quervain''s tenosynovitis: wrist pain, splint or injection'
 description: 'De Quervain''s causes pain on the thumb side of the wrist, often in new parents and people who grip and twist. Who gets it, what studies found for splints and injections and what physical therapy adds.'
 translationKey: de-quervain
 pubDate: 2026-11-26
-image: clinic
+image: deQuervain
 sources:
   - title: 'Consensus on a multidisciplinary treatment guideline for de Quervain disease: results from the European HANDGUIDE study'
     publisher: 'Huisstede BM, Coert JH, Fridén J, Hoogvliet P; European HANDGUIDE Group. Physical Therapy 94(8):1095–1110'

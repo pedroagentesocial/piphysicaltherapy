@@ -4,7 +4,7 @@ seoTitle: 'Espondilitis anquilosante: cómo ayudan el ejercicio y la terapia'
 description: 'La espondilitis anquilosante causa dolor y rigidez de espalda que mejoran al moverse. Cómo reconocerla, por qué las guías recomiendan con fuerza la terapia física y qué encontraron los ensayos de ejercicio.'
 translationKey: ankylosing-spondylitis
 pubDate: 2026-11-23
-image: process
+image: ankylosingSpondylitis
 sources:
   - title: 'Ankylosing Spondylitis'
     publisher: 'Instituto Nacional de Artritis y Enfermedades Musculoesqueléticas y de la Piel (NIAMS), NIH'

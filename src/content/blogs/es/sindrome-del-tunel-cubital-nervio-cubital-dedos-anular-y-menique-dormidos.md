@@ -4,7 +4,7 @@ seoTitle: 'Túnel cubital: dedos dormidos, qué ayuda y cuándo operar'
 description: 'El hormigueo en el anular y el meñique que empeora con el codo doblado suele ser síndrome del túnel cubital. Cómo se diagnostica, qué encontraron los estudios de consejos, férulas nocturnas y deslizamientos del nervio y cómo se comparan las cirugías.'
 translationKey: cubital-tunnel
 pubDate: 2026-11-24
-image: rehab
+image: cubitalTunnel
 sources:
   - title: 'Ulnar Nerve Entrapment at the Elbow (Cubital Tunnel Syndrome)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

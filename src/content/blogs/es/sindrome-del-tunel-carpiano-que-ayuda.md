@@ -3,7 +3,7 @@ title: 'Síndrome del túnel carpiano: qué causa el hormigueo, qué ayuda y cu�
 description: 'El síndrome del túnel carpiano causa entumecimiento y hormigueo en la mano, a menudo de noche. Lo que dice la investigación sobre el trabajo, el uso del teclado, las férulas, las inyecciones, la terapia de mano y la cirugía, y las señales de que no conviene esperar.'
 translationKey: carpal-tunnel
 pubDate: 2026-11-12
-image: team
+image: carpalTunnel
 sources:
   - title: 'Prevalence of carpal tunnel syndrome in a general population'
     publisher: 'Atroshi I, Gummesson C, Johnsson R, et al. JAMA 282(2):153–158'

@@ -3,7 +3,7 @@ title: 'Conmoción cerebral: cómo es la recuperación, por qué ya no se indica
 description: 'La mayoría de las personas se siente mejor de una conmoción en semanas, y descansar en un cuarto oscuro ya no es el consejo. Lo que dice la investigación, cómo ayuda la terapia física y las señales de peligro.'
 translationKey: concussion
 pubDate: 2026-11-05
-image: team
+image: concussion
 sources:
   - title: 'A Fact Sheet for High School Parents'
     publisher: 'Centros para el Control y la Prevención de Enfermedades (CDC), HEADS UP'

@@ -3,7 +3,7 @@ title: 'Lesión del ligamento cruzado anterior (LCA): cómo es la rehabilitació
 description: 'Con o sin cirugía, la rehabilitación es la base de la recuperación del LCA. Lo que muestran los estudios sobre cirugía o rehabilitación primero, cuándo volver al deporte y cómo prevenir la siguiente lesión.'
 translationKey: acl-return-to-sport
 pubDate: 2026-10-30
-image: process
+image: aclReturnToSport
 sources:
   - title: 'Management of Anterior Cruciate Ligament Injuries: Evidence-Based Clinical Practice Guideline'
     publisher: 'Academia Americana de Cirujanos Ortopédicos (AAOS)'

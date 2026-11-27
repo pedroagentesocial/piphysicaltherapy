@@ -3,7 +3,7 @@ title: 'Codo de tenista: qué funciona, qué no y cuánto tarda'
 description: 'La mayoría de los casos de codo de tenista mejoran en un año, pero el tratamiento que elija puede cambiar el camino. Lo que muestran los estudios sobre ejercicio, terapia física, inyecciones de esteroides y PRP, coderas y cirugía.'
 translationKey: tennis-elbow
 pubDate: 2026-11-05
-image: rehab
+image: tennisElbow
 sources:
   - title: 'Prevalence and determinants of lateral and medial epicondylitis: a population study'
     publisher: 'Shiri R, Viikari-Juntura E, Varonen H, Heliövaara M. American Journal of Epidemiology 164(11):1065–1074'

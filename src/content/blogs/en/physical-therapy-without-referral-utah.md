@@ -3,7 +3,7 @@ title: 'Do you need a referral to see a physical therapist in Utah?'
 description: 'Utah law lets you start physical therapy without a doctor’s referral. What the statute says, how Medicare and private insurance handle it, and what the research shows.'
 translationKey: direct-access-utah
 pubDate: 2026-10-29
-image: process
+image: accident
 sources:
   - title: 'Utah Code 58-24b-307: No referral required for physical therapy'
     publisher: 'Utah State Legislature'

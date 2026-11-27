@@ -3,7 +3,7 @@ title: 'Jaw pain and TMJ disorders: what helps, what to avoid and whether whipla
 description: 'Temporomandibular disorders (TMD) cause pain in the jaw joint and chewing muscles. Most improve on their own. What guidelines recommend, which treatments to avoid, what research says about whiplash and the jaw, and warning signs.'
 translationKey: tmd-jaw-pain
 pubDate: 2026-11-16
-image: clinic
+image: tmdJawPain
 sources:
   - title: 'TMD (Temporomandibular Disorders)'
     publisher: 'National Institute of Dental and Craniofacial Research (NIDCR), NIH'

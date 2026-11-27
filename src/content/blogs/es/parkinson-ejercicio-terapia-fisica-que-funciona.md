@@ -4,7 +4,7 @@ seoTitle: 'Párkinson y ejercicio: qué funciona y cómo empezar'
 description: 'El ejercicio es una de las cosas más útiles que puede hacer si tiene párkinson. Qué encontraron los ensayos de caminadora, bicicleta, taichí, baile y equilibrio, cuánto ejercicio buscar y cómo empezar con seguridad.'
 translationKey: parkinsons-disease
 pubDate: 2026-11-24
-image: team
+image: parkinsonsDisease
 sources:
   - title: "Parkinson's disease"
     publisher: 'NHS (Servicio Nacional de Salud del Reino Unido)'

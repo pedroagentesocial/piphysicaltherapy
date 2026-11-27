@@ -3,7 +3,7 @@ title: 'Neuritis vestibular y laberintitis: por qué el mareo persiste y cómo a
 description: 'Un vértigo repentino e intenso que dura días suele ser un problema del nervio del oído interno, pero también puede ser un derrame cerebral. Qué son la neuritis vestibular y la laberintitis, cuánto tarda la recuperación, qué pueden hacer la rehabilitación vestibular y los medicamentos, y cuándo llamar al 911.'
 translationKey: vestibular-neuritis
 pubDate: 2026-11-14
-image: clinic
+image: vestibularNeuritis
 sources:
   - title: 'Acute unilateral vestibulopathy/vestibular neuritis: Diagnostic criteria'
     publisher: 'Strupp M, Bisdorff A, Furman J, et al. Journal of Vestibular Research 32(5):389–406'

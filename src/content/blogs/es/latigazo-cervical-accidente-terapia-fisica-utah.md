@@ -3,7 +3,7 @@ title: 'Latigazo cervical después de un accidente de auto: cómo es la recupera
 description: 'Cómo se clasifica el latigazo cervical, cómo suele ser la recuperación, qué recomiendan las guías de terapia física y cómo paga la atención el seguro PIP sin culpa de Utah.'
 translationKey: whiplash-utah
 pubDate: 2026-10-29
-image: accident
+image: whiplashUtah
 sources:
   - title: 'Utah Crash Facts 2023'
     publisher: 'Oficina de Seguridad Vial de Utah (Utah Highway Safety Office)'

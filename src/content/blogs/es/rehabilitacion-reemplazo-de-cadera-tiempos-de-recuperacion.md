@@ -3,7 +3,7 @@ title: 'Rehabilitación tras el reemplazo de cadera: los tiempos de recuperació
 description: 'La mayoría de las personas camina el mismo día o al día siguiente de la cirugía de reemplazo de cadera. Qué esperar en las semanas y meses siguientes, qué dice la investigación sobre las precauciones de cadera y la terapia en casa frente a la supervisada, y cuándo llamar a su cirujano.'
 translationKey: hip-replacement-rehab
 pubDate: 2026-11-14
-image: rehab
+image: hipReplacementRehab
 sources:
   - title: 'Total Hip Replacement'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

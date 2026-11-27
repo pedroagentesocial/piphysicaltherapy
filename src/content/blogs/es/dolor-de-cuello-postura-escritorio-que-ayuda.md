@@ -3,7 +3,7 @@ title: 'Dolor de cuello por trabajo de escritorio y pantallas: qué ayuda de ver
 description: 'El dolor de cuello es común, pero lo que dice la investigación sobre la "mala postura" puede sorprenderle. Lo que muestra la evidencia sobre fortalecimiento, ejercicio breve diario, terapia manual y señales de alarma.'
 translationKey: neck-pain-desk
 pubDate: 2026-11-03
-image: team
+image: neckPainDesk
 sources:
   - title: 'Summary Health Statistics: National Health Interview Survey, 2018, Table A-5'
     publisher: 'Centro Nacional de Estadísticas de Salud (NCHS), CDC'

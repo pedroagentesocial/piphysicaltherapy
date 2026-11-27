@@ -3,7 +3,7 @@ title: 'Rodilla del corredor: por qué duele la parte delantera de la rodilla y 
 description: 'La rodilla del corredor es común y no solo afecta a quienes corren. Lo que dice la investigación sobre el ejercicio, los cambios en el entrenamiento, las plantillas, las cintas, las rodilleras y la cirugía, y cuánto puede tardar la recuperación.'
 translationKey: runners-knee
 pubDate: 2026-11-06
-image: rehab
+image: runnersKnee
 sources:
   - title: '2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat, Manchester. Part 1: Terminology, definitions, clinical examination, natural history, patellofemoral osteoarthritis and patient-reported outcome measures'
     publisher: 'Crossley KM, Stefanik JJ, Selfe J, et al. British Journal of Sports Medicine 50(14):839–843'

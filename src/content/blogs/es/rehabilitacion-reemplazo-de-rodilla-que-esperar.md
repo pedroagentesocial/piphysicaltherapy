@@ -3,7 +3,7 @@ title: 'Rehabilitación después de un reemplazo total de rodilla: qué esperar 
 description: 'El reemplazo de rodilla es común y suele dar buenos resultados, pero la recuperación depende de la rehabilitación. Lo que recomienda la guía de terapia física de 2026, una línea de tiempo típica y las señales de alarma.'
 translationKey: knee-replacement-rehab
 pubDate: 2026-11-03
-image: accident
+image: kneeReplacementRehab
 sources:
   - title: 'Total Knee Replacement'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

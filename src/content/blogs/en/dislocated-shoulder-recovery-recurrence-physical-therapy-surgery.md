@@ -3,7 +3,7 @@ title: 'Dislocated shoulder: recovery, the risk of it happening again, and when 
 description: 'After a first shoulder dislocation, how long recovery takes, who is most likely to dislocate again, what a sling can and cannot do, and what trials found about physical therapy and surgery.'
 translationKey: shoulder-dislocation
 pubDate: 2026-11-18
-image: accident
+image: shoulderDislocation
 sources:
   - title: 'Shoulder Dislocation'
     publisher: 'American Academy of Orthopaedic Surgeons, OrthoInfo'

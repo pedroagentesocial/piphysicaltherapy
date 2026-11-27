@@ -3,7 +3,7 @@ title: 'Nervio pinzado en el cuello: por qué le duele el brazo, cuánto dura y 
 description: 'El dolor, el hormigueo o la debilidad en el brazo por un nervio pinzado en el cuello (radiculopatía cervical) suelen mejorar sin cirugía. Lo que muestran los estudios sobre el tiempo de recuperación, el collarín, la terapia física y la cirugía, y las señales de alerta que no debe ignorar.'
 translationKey: cervical-radiculopathy
 pubDate: 2026-11-16
-image: team
+image: cervicalRadiculopathy
 sources:
   - title: 'Cervical Radiculopathy (Pinched Nerve)'
     publisher: 'Academia Americana de Cirujanos Ortopédicos, OrthoInfo'

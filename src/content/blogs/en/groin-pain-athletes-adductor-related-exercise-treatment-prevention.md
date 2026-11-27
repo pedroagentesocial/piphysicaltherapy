@@ -4,7 +4,7 @@ seoTitle: 'Groin pain in athletes: adductor pain, rehab and prevention'
 description: 'Groin pain is common in soccer and other sports that kick, sprint and change direction. How it is classified, what trials found for active training and how a single adductor exercise cut groin problems by 41%.'
 translationKey: groin-pain-athletes
 pubDate: 2026-11-25
-image: rehab
+image: groinPainAthletes
 sources:
   - title: 'Doha agreement meeting on terminology and definitions in groin pain in athletes'
     publisher: 'Weir A, Brukner P, Delahunt E, et al. British Journal of Sports Medicine 49(12):768–774'

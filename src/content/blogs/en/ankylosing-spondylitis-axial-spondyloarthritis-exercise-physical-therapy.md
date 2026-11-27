@@ -4,7 +4,7 @@ seoTitle: 'Ankylosing spondylitis: how exercise and physical therapy help'
 description: 'Ankylosing spondylitis causes back pain and stiffness that ease with movement. How to recognize it, why guidelines strongly recommend physical therapy and what exercise trials found.'
 translationKey: ankylosing-spondylitis
 pubDate: 2026-11-23
-image: process
+image: ankylosingSpondylitis
 sources:
   - title: 'Ankylosing Spondylitis'
     publisher: 'National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS), NIH'
