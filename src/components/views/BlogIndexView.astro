@@ -59,7 +59,7 @@ const dateFmt = new Intl.DateTimeFormat(localeTags[lang], { year: 'numeric', mon
       ))}
     </ul>
   )}
-  {posts.length > 0 && <BlogPager locale={lang === 'es' ? 'es' : 'en'} />}
+  {posts.length > 0 && <BlogPager locale={lang === 'es' ? 'es' : 'en'} perPage={8} />}
 </section>
 
 <CtaBand title={t.blog.ctaTitle} body={t.blog.ctaBody} />
