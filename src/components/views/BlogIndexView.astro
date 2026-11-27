@@ -2,6 +2,7 @@
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Img from '../Img.astro';
 import CtaBand from '../CtaBand.astro';
+import BlogPager from '../BlogPager.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { hrefFor } from '../../i18n/routes';
 import { localeTags } from '../../i18n/config';
@@ -28,9 +29,9 @@ const dateFmt = new Intl.DateTimeFormat(localeTags[lang], { year: 'numeric', mon
   {posts.length === 0 ? (
     <p class="text-ink-soft">{t.blog.empty}</p>
   ) : (
-    <ul role="list" class="grid gap-6 sm:grid-cols-2">
+    <ul role="list" class="grid gap-6 sm:grid-cols-2" data-blog-grid>
       {posts.map((post, i) => (
-        <li class="reveal" style={`--reveal-delay:${(i % 2) * 70}ms`}>
+        <li class="reveal" data-blog-card style={`--reveal-delay:${(i % 2) * 70}ms`}>
           <a
             href={postHref(post)}
             class="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
@@ -58,6 +59,7 @@ const dateFmt = new Intl.DateTimeFormat(localeTags[lang], { year: 'numeric', mon
       ))}
     </ul>
   )}
+  {posts.length > 0 && <BlogPager locale={lang === 'es' ? 'es' : 'en'} />}
 </section>
 
 <CtaBand title={t.blog.ctaTitle} body={t.blog.ctaBody} />
